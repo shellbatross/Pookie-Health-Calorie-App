@@ -15,6 +15,15 @@ function Tab2(){
                 </label>
             </div>
             </form>
+            <br></br>
+            Hat color to place on Player Two's Head
+            <div>
+                <select>
+                    <option value="0">Select color:</option>
+                    <option value="1">Red</option>
+                    <option value="2">Blue</option>
+                </select>
+            </div>
     </div>)
 
 }
