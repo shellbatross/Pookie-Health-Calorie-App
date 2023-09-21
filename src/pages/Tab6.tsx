@@ -1,7 +1,10 @@
 import React from 'react';
 
+import "./Tab6.scss"
 function Tab6(){
-    return (<div>AEIU AEIU AEIU AEIUD</div>)
+    return (<div>
+        <h1 className='text1'>Down Here</h1>
+        </div>)
 
 }
 
