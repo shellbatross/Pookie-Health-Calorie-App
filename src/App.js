@@ -6,6 +6,7 @@ import './App.css';
 //We are going to need to import each one of the tabs to use in the router
 //testing something
 import Homepage from "./pages/Homepage.tsx";
+import NavBar from "./components/NavBar.tsx";
 import Tab1 from "./pages/Tab1.tsx";
 import Tab2 from "./pages/Tab2.tsx";
 import Tab3 from "./pages/Tab3.tsx";
@@ -18,6 +19,9 @@ import Tab6 from "./pages/Tab6.tsx";
 function App() {
   return (
     <Router>
+    <NavBar>
+      
+    </NavBar>
     <Routes>
     <Route exact path = "/"  element = {<Homepage></Homepage>}></Route>
     <Route path = "/tab1"  element = {<Tab1></Tab1>}></Route>
@@ -28,12 +32,6 @@ function App() {
     <Route path = "/tab6" element = {<Tab6></Tab6>}></Route>
     </Routes> 
 
-    <Link to = "/tab1"> Tab1    </Link>
-    <Link to = "/tab2">     Tab2         </Link>
-    <Link to = "/tab3">    Tab3    </Link>
-    <Link to = "/tab4">    Tab4   </Link>
-    <Link to = "/tab5">   Tab5   </Link>
-    <Link to = "/tab6">   Tab5    </Link>
     </Router>
     
   );
