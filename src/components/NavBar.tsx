@@ -8,13 +8,12 @@ function NavBar(){
 
     return(
         <div className="bundle-of-links">
-        <Link to = "/tab1" className="first-link"> Tab1</Link>
-        <Link to = "/tab2">     Tab2         </Link>
-        <Link to = "/tab3">    Tab3    </Link>
-        <Link to = "/tab4">    Tab4   </Link>
-        <Link to = "/tab5">   Tab5   </Link>
-        <Link to = "/tab6">   Tab6</Link>
-        <img src = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" className="pikachu"/>
+        <Link to = "/tab1" className="first-link"> Text </Link>
+        <Link to = "/tab2">     Choices         </Link>
+        <Link to = "/tab3">    ToDo    </Link>
+        <Link to = "/tab4">    Profile   </Link>
+        <Link to = "/tab5">   Colors   </Link>
+        <Link to = "/tab6">   Lower Right</Link>
         </div>
     )
 
