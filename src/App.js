@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar.tsx";
 import Homepage from "./pages/Homepage.tsx";
 import Tab1 from "./pages/Tab1.tsx";
 import Tab2 from "./pages/Tab2.tsx";
-import Tab3 from "./pages/Tab3.tsx";
+import Tab3 from "./pages/Tab3.jsx";
 import Tab4 from "./pages/Tab4.tsx";
 import Tab5 from "./pages/Tab5.tsx";
 import Tab6 from "./pages/Tab6.tsx";
