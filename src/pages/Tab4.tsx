@@ -14,6 +14,8 @@ function Tab4(){
 
     // hidden button classname was made first to just make the button invisible
     return (<div>
+                <br />
+                <h1 className='top-left'>Profile</h1>
                 <button className='hidden-button' onClick={buttonClick}>
                     <img src='https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/flushed-face.png' className='blushy-wushy' />
                 </button>

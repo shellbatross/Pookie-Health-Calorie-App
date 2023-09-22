@@ -2,7 +2,10 @@ import React from 'react';
 
 import "./Tab1.scss"
 function Tab1(){
-    return (<div><h1 className='longText'>According to all known laws of aviation, there is no way a bee should be able to fly.
+    return (<div>
+         <br />
+         <h1 className='top-left'>Text</h1>
+         <span className='longText'>According to all known laws of aviation, there is no way a bee should be able to fly.
         Its wings are too small to get its fat little body off the ground.
         The bee, of course, flies anyway because bees don't care what humans think is impossible.
         Yellow, black. Yellow, black. Yellow, black. Yellow, black.
@@ -1364,7 +1367,7 @@ function Tab1(){
         I'm sorry. I'm sorry, everyone. Can we stop here?
         I'm not making a major life decision during a production number!
         All right. Take ten, everybody. Wrap it up, guys.
-        I had virtually no rehearsal for that.</h1>
+        I had virtually no rehearsal for that.</span>
         </div>)
 
 }
