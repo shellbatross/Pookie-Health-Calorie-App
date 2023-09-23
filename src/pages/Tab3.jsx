@@ -15,12 +15,12 @@ function Tab3(){
     //when the person finishes typing in the text box, and they click, the handle add will be called. inside handle add, i am setting the state of the todo list
     //to grab input, and ...put in the rest of todolist. Then this will re render the contents of the state of the new stte of the variable.
     function handleAdd(){
-        let tmp_obj = {"strike":"false", "input":input}
+        let tmp_obj = {"strike":"false", "info":input}
         setList([...todoList,tmp_obj]);
     }
     //as the person types, they are going to change the input box. as the input changes with "onChange", I am calling this function to set the input state
     //to whatever they are typing, causing a re render of what is the input
-    function handleChange(event){
+    function handleChange(event){   
         setInput(event.target.value);
     };
     function rescramble(item,idx){
@@ -28,11 +28,11 @@ function Tab3(){
         todoList.map((curr,i)=>
         {
             if(curr === item && idx == i){
-                newList.push({"strike":"true","input": curr.input})
+                newList.push({"strike":"true","info": curr.info})
 
         }
         else{
-            newList.push(item)
+            newList.push(curr)
         }
 
         }
@@ -41,33 +41,59 @@ function Tab3(){
    
     }
 
-    console.log(todoList);
-    return (<div>
-        <ul>
+    function deletefromlist(item,idx){
+        let newList = []
+        todoList.map((curr,i)=>
+        {
+            if(curr != item && idx != i){
+                newList.push(curr)
+            
+
+        }
+        }
+        )
+        setList(newList);
+    }
+
+    return (
+    <div className='whole-list'>
+        <ul className='list'>
         {todoList.map((item,i)=>{
         if(item.strike ==="false"){
             return(
+                <div className='whole-list-item'>
         <li key = {i} onClick = {()=>rescramble(item,i)}>
             <button className="clickable-item">
-                {item.input}
+                {item.info}
             </button>
-        </li>)
+
+            
+        </li>
+        <img src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/900px-Red_x.svg.png?20111003033350" onClick = {()=>deletefromlist(item,i)}className = "delete-button" />
+        </div>
+
+        
+        )
         }
         else{
             return(
+            <div className='whole-list-item'>
             <li key = {i} onClick = {()=>rescramble(item,i)}>
             <button className="clickable-item">
-                <s>{item.input}</s>
+                <s>{item.info}</s>
+              
             </button>
         </li>
+        <img src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/900px-Red_x.svg.png?20111003033350" onClick = {()=>deletefromlist(item,i)} className = "delete-button" />
+        </div>
             )
         }
         }
     ) }
-    <input type = "text"  onChange = {handleChange}>
+    <input type = "text"  onChange = {handleChange} className="form">
     </input>
-    <button type = "button" onClick = {handleAdd}>
-        Add something to the to do list!
+    <button type = "button" onClick = {handleAdd} className= "submitbutton">
+        <h1 className='submitbuttonfont'>Add something to the to do list!</h1>
     </button>
    </ul>
    </div>
