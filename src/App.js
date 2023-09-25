@@ -7,7 +7,6 @@ import './App.css';
 //testing something
 import NavBar from "./components/NavBar.tsx";
 import Homepage from "./pages/Homepage.tsx";
-import NavBar from "./components/NavBar.tsx";
 import Tab1 from "./pages/Tab1.tsx";
 import Tab2 from "./pages/Tab2.tsx";
 import Tab3 from "./pages/Tab3.jsx";
