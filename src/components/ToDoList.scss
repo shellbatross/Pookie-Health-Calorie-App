@@ -1,0 +1,39 @@
+
+.whole-list-item{
+    display:flex;
+}
+
+.list{
+    display: 'flex';
+    
+}
+
+.clickable-item{
+    background: none;
+    border : none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.delete-button{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.form{
+    font-size: 30px;
+    height: 70  px;    
+
+}
+.crossed-line {
+    text-decoration: line-through;
+}
+
+.submitbutton{
+    border-radius: 4%;
+}
+
+.submitbuttonfont{
+    font-size: 20px;
+}
