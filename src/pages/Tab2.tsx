@@ -1,29 +1,38 @@
 import React from 'react';
 
 function Tab2(){
-    return (<div>
-            <h1>Choices</h1>
-            Hat color to place on Player One's Head
-            <form>
-            <div>
-                <label>
-                <input type="radio" value="Red"/> Red <br />
-                </label>
 
-                <label>
-                <input type="radio" value="Blue"/> Blue <br />
-                </label>
-            </div>
-            </form>
+    function pressed(a, b) {
+        var ele = document.getElementsByName("P1");
+        for (var i = 0; i < ele.length; i++) {
+            if ((ele[i] as HTMLInputElement).checked)
+                document.getElementById("btn").innerHTML
+                    = "You chose " + (ele[i] as HTMLInputElement).value + " for P1 and " + (document.getElementById(b) as HTMLInputElement).value + " for P2!";
+        }
+    }
+
+
+    return (<div>
+            <br />
+            <h1 className='top-left'>Choices</h1>
+            Hat color to place on P1's Head <br />
+
+            <input type="radio" name="P1" value="Red"/> Red <br />
+            <input type="radio" name="P1" value="Blue"/> Blue <br />
+
             <br></br>
-            Hat color to place on Player Two's Head
+            Hat color to place on P2's Head
             <div>
-                <select>
-                    <option value="0">Select color:</option>
-                    <option value="1">Red</option>
-                    <option value="2">Blue</option>
-                </select>
+                <select id="dropdown">
+                    <option value="Unselected">Select color:</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                </select> 
             </div>
+
+            <br></br>
+            <button id="btn" type="submit" onClick={() => pressed("radio-btn", "dropdown")}> Press Me! </button>
+
     </div>)
 
 }
