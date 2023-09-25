@@ -73,7 +73,7 @@ function Tab3(){
         </div>
 
         
-        )
+        );
         }
         else{
             return(
@@ -86,16 +86,16 @@ function Tab3(){
         </li>
         <img src = "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/900px-Red_x.svg.png?20111003033350" onClick = {()=>deletefromlist(item,i)} className = "delete-button" />
         </div>
-            )
+            );
         }
         }
     ) }
-    <input type = "text"  onChange = {handleChange} className="form">
+   </ul>
+   <input type = "text"  onChange = {handleChange} className="form">
     </input>
     <button type = "button" onClick = {handleAdd} className= "submitbutton">
         <h1 className='submitbuttonfont'>Add something to the to do list!</h1>
     </button>
-   </ul>
    </div>
     );
 
