@@ -1,6 +1,7 @@
 
 .whole-list-item{
     display:flex;
+    position: absolute;
 }
 .list{
     display: 'flex';
@@ -25,7 +26,7 @@
 
 .form{
     font-size: 30px;
-    height: 70px;    
+    height: 70  px;    
 
 }
 .crossed-line {
