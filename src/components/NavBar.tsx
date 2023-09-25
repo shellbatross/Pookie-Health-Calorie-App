@@ -8,12 +8,12 @@ function NavBar(){
 
     return(
         <div className="bundle-of-links">
-        <Link to = "/tab1" className="first-link"> Text </Link>
-        <Link to = "/tab2">     Choices         </Link>
-        <Link to = "/tab3">    ToDo    </Link>
-        <Link to = "/tab4">    Profile   </Link>
-        <Link to = "/tab5">   Colors   </Link>
-        <Link to = "/tab6">   Lower Right</Link>
+        <Link to = "/tab1" className="first-link"> Text&nbsp;&nbsp;    </Link>
+        <Link to = "/tab2">        Choices&nbsp;&nbsp;            </Link>
+        <Link to = "/tab3">        ToDo&nbsp;&nbsp;       </Link>
+        <Link to = "/tab4">        Profile&nbsp;&nbsp;    </Link>
+        <Link to = "/tab5">        Colors&nbsp;&nbsp;    </Link>
+        <Link to = "/tab6">        Lower Right</Link>
         </div>
     )
 
