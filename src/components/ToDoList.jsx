@@ -1,3 +1,6 @@
+// https://www.w3schools.com/cssref/index.php
+// I did not copy any of this JS code lol react sucks and i figured it out
+
 import React from 'react';
 
 import {useState, useEffect} from "react";
