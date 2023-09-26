@@ -1,57 +1,56 @@
 // source: https://www.w3schools.com/howto/howto_css_image_center.asp
 .blushy-wushy {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width:120%;
-    max-height: 120%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:120%;
+  max-height: 120%;
+}
 
 // source: https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_top_left
 .topleft {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .blushy-name {
-    text-align: center;
+  text-align: center;
 }
 
 .hidden-button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    max-height: 100%;
-  }
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
 
-  .notification {
-    display: flex; 
-    align-items: center; 
-    background-color: rgba(131, 241, 208, 0.861);
-    border-radius: 18px;
-  }
+.notification {
+  display: flex; 
+  align-items: center; 
+  background-color: rgba(131, 241, 208, 0.861);
+  border-radius: 18px;
+}
 
-  .warning-text {
-    text-align: center;
-    flex-grow: 1;
-    font-size:larger
-  }
-  
-  .notification button {
-    font-size: 30px;
-    padding: 0 15px;
-    background: none;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-  }
+.warning-text {
+  text-align: center;
+  flex-grow: 1;
+  font-size:larger
+}
 
-  
+.notification button {
+  font-size: 30px;
+  padding: 0 15px;
+  background: none;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+

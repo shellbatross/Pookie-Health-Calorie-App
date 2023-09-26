@@ -20,10 +20,10 @@ function Tab4(){
                 <button className='hidden-button' onClick={openNotification}>
                     <img src='https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/flushed-face.png' className='blushy-wushy' />
                 </button>
-                {state != "off" && (
+                {state == "off" || (
                     <main className="notification">
                         <h1 className='warning-text'> Warning! Do not click on the profile image.</h1>
-                        <button onClick={closeNotification}>X</button>
+                        <button onClick={closeNotification}>x</button>
                    </main>
                  )}
                 <h1 className='blushy-name'>Blushy J. Blush</h1>
