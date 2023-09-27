@@ -14,6 +14,7 @@ function NavBar(){
         <Link to = "/tab4">        Profile&nbsp;&nbsp;    </Link>
         <Link to = "/tab5">        Colors&nbsp;&nbsp;    </Link>
         <Link to = "/tab6">        Lower Right</Link>
+        <Link to = "/demo">        Static Screenshot</Link>
         </div>
     )
 
