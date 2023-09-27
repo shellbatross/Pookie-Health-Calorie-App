@@ -5,15 +5,15 @@
   initial-value: 0;
 }
 
-@keyframes html-progress {
+@keyframes workout-progress {
   to { --progress-value: 62; }
 }
 
-@keyframes css-progress {
+@keyframes dailygoal-progress {
   to { --progress-value: 87; }
 }
 
-@keyframes js-progress {
+@keyframes workoutgoal-progress {
   to { --progress-value: 73; }
 }
 
@@ -29,41 +29,41 @@
 }
 
 .progress-bar-circle::before {
-  counter-reset: percentage var(--progress-value);
+  counter-reset: percentage var(--progress-value);  
   content: counter(percentage) '%';
 }
 
-.html {
+.workout {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
-  animation: html-progress 2s 1 forwards;
+    conic-gradient(rgb(0, 128, 124) calc(var(--progress-value) * 1%), rgb(192, 250, 255) 0);
+  animation: workout-progress 2s 1 forwards;
+}
+    
+.workout::before {
+  animation: workout-progress 2s 1 forwards;
 }
 
-.html::before {
-  animation: html-progress 2s 1 forwards;
-}
-
-.css {
+.dailygoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
     conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
-  animation: css-progress 2s 1 forwards;
+  animation: dailygoal-progress 2s 1 forwards;
 }
 
-.css::before {
-  animation: css-progress 2s 1 forwards;
+.dailygoal::before {
+  animation: dailygoal-progress 2s 1 forwards;
 }
 
-.js {
+.workoutgoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
-  animation: js-progress 2s 1 forwards;
+    conic-gradient(rgb(255, 72, 72) calc(var(--progress-value) * 1%), rgb(255, 119, 142) 0);
+  animation: workoutgoal-progress 2s 1 forwards;
 }
 
-.js::before {
-  animation: js-progress 2s 1 forwards;
+.workoutgoal::before {
+  animation: workoutgoal-progress 2s 1 forwards;
 }
 
 body {
@@ -78,6 +78,7 @@ body {
 
 h2 {
   text-align: center;
+  white-space: nowrap
 }
 
 progress {

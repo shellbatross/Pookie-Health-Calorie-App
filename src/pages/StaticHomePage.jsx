@@ -10,13 +10,12 @@ import PookieExp from "../components/PookieExp";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
 
-    const [content, setContent] = useState({"workout":"Running", "goal":"Daily"});
     return(
         <div className="whole-site">
         <div className="circles">
-        <CircleProgress props = {content}></CircleProgress>
-        <CircleProgress props = {content}></CircleProgress>
-        <CircleProgress props = {content}></CircleProgress>
+        <CircleProgress props = {{"info":["Workout","progress-bar-circle workout"]}}></CircleProgress>
+        <CircleProgress props = {{"info":["Daily Goal","progress-bar-circle dailygoal"]}}></CircleProgress>
+        <CircleProgress props = {{"info":["Workout Goal","progress-bar-circle workoutgoal"]}}></CircleProgress>
         </div>
         <img src = {pookie} className = "pookie"></img>
         <PookieExp></PookieExp>
