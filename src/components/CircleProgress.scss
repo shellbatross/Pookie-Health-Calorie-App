@@ -21,7 +21,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  
+  font-size: 50px;
   /* to center the percentage value */
   display: flex;
   justify-content: center;
@@ -61,24 +61,29 @@
     conic-gradient(rgb(255, 72, 72) calc(var(--progress-value) * 1%), rgb(255, 119, 142) 0);
   animation: workoutgoal-progress 2s 1 forwards;
 }
-
+.h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
 .workoutgoal::before {
   animation: workoutgoal-progress 2s 1 forwards;
 }
 
 body {
-  font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
   margin: 30px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   max-width: 600px;
+  font-family:'Pixelify Sans', cursive;
 }
 
 h2 {
   text-align: center;
-  white-space: nowrap
+  white-space: nowrap;
+  font-family:'Pixelify Sans', cursive;
+  
 }
 
 progress {
