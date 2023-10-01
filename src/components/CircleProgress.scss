@@ -47,7 +47,7 @@
 .dailygoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
+    conic-gradient(rgb(255, 105, 180) calc(var(--progress-value) * 1%), rgb(255, 192, 203) 0);
   animation: dailygoal-progress 2s 1 forwards;
 }
 
