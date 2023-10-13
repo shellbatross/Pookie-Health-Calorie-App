@@ -8,12 +8,13 @@ import pookie from "../ass-ets/pookie_level2.png";
 import speechbubble from "../ass-ets/speechbubble.png";
 import PookieExp from "../components/PookieExp";
 import Form from 'react-bootstrap/Form';
-
+import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
 
     return(
         <div className="whole-site">
+        <SetWorkOutPopUp style = {{borderColor: "black", borderWidth: "10px"}}/>
         <div className = "main-buttons">
         <Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button>
         <Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button>

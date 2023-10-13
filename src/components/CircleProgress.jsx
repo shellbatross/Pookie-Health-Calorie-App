@@ -2,14 +2,14 @@ import React from "react";
 
 import "./CircleProgress.scss";
 function CircleProgress(props){
-let x = props.props.info    
+let x = props.props.info
 let circle_label = x[0]
 let circle_starter = x[1]
 
 return(
     <div class="progress-bar-container">
   <h2>
-    <label for= {circle_label}>{circle_label}</label>
+    <label for= {circle_label}></label>
   </h2>
   <div class={circle_starter}>
     <progress id={circle_label} min="0" max="100" value="92" ></progress>

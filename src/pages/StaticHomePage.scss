@@ -1,5 +1,24 @@
-.whole-site{
-zoom: 0;
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 640px) 
+and (max-device-width : 960px) {
+/* Here you should set what size you want your div to be 
+when viewed on smartphone */
+/* Styles */
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
 }
 
 .circles{
@@ -55,12 +74,10 @@ display: flex;
 }
 
 .full-form{
-    font-size: 50px;
+    font-size: 100px;
     margin-top: 5px;
     margin-left: 10px;
     margin-right:10px;
-    width: 300px;
-    height: 400px;
     
 }
 
