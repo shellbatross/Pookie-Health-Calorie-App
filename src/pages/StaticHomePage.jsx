@@ -14,15 +14,14 @@ function StaticHomePage(){
 
     return(
         <div className="whole-site">
-        <SetWorkOutPopUp style = {{borderColor: "black", borderWidth: "10px"}}/>
         <div className = "main-buttons">
         <Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button>
         <Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button>
         <Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button>
         </div>
         <div className="circles">
-        <CircleProgress props = {{"info":["Workout: Running","progress-bar-circle workout"]}}></CircleProgress>
-        <CircleProgress props = {{"info":["Calories Burned","progress-bar-circle dailygoal"]}}></CircleProgress>
+        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: Running","progress-bar-circle workout"]}}></CircleProgress>
+        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle dailygoal"]}}></CircleProgress>
         <CircleProgress props = {{"info":["Workout Goal: Running Pace","progress-bar-circle workoutgoal"]}}></CircleProgress>
         </div>
         <div className = "pookie-inline-wrapper">
