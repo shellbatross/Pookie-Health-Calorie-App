@@ -7,6 +7,7 @@ import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
 import speechbubble from "../ass-ets/speechbubble.png";
 import PookieExp from "../components/PookieExp";
+import {Link} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 function StaticHomePage(){
@@ -15,9 +16,9 @@ function StaticHomePage(){
     return(
         <div className="whole-site">
         <div className = "main-buttons">
-        <Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button>
-        <Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button>
-        <Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button>
+        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button></Link>
+        <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button></Link>
+        <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button></Link>
         </div>
         <div className="circles">
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: Running","progress-bar-circle workout"]}}></CircleProgress>
