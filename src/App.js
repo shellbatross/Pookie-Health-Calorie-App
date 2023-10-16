@@ -15,6 +15,9 @@ import Tab4 from "./pages/Tab4.tsx";
 import Tab5 from "./pages/Tab5.tsx";
 import Tab6 from "./pages/Tab6.tsx";
 import StaticHomePage from './pages/StaticHomePage';
+import UserInfoPage from './pages/UserInfoPage';
+import GoalsPage from './pages/GoalsPage';
+import SetWorkoutPage from './pages/SetWorkoutPage';
 
 //I fucking hate hash routing i fucking hate hash routing
 //Need to let people go between tabs -> idkno put a header or something(?) also does the home page even count
@@ -32,7 +35,11 @@ function App() {
     <Route path = "/tab4" element = {<Tab4></Tab4>}></Route>
     <Route path = "/tab5" element = {<Tab5></Tab5>}></Route>
     <Route path = "/tab6" element = {<Tab6></Tab6>}></Route>
-    <Route path = "/demo" element = {<StaticHomePage/>}></Route>
+    <Route path = "/setworkout" element = {<SetWorkoutPage/>}></Route>
+    <Route path = "/goals" element = {<GoalsPage/>}></Route>
+    <Route path = "/userinfo" element = {<UserInfoPage/>}></Route>
+    <Route path = "/home" element = {<StaticHomePage/>}></Route>
+    
     </Routes> 
     </Router>
     
