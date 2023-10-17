@@ -22,6 +22,7 @@ function GoalsPage(){
         return goalsMet
     }
 
+    // https://legacy.reactjs.org/docs/hooks-state.html  used to understand hooks, referenced heavily
     const [goals, setGoals] = useState({
             x: [1, 2, 3, 4, 5, 6, 7],
             y: progValues(),
@@ -47,6 +48,7 @@ function GoalsPage(){
 
         <p>Input 7 days worth of workout progress. </p> <br />
 
+        {/* https://www.w3schools.com/bootstrap/bootstrap_forms.asp  bootstrap form style */}
         <form id="days-form" className="form-inline">
         <label htmlFor="day1">Day 1:     </label>
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
@@ -71,22 +73,24 @@ function GoalsPage(){
         
         <br /> <br />
 
+        {/* https://www.w3schools.com/bootstrap/bootstrap_buttons.asp  bootstrap button style*/}
+
         <button type="button" className="btn btn-info" onClick={() => updateChart()}>Submit</button>
         </form>
 
+        {/* https://plotly.com/javascript/react/  used to understand Plot elements */}
+        {/* https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb  heavily referenced information*/}
         <Plot graphDiv="graph"
-            data={[
-            {
+            data={[{
                 x: [1, 2, 3, 4, 5, 6, 7],
                 y: progValues(),
                 type: 'line',
                 marker: {color: 'blue'},
-            },
-            ]}
+            }]}
 
             layout={ {width: 500, height: 400, title: 'Goals Met', tickmode: 'linear',
                 yaxis: {autorange: false, range: [0, 7], dtick: 1}, 
-                xaxis: {autorange: false, range: [1, 7], dtick: 1}} }
+                xaxis: {autorange: false, range: [1, 7], dtick: 1}}}
         /> 
 
     </div>)
