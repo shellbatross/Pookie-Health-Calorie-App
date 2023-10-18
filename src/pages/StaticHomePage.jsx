@@ -15,14 +15,17 @@ function StaticHomePage(){
 
     return(
         <div className="whole-site">
+        <br/>
+        <PookieExp></PookieExp>
+        <br/>
         <div className = "main-buttons">
-        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button></Link>
+        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Workout Goals🏅</Button></Link>
         <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button></Link>
         <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button></Link>
         </div>
         <div className="circles">
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: Running","progress-bar-circle workout"]}}></CircleProgress>
-        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle dailygoal"]}}></CircleProgress>
+        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal"]}}></CircleProgress>
         <CircleProgress props = {{"info":["Workout Goal: Running Pace","progress-bar-circle workoutgoal"]}}></CircleProgress>
         </div>
         <div className = "pookie-inline-wrapper">
@@ -43,7 +46,6 @@ function StaticHomePage(){
     </Form>
     </div>
     </div>
-    <PookieExp></PookieExp>
         </div>
         
     )

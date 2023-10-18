@@ -23,18 +23,18 @@ and (min-width : 1224px) {
 
 .circles{
     display: flex;
-    column-gap: 150px;
-    justify-content: space-between;
-
+    column-gap: 40px;
+    justify-content:space-evenly;
+    float: down;
 }
 
 .form-wrapper{
 margin-top:50px;
 border-width:10px;
 border-style:solid;
-border-color: rgb(252, 133, 86);
-margin-bottom: 70px;
-display: flex;
+border-color: rgb(134, 76, 153);
+margin-bottom: 450px;
+display: block;
 }
 
 .circle{
@@ -57,25 +57,36 @@ display: flex;
 }
 
 .goalsbutton{
-    width: 200px;
+    width: 230px;
     height: 100px;
+    margin-left: 150px;
+    margin-right: 40px;
     font-size: 30px;
+    margin-top: 10px;
+    background-color: rgb(149, 98, 166);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .submitbutton{
     margin-top: -50px;
     color: white;
     margin-left: 35%;
+    background-color: rgb(149, 98, 166);
 }
 .caloriesbutton{
-    width: 200px;
+    width: 230px;
     height: 100px;
     font-size: 30px;
+    background-color: rgb(149, 98, 166);
+    margin-top: 10px;
+    margin-right: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 50px
 }
 
 .full-form{
     font-size: 100px;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right:10px;
     
@@ -85,13 +96,16 @@ display: flex;
     font-size: 50px;
 }
 
-
 .workoutgoalsbutton{
-    width: 300px;
+    width: 250px;
     height: 100px;
     font-size: 30px;
+    margin-top: 10px;
     color: white;
-
+    background-color: rgb(149, 98, 166);
+    margin-right: 60px;
+    margin-left: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -99,4 +113,5 @@ display: flex;
     width: 500px;
     height: 700px;
     left: 100px;
+    margin-left: 250px;
 }

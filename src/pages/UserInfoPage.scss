@@ -1,0 +1,34 @@
+.page-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-overflow: clip;
+    text-align: center;
+    padding-left: 100px; 
+}
+
+label {
+    border: 2px solid white;
+    float:left;
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-overflow: clip;
+    font-size:x-large
+}
+
+input {
+    float:left;
+    border: 2px solid rgb(134, 76, 153);
+}
+
+.button {
+    text-align: center;
+    background-color: rgb(151, 200, 225);
+    border-radius: 4px;
+    padding: 10px 10px;
+    color: black;
+    float: right;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}

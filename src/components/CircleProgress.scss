@@ -22,7 +22,21 @@
   height: 200px;
   border-radius: 50%;
   font-size: 50px;
+  margin-top:20px;
+  margin-left: 45px;
   /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar-circle-center {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 50px;
+  /* to center the percentage value */
+  margin-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,10 +47,15 @@
   content: counter(percentage) '%';
 }
 
+.progress-bar-circle-center::before {
+  counter-reset: percentage var(--progress-value);  
+  content: counter(percentage) '%';
+}
+
 .workout {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(0, 128, 124) calc(var(--progress-value) * 1%), rgb(192, 250, 255) 0);
+    conic-gradient(rgb(0, 128, 124) calc(var(--progress-value) * 1%), rgb(75, 89, 181) 0);
   animation: workout-progress 2s 1 forwards;
 }
     
@@ -47,7 +66,7 @@
 .dailygoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(255, 105, 180) calc(var(--progress-value) * 1%), rgb(255, 192, 203) 0);
+    conic-gradient(rgb(88, 88, 191) calc(var(--progress-value) * 1%), rgb(84, 175, 214) 0);
   animation: dailygoal-progress 2s 1 forwards;
 }
 
@@ -58,11 +77,11 @@
 .workoutgoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(255, 72, 72) calc(var(--progress-value) * 1%), rgb(255, 119, 142) 0);
+    conic-gradient(rgb(134, 65, 190) calc(var(--progress-value) * 1%), rgb(151, 200, 225) 0);
   animation: workoutgoal-progress 2s 1 forwards;
 }
 .h2{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 50px;
 }
 .workoutgoal::before {
