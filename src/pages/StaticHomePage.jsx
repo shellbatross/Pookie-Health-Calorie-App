@@ -1,6 +1,7 @@
 import React from "react";
-import {useState} from "react";
-
+import {useState,useContext} from "react";
+import {UserContext} from "../context/UserContext";
+import { WorkoutContext } from '../context/WorkoutContext';
 import CircleProgress from "../components/CircleProgress";
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
@@ -12,7 +13,14 @@ import Form from 'react-bootstrap/Form';
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
-  
+    //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
+    //the "context" is an object, our current user with all their information. When you update set 
+    //the state with setUser
+    const {current_user,setUser}= useContext(UserContext);
+    const {current_workout,setWorkout} = useContext(WorkoutContext);
+    //Inspect, check console in browser you'll see what I mean
+    console.log(current_user)
+    console.log(current_workout)
     return(
 
         <div className="whole-site">
@@ -25,9 +33,11 @@ function StaticHomePage(){
         <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button></Link>
         </div>
         <div className="circles">
-        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: Running","progress-bar-circle workout"]}}></CircleProgress>
+        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_workout,"progress-bar-circle workout"]}}></CircleProgress>
+        <div className = "middleCircle">
         <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal"]}}></CircleProgress>
-        <CircleProgress props = {{"info":["Workout Goal: Running Pace","progress-bar-circle workoutgoal"]}}></CircleProgress>
+        </div>
+        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Workout Goal:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal"]}} ></CircleProgress>
         </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>

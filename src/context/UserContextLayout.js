@@ -9,9 +9,10 @@ const UserContextLayout = () => {
       'username': user_names[user],
       'height': '',
       'weight':'',
-      'workout_set':'getting ripped',
+      'workout_set':'Running',
+      'workout_goal_set': 'Running Pace',
       'workouts': {},
-      'rings': {}
+      'rings': {"default":100}
     });
   
   return (

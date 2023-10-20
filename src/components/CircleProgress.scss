@@ -36,7 +36,7 @@
   border-radius: 50%;
   font-size: 50px;
   /* to center the percentage value */
-  margin-top: 200px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@
   animation: workoutgoal-progress 2s 1 forwards;
 }
 .h2{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Noto Sans TC';
   font-size: 50px;
 }
 .workoutgoal::before {
@@ -101,7 +101,7 @@ body {
 h2 {
   text-align: center;
   white-space: nowrap;
-  font-family:'Pixelify Sans', cursive;
+  font-family: 'Noto Sans TC'
   
 }
 

@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import Form from 'react-bootstrap/Form';
 import {UserContext} from "../context/UserContext";
 import { WorkoutContext } from '../context/WorkoutContext';
 
@@ -11,9 +12,19 @@ function SetWorkoutPage(){
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_workout)
-    return (<div>
-        Meow
-    </div>)
+
+    function setNew(val){
+        console.log("meow")
+        setUser({...current_user, workout_set:val})
+
+    }
+    
+    return (<Form.Select aria-label="Default select example" onChange= {(event)=>setNew(event.target.value)}>
+    <option>Start setting your workout here!</option>
+    <option value="Running">Running</option>
+    <option value="Biking" >Biking</option>
+    <option value="Lifting">Lifting</option>
+  </Form.Select>)
 
 }
 
