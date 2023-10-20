@@ -12,8 +12,9 @@ import Form from 'react-bootstrap/Form';
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
-
+  
     return(
+
         <div className="whole-site">
         <br/>
         <PookieExp></PookieExp>
