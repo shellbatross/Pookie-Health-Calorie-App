@@ -9,6 +9,7 @@ function UserInfoPage(){
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
     const {current_workout,setWorkout} = useContext(WorkoutContext);
+    //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_workout)
     return (<div>
