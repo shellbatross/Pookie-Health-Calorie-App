@@ -2,7 +2,6 @@ import React from "react";
 
 import "./CircleProgress.scss";
 function CircleProgress(props){
-console.log(props)
 let x = props.props.info
 let circle_label = x[0]
 let circle_starter = x[1]

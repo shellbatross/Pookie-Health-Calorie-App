@@ -27,35 +27,39 @@ function StaticHomePage(){
         <br/>
         <PookieExp></PookieExp>
         <br/>
+        <div className = "button-circle-wrapper">
         <div className = "main-buttons">
         <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Workout Goals🏅</Button></Link>
         <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button></Link>
         <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button></Link>
         </div>
         <div className="circles">
-        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_workout,"progress-bar-circle workout"]}}></CircleProgress>
+        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout"]}}></CircleProgress>
         <div className = "middleCircle">
         <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal"]}}></CircleProgress>
         </div>
         <CircleProgress className = "workoutGoalCircle" props = {{"info":["Workout Goal:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal"]}} ></CircleProgress>
         </div>
+        </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
         <img src = {speechbubble} className = "speechbubble"></img>
-        <div className = "form-wrapper">
+        
+    </div>
+    <div className = "form-wrapper">
         <Form className = "full-form">
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Run Distance</Form.Label>
-        <Form.Control type="email" placeholder="10" /><h1>miles</h1>
+        <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Distance</Form.Label>
+        <Form.Control type="email" rows={1}placeholder="10 miles" />
       </Form.Group>
+      
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Run Duration</Form.Label>
-        <Form.Control as="textarea" rows={1} placeholder ="01:30"/><h1 className="format-for-submits">hours:minutes</h1>
+        <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Duration</Form.Label>
+        <Form.Control as="textarea" rows={1} placeholder ="01:30 hours:minutes"/>
         <Button variant = "warning" style={{display: "inline" }} className = "submitbutton">Submit</Button>
 
       </Form.Group>
     </Form>
-    </div>
     </div>
         </div>
         

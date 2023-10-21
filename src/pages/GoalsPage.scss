@@ -8,3 +8,14 @@ label {
 input, label {
     float:left;
 }
+
+.page{
+    display:flex;
+        flex-direction: column;
+}   
+
+.btn btn-info{
+    width: 100px;
+    align-self: center;
+    margin-top: 25px;
+}

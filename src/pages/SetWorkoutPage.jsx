@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import {UserContext} from "../context/UserContext";
 import { WorkoutContext } from '../context/WorkoutContext';
 import bike from '../ass-ets/kisspng-cycling-bicycle-computer-icons-mountain-biking-cycle-sport-centre-5b192e8044dff0.2187165515283769602821.png';
@@ -16,14 +17,21 @@ function SetWorkoutPage(){
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_workout)
+    let workouts = ["Running","Biking","Lifting"]
 
     function setNew(val){
         console.log("meow")
+        workouts = ["Running","Biking","Lifting"]
+        if(workouts.includes(val)){
         setUser({...current_user, workout_set:val})
+        }
+        else{
+        setUser({...current_user, workout_goal_set:val})
+        }
 
     }
     
-    return (<div><img src={bike} className="bike"></img>
+    return (<div className = "all-items"><img src={bike} className="bike"></img>
     <img src={runner} className="runner"></img>
     <img src={lift} className="lift"></img>
     <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='workoutbox'>
@@ -41,7 +49,7 @@ function SetWorkoutPage(){
     <form id="numberform" className="numberbox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <button type="button" className="submit"> Submit</button>
+    <Button variant = "secondary" className="submit"> Submit</Button>
     
     </div>)
 

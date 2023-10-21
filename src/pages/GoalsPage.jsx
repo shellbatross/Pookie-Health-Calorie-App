@@ -3,7 +3,7 @@ import {UserContext} from "../context/UserContext";
 import { WorkoutContext } from '../context/WorkoutContext';
 import Plot from 'react-plotly.js';
 
-
+import './GoalsPage.scss';
 function GoalsPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
@@ -52,7 +52,7 @@ function GoalsPage(){
         layout.datarevision = revision + 1;
     };
 
-    return (<div id="page">
+    return (<div className="page">
         <h2 className="gptitle">Weekly Goal Progress</h2> <br />
         <p>Current goal: 5 miles </p>
 
@@ -85,9 +85,8 @@ function GoalsPage(){
 
         {/* https://www.w3schools.com/bootstrap/bootstrap_buttons.asp  bootstrap button style*/}
 
-        <button type="button" className="btn btn-info" onClick={() => updateChart()}>Submit</button>
         </form>
-
+        <button type="button" className=" btn btn-info" onClick={() => updateChart()}>Submit</button>
         {/* https://plotly.com/javascript/react/  used to understand Plot elements */}
         {/* https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb  heavily referenced information*/}
         <Plot graphDiv="graph"

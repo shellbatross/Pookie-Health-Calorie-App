@@ -4,7 +4,7 @@ import {useState} from 'react';
 import WorkoutContextLayout from './WorkoutContextLayout';
 const UserContextLayout = () => {
     const user = 'justin';
-    const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shradha':'shredder', 'stephanie':'shell'}
+    const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shraddha':'shredder', 'stephanie':'shell'}
     const [current_user, setUser] = useState(localStorage.getItem('current_user') || {
       'username': user_names[user],
       'height': '',

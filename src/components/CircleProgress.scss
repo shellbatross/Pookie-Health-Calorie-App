@@ -6,15 +6,15 @@
 }
 
 @keyframes workout-progress {
-  to { --progress-value: ; }
+  to { --progress-value: 10 ; }
 }
 
 @keyframes dailygoal-progress {
-  to { --progress-value: ; }
+  to { --progress-value: 20; }
 }
 
 @keyframes workoutgoal-progress {
-  to { --progress-value: ; }
+  to { --progress-value: 50; }
 }
 
 .progress-bar-circle {
@@ -55,7 +55,7 @@
 .workout {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(0, 128, 124) calc(var(--progress-value) * 1%), rgb(75, 89, 181) 0);
+    conic-gradient(rgb(127, 121, 205) calc(var(--progress-value) * 1%), rgb(158, 168, 227) 0);
   animation: workout-progress 2s 1 forwards;
 }
     
@@ -66,7 +66,7 @@
 .dailygoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(88, 88, 191) calc(var(--progress-value) * 1%), rgb(84, 175, 214) 0);
+    conic-gradient(rgb(129, 183, 198) calc(var(--progress-value) * 1%), rgb(166, 206, 223) 0);
   animation: dailygoal-progress 2s 1 forwards;
 }
 
@@ -77,7 +77,7 @@
 .workoutgoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(134, 65, 190) calc(var(--progress-value) * 1%), rgb(151, 200, 225) 0);
+    conic-gradient(rgb(188, 224, 240)calc(var(--progress-value) * 1%), rgb(221, 241, 251) 0);
   animation: workoutgoal-progress 2s 1 forwards;
 }
 .h2{

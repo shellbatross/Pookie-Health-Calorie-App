@@ -21,11 +21,26 @@ and (min-width : 1224px) {
 /* Styles */
 }
 
+.button-circle-wrapper{
+    margin-top: 100px;
+}
 .circles{
     display: flex;
     column-gap: 40px;
     justify-content:space-evenly;
     float: down;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    outline: none;
+}
+a:focus {
+    outline: none;
 }
 
 .form-wrapper{
@@ -52,17 +67,14 @@ display: block;
 }
 .main-buttons{
   display: flex;
-  column-gap: 20px;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 
 .goalsbutton{
     width: 230px;
     height: 100px;
-    margin-left: 150px;
-    margin-right: 40px;
     font-size: 30px;
-    margin-top: 10px;
     background-color: rgb(149, 98, 166);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
