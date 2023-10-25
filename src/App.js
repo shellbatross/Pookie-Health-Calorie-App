@@ -28,7 +28,6 @@ function App() {
   localStorage.clear();
   return (
     <Router>
-    <NavBar></NavBar>
     <Routes>
     <Route exact path = "/"  element = {<Homepage></Homepage>}></Route>
     <Route path = "/tab1"  element = {<Tab1></Tab1>}></Route>

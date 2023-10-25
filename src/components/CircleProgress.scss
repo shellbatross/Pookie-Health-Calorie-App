@@ -13,15 +13,17 @@
   to { --progress-value: 20; }
 }
 
+
 @keyframes workoutgoal-progress {
   to { --progress-value: 50; }
 }
 
+
 .progress-bar-circle {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  font-size: 50px;
+  font-size: 100px;
   margin-top:20px;
   margin-left: 45px;
   /* to center the percentage value */
@@ -30,11 +32,21 @@
   align-items: center;
 }
 
+.form-label{
+  font-size: 100px;
+  white-space: nowrap;
+  
+}
+
+.form-control{
+  font-size: 100px;
+  
+}
 .progress-bar-circle-center {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  font-size: 50px;
+  font-size: 100px;
   /* to center the percentage value */
 
   display: flex;

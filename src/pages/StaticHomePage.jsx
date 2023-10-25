@@ -25,14 +25,15 @@ function StaticHomePage(){
 
         <div className="whole-site">
         <br/>
-        <PookieExp></PookieExp>
+        
         <br/>
         <div className = "button-circle-wrapper">
         <div className = "main-buttons">
-        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Workout Goals🏅</Button></Link>
+        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button></Link>
         <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Swap Workout🏃‍♀️</Button></Link>
         <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Information 📁</Button></Link>
         </div>
+        <PookieExp></PookieExp>
         <div className="circles">
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout"]}}></CircleProgress>
         <div className = "middleCircle">
