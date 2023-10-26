@@ -1,6 +1,7 @@
 import React from "react";
 import {useState,useContext} from "react";
 import {UserContext} from "../context/UserContext";
+import EndDayButton from "../components/EndDayButton";
 import CircleProgress from "../components/CircleProgress";
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
@@ -42,7 +43,7 @@ function StaticHomePage(){
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
         
-    </div>
+    </div>  
     <div className = "form-wrapper">
         <Form className = "full-form">
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -57,7 +58,9 @@ function StaticHomePage(){
 
       </Form.Group>
     </Form>
+   
     </div>
+    <EndDayButton></EndDayButton>
         </div>
         
     )
