@@ -1,7 +1,6 @@
 import React from "react";
 import {useState,useContext} from "react";
 import {UserContext} from "../context/UserContext";
-import { WorkoutContext } from '../context/WorkoutContext';
 import CircleProgress from "../components/CircleProgress";
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
@@ -17,10 +16,8 @@ function StaticHomePage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
-    const {current_workout,setWorkout} = useContext(WorkoutContext);
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
-    console.log(current_workout)
     return(
 
         <div className="whole-site">
@@ -35,16 +32,15 @@ function StaticHomePage(){
         </div>
         <PookieExp></PookieExp>
         <div className="circles">
-        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout"]}}></CircleProgress>
+        <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout",current_user]}}></CircleProgress>
         <div className = "middleCircle">
-        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal"]}}></CircleProgress>
+        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal",current_user]}}></CircleProgress>
         </div>
-        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Workout Goal:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal"]}} ></CircleProgress>
+        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Workout Goal:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>
         </div>
         </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
-        <img src = {speechbubble} className = "speechbubble"></img>
         
     </div>
     <div className = "form-wrapper">

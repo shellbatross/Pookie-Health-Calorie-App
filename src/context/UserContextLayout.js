@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import {UserContext} from './UserContext';
 import {useState} from 'react';
-import WorkoutContextLayout from './WorkoutContextLayout';
+import WorkoutContextLayout from './TimeContextLayout';
 const UserContextLayout = () => {
     const user = 'justin';
     const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shraddha':'shredder', 'stephanie':'shell'}
@@ -9,10 +9,12 @@ const UserContextLayout = () => {
       'username': user_names[user],
       'height': '',
       'weight':'',
-      'workout_set':'Running',
+      'workout_set':'Running',  
       'workout_goal_set': 'Running Pace',
-      'workouts': {},
-      'rings': {"default":100}
+      'active_workouts': {'Running': {'current':2, 'limit':5}},
+      'active_workout_goals': {'Running': {'current': 12, 'goal': 8}},
+      'calories': {'current':238, 'limit':400},
+      'rings': {"10/22/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}}
     });
   
   return (

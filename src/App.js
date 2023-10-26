@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Home index app, the routes to each of the websites "tabs" will be here
 //We are going to need to import each one of the tabs to use in the router
 //testing something
+import Time from "./ass-ets/Time";
+import TimeContextLayout from './context/TimeContextLayout';
 import NavBar from "./components/NavBar.tsx";
 import Homepage from "./pages/Homepage.tsx";
 import Tab1 from "./pages/Tab1.tsx";
@@ -19,7 +21,7 @@ import UserInfoPage from './pages/UserInfoPage';
 import GoalsPage from './pages/GoalsPage';
 import SetWorkoutPage from './pages/SetWorkoutPage';
 import UserContextLayout from './context/UserContextLayout';
-import WorkoutContextLayout from './context/WorkoutContextLayout';
+import WorkoutContextLayout from './context/TimeContextLayout';
 //I fucking hate hash routing i fucking hate hash routing
 //Need to let people go between tabs -> idkno put a header or something(?) also does the home page even count
 
@@ -37,7 +39,8 @@ function App() {
     <Route path = "/tab5" element = {<Tab5></Tab5>}></Route>
     <Route path = "/tab6" element = {<Tab6></Tab6>}></Route>
     <Route element = {<UserContextLayout></UserContextLayout>}>
-    <Route element = {<WorkoutContextLayout></WorkoutContextLayout>}>
+    <Route element = {<TimeContextLayout></TimeContextLayout>}>
+    <Route path = "/helper" element = {<Time></Time>}></Route>
     <Route path = "/setworkout" element = {<SetWorkoutPage/>}></Route>
     <Route path = "/goals" element = {<GoalsPage/>}></Route>
     <Route path = "/userinfo" element = {<UserInfoPage/>}></Route>

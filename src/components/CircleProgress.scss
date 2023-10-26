@@ -6,16 +6,16 @@
 }
 
 @keyframes workout-progress {
-  to { --progress-value: 10 ; }
+  to { --progress-value: var(--workoutval)}
 }
 
 @keyframes dailygoal-progress {
-  to { --progress-value: 20; }
+  to { --progress-value: var(--calorieval)}
 }
 
 
 @keyframes workoutgoal-progress {
-  to { --progress-value: 50; }
+  to { --progress-value: 20}
 }
 
 

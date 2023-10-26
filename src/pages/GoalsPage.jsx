@@ -1,6 +1,6 @@
 import React, { useState,useContext }  from 'react';
 import {UserContext} from "../context/UserContext";
-import { WorkoutContext } from '../context/WorkoutContext';
+import { TimeContext } from '../context/TimeContext';
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Plot from 'react-plotly.js';
@@ -12,10 +12,10 @@ function GoalsPage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
-    const {current_workout,setWorkout} = useContext(WorkoutContext);
+    const {current_time,setTime} = useContext(TimeContext);
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
-    console.log(current_workout)
+    console.log(current_time)
 
     function progValues() {
         var days = document.getElementsByName("days");

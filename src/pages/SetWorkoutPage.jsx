@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {UserContext} from "../context/UserContext";
-import { WorkoutContext } from '../context/WorkoutContext';
+import { WorkoutContext } from '../context/TimeContext';
 import bike from '../ass-ets/kisspng-cycling-bicycle-computer-icons-mountain-biking-cycle-sport-centre-5b192e8044dff0.2187165515283769602821.png';
 import runner from '../ass-ets/running-icon-on-transparent-background-hi.png';
 import lift from '../ass-ets/clipart1105277.png';
@@ -12,11 +12,9 @@ function SetWorkoutPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
-    const {current_user,setUser}= useContext(UserContext);
-    const {current_workout,setWorkout} = useContext(WorkoutContext);
+    const {current_user,setUser}= useContext(UserContext);  
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
-    console.log(current_workout)
     let workouts = ["Running","Biking","Lifting"]
 
     function setNew(val){
