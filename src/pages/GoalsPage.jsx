@@ -1,9 +1,12 @@
 import React, { useState,useContext }  from 'react';
 import {UserContext} from "../context/UserContext";
 import { WorkoutContext } from '../context/WorkoutContext';
+import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import Plot from 'react-plotly.js';
 
 import './GoalsPage.scss';
+
 function GoalsPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
@@ -48,15 +51,17 @@ function GoalsPage(){
 
     const updateChart = () => { 
         goals.x = progValues();
-        setRevision(revision + 1 );
+        setRevision(revision + 1);
         layout.datarevision = revision + 1;
     };
 
     return (<div className="page">
-        <h2 className="gptitle">Weekly Goal Progress</h2> <br />
-        <p>Current goal: 5 miles </p>
+        <Link to = ""><Button variant = "primary" style={{display: "inline"}} className ="home-btn" >Home</Button></Link>
 
-        <p>Input 7 days worth of workout progress. </p> <br />
+        <h2 className="gptitle">Weekly Goal Progress</h2> <br />
+        <h4 className="goal-num">Current goal: 5 miles </h4>
+
+        <p className="input-msg">Input 7 days worth of workout progress. </p> <br />
 
         {/* https://www.w3schools.com/bootstrap/bootstrap_forms.asp  bootstrap form style */}
         <form id="days-form" className="form-inline">
@@ -81,25 +86,24 @@ function GoalsPage(){
         <label htmlFor="day7">Day 7:</label>
         <input type="number" id="day7" name="days" min="0" placeholder="0" />  
         
-        <br /> <br />
+        </form>
+        <br />
 
         {/* https://www.w3schools.com/bootstrap/bootstrap_buttons.asp  bootstrap button style*/}
-
-        </form>
-        <button type="button" className=" btn btn-info" onClick={() => updateChart()}>Submit</button>
+        <button type="button" className=" btn btn-info" onClick={() => updateChart()}>Submit</button> <br />
         {/* https://plotly.com/javascript/react/  used to understand Plot elements */}
         {/* https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb  heavily referenced information*/}
-        <Plot graphDiv="graph"
+        <Plot className="graph" graphDiv="graph"
             data={[{
                 x: [1, 2, 3, 4, 5, 6, 7],
                 y: progValues(),
                 type: 'line',
-                marker: {color: 'blue'},
+                marker: {color: 'purple'},
             }]}
 
-            layout={ {width: 500, height: 400, title: 'Goals Met', tickmode: 'linear',
-                yaxis: {autorange: false, range: [0, 7], dtick: 1}, 
-                xaxis: {autorange: false, range: [1, 7], dtick: 1}}}
+            layout={ {width: 550, height: 450, title: 'Goals Met Over the Past 7 Days', tickmode: 'linear',
+                yaxis: {autorange: false, range: [0, 7], dtick: 1, title: {text: 'Goals Met'}}, 
+                xaxis: {autorange: false, range: [1, 7], dtick: 1, title: {text: 'Days'}}}}
         /> 
 
     </div>)

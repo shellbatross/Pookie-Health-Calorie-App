@@ -11,11 +11,30 @@ input, label {
 
 .page{
     display:flex;
-        flex-direction: column;
-}   
+    flex-direction: column;
+    transform: scale(3.9);
+    transform-origin: 0 0;
+    margin-top: 150px;
+    margin-left: 8%;
+    position:absolute;
+    top: 0; /*[wherever you want it]*/
+    left: 0; /*[wherever you want it]*/
+}  
+
+.graph{
+    position:absolute;
+}
 
 .btn btn-info{
     width: 100px;
     align-self: center;
     margin-top: 25px;
+}
+
+.goal-num{
+    align-self: center;
+}
+
+.input-msg{
+    align-self: center;
 }
