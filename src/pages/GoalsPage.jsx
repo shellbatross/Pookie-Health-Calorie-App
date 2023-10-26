@@ -56,7 +56,7 @@ function GoalsPage(){
     };
 
     return (<div className="page">
-        <Link to = ""><Button variant = "primary" style={{display: "inline"}} className ="home-btn" >Home</Button></Link>
+        <Link to = "/home"><Button variant = "primary" style={{display: "inline"}} className ="home-btn" >Home</Button></Link>
 
         <h2 className="gptitle">Weekly Goal Progress</h2> <br />
         <h4 className="goal-num">Current goal: 5 miles </h4>
