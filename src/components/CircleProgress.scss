@@ -15,7 +15,7 @@
 
 
 @keyframes workoutgoal-progress {
-  to { --progress-value: 20}
+  to { --progress-value: var(--workoutgoalval)}
 }
 
 
