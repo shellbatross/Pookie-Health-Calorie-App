@@ -14,7 +14,7 @@ const UserContextLayout = () => {
       'active_workouts': {'Running': {'current':2, 'limit':5}},
       'active_workout_goals': {'Running': {'current': 12, 'goal': 8}},
       'calories': {'current':238, 'limit':400},
-      'rings': {"10/22/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}}
+      'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}}
     });
   
   return (
