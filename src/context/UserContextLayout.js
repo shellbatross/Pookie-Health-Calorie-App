@@ -11,10 +11,17 @@ const UserContextLayout = () => {
       'weight':'',
       'workout_set':'Running',  
       'workout_goal_set': 'Running Pace',
-      'active_workouts': {'Running': {'current':2, 'limit':5}},
+      'active_workouts': {'Running': {'current':2, 'goal':5}},
       'active_workout_goals': {'Running': {'current': 12, 'goal': 8}},
-      'calories': {'current':238, 'limit':400},
-      'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}}
+      'calories': {'current':238, 'goal':400},
+      'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
+      'workout_pace':{ "Running": {"10/25/2023": {"goal": 8 ,"avg_reached": 11}, 
+      "10/26/2023":{"goal": 8,  "avg_reached": 10}},
+      "Biking":{},
+      "Lifting":{},
+      "Other": {}
+      }
+      
     });
   
   return (

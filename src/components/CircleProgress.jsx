@@ -13,7 +13,7 @@ let workout_goal_final = 0
 if(x[2]["workout_set"] != ""){
 let curr_workout = x[2]["workout_set"]
 let workout_start_val = x[2]["active_workouts"][curr_workout]["current"]
-let workout_end_val =x[2]["active_workouts"][curr_workout]["limit"]
+let workout_end_val =x[2]["active_workouts"][curr_workout]["goal"]
 workout_final_val = Math.floor(workout_start_val/workout_end_val*100)
 let curr_workout_goal = x[2]["active_workout_goals"][curr_workout]
 let start_workout_goal = curr_workout_goal["current"]
@@ -25,7 +25,7 @@ workout_goal_final = Math.floor(end_workout_goal/start_workout_goal*100)
 
 let curr_calorie = x[2]["calories"]
 let start_calories = curr_calorie["current"]
-let end_calories = curr_calorie["limit"]
+let end_calories = curr_calorie["goal"]
 calorie_final = Math.floor(start_calories/end_calories*100)
 
 

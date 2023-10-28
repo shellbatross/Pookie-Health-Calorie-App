@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import UpdateForm from "../components/UpdateForm";
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
+import Confetti from "react-confetti";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -22,7 +23,10 @@ function StaticHomePage(){
     console.log(current_user)
     return(
 
+        
         <div className="whole-site">
+            
+        <Confetti></Confetti>
         <br/>
         
         <br/>
