@@ -1,31 +1,98 @@
 .all-items{
     margin-top: 200px;
 }
+.title {
+    font-size: 150px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.directions {
+    font-size: 100px;
+    margin-left: 50px;
+    margin-bottom: 150px;
+}
+.images {
+    display: flex;
+    flex: row;
+}
 
 .bike {
-    width: 150px;
-    height: 170px;
-    margin-right: 30px;
-    margin-bottom: 20px;
+    transform: scale(1.7);
+    margin-left: 160px;
+    margin-right: 271px;
+    color: white;
+    background-color: white;
 }
 
 .runner {
-    width: 150px;
-    height: 160px;
-    margin-right: 30px;
+    transform: scale(1.4);
+    margin-right: 0px;
+    color: white;
+    background-color: white;
 }
 
 .lift {
-    width: 150px
+    transform: scale(1.05);
+    margin-left: 110px;
+    
+    margin-top: -100px;
+    color: white;
+    background-color: white;
 }
-.workoutbox {
-    margin-bottom: 30px;
+
+.customworkout {
+    margin-left: 50px;
+    margin-top: 150px;
+    font-size: 150px;
 }
-.numberbox {
+
+.disclaimer {
+    margin-left: 50px;
     margin-top: 30px;
+    font-size: 100px;
+    margin-bottom: 150px;
+}
+
+.goalbox {
+    transform: scale(4);
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 800px;
+}
+
+.personal {
+    font-size: 80px;
+    margin-left: 50px;
+}
+
+.personaldescription {
+    font-size: 60px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+.personalbox {
+    transform: scale(4.6);
+    width:500px;
+    margin-left: 950px;
+}
+
+.goalnumber {
+    font-size: 80px;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.goalnumberbox {
+    transform: scale(4.6);
+    margin-top: 100px;
+    width:500px;
+    margin-left: 950px;
 }
 
 .submit {
-    margin-top: 30px;
+    transform: scale(5);
+    margin-top: 200px;
     margin-right: 300px;
 }

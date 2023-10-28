@@ -20,6 +20,9 @@ import StaticHomePage from './pages/StaticHomePage';
 import UserInfoPage from './pages/UserInfoPage';
 import GoalsPage from './pages/GoalsPage';
 import SetWorkoutPage from './pages/SetWorkoutPage';
+import RunPage from './pages/RunPage';
+import BikePage from './pages/BikePage';
+import LiftPage from './pages/LiftPage';
 import UserContextLayout from './context/UserContextLayout';
 import WorkoutContextLayout from './context/TimeContextLayout';
 //I fucking hate hash routing i fucking hate hash routing
@@ -45,6 +48,9 @@ function App() {
     <Route path = "/goals" element = {<GoalsPage/>}></Route>
     <Route path = "/userinfo" element = {<UserInfoPage/>}></Route>
     <Route path = "/home" element = {<StaticHomePage/>}></Route>
+    <Route path = "/run" element = {<RunPage/>}></Route>
+    <Route path = "/bike" element = {<BikePage/>}></Route>
+    <Route path = "/lift" element = {<LiftPage/>}></Route>
     </Route>
     </Route>
     </Routes> 

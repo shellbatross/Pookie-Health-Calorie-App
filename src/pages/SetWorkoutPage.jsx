@@ -7,6 +7,7 @@ import bike from '../ass-ets/kisspng-cycling-bicycle-computer-icons-mountain-bik
 import runner from '../ass-ets/running-icon-on-transparent-background-hi.png';
 import lift from '../ass-ets/clipart1105277.png';
 import "./SetWorkoutPage.scss"
+import {Link} from "react-router-dom";
 
 function SetWorkoutPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -29,22 +30,30 @@ function SetWorkoutPage(){
 
     }
     
-    return (<div className = "all-items"><img src={bike} className="bike"></img>
-    <img src={runner} className="runner"></img>
-    <img src={lift} className="lift"></img>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='workoutbox'>
-      <option>Start setting your workout here!</option>
-      <option value="Running">Running</option>
-      <option value="Biking">Biking</option>
-      <option value="Lifting">Lifting</option>
-    </Form.Select>
+    return (<div className = "all-items">
+    <div className='title'>Choose a Workout</div>
+    <div className='directions'>Click an Icon or Submit Custom Workout Below</div>
+    <div className='images'>
+    <Link to = "/bike"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={bike} className="bike"></img></Button></Link>
+    <Link to = "/run"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={runner} className="runner"></img></Button></Link>
+    <Link to = "/lift"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={lift} className="lift"></img></Button></Link>
+    </div>
+    <div className='customworkout'>Submit a Custom Workout</div>
+    <div className='disclaimer'>Disclaimer: The app does not track calories for custom workouts</div>
     <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='goalbox'>
-      <option>Choose your goal!</option>
-      <option value="Distance">Distance</option>
+      <option>Choose your goal here!</option>
+      <option value="Duration">Duration</option>
       <option value="Speed">Speed</option>
       <option value="Reps">Reps</option>
+      <option value="Distance">Distance</option>
     </Form.Select>
-    <form id="numberform" className="numberbox">
+    <div className='personal'>Enter your personal best for your goal</div>
+    <div className='personaldescription'>i.e. if you chose duration for your goal, enter your longest duration session</div>
+    <form className="personalbox">
+        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
+    </form>
+    <div className='goalnumber'>Enter your goal</div>
+    <form className="goalnumberbox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
     <Button variant = "secondary" className="submit"> Submit</Button>
