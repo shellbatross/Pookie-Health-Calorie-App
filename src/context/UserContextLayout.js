@@ -5,7 +5,9 @@ import WorkoutContextLayout from './TimeContextLayout';
 const UserContextLayout = () => {
     const user = 'justin';
     const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shraddha':'shredder', 'stephanie':'shell'}
-    const [current_user, setUser] = useState(localStorage.getItem('current_user') || {
+    console.log(JSON.parse(localStorage.getItem('user')))
+    //Get from local storage if there, if not make it and store it
+    const [current_user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || {
       'username': user_names[user],
       'height': '',
       'weight':'',
@@ -22,8 +24,14 @@ const UserContextLayout = () => {
       "Other": {}
       }
       
-    });
-  
+    }
+    );
+
+    //Do this for the very first time they load the app only, if we do multiple setting up we will have a ton of  ///// and break it
+    if(localStorage.getItem('user')===null){
+    localStorage.setItem("user",JSON.stringify(current_user))
+    }
+
   return (
     <UserContext.Provider value = {{current_user,setUser}}>
       <Outlet />

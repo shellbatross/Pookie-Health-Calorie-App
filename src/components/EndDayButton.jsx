@@ -39,7 +39,6 @@ function EndDayButton(){
         setTime(arr_info.join("/"))
         setUser({...current_user, workout_goal_set:"",workout_set: ""})
 
-        console.log(current_user)
 
     }
     return(

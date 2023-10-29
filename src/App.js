@@ -30,7 +30,18 @@ import WorkoutContextLayout from './context/TimeContextLayout';
 
 //<NavBar>
 function App() {
-  localStorage.clear();
+  function clearStorage() {
+
+    let session = sessionStorage.getItem('register');
+
+    if (session == null) {
+    
+        localStorage.removeItem('user');
+
+    }
+    sessionStorage.setItem('register', 1);
+}
+window.addEventListener('load', clearStorage);
   return (
     <Router>
     <Routes>
