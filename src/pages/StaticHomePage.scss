@@ -134,20 +134,25 @@ display: block;
     // height: 1600px;
     // left: 100px;
     transform: scale(.8);
-    margin-left: 30px;
-    margin-right: 50px;
-    margin-bottom: 100px;
+    // margin-left: 30px;
+    margin-right: 10px;
+    margin-bottom: 150px;
 }
 
 pookie-box{
-    width: 900px;
-    height: 1000px;
+    width: 1100px;
+    height: 900px;
     margin-top: 140px;
     margin-right: 50px;
     border: 15px solid rgb(134, 76, 153);
-    text-size-adjust: 500%;
+    text-size-adjust: 520%;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     word-wrap: break-word; 
-    padding: 20px;
+    padding: 90px;
     border-radius: 25px;
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

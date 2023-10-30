@@ -13,6 +13,7 @@ import Form from 'react-bootstrap/Form';
 import UpdateForm from "../components/UpdateForm";
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 import Confetti from "react-confetti";
+import messages from "../ass-ets/PookieMessages";
 function StaticHomePage(){
     //Just making it semi useable for later, hardcoded values for rings but after that you can just pass in what to print in the rings
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -50,7 +51,8 @@ function StaticHomePage(){
         </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
-        <pookie-box>Heeeyyyyyyyyyyyyyyyyyyyyyyyy</pookie-box>
+        
+        <pookie-box>{messages['motivate'][0]}</pookie-box>
         
         </div>  
     <div className = "form-wrapper">
