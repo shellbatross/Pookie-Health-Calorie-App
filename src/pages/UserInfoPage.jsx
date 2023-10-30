@@ -1,5 +1,7 @@
 import React, {useContext} from 'react';
 import {UserContext} from "../context/UserContext";
+import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import "./UserInfoPage.scss"
 
 function UserInfoPage(){
@@ -9,8 +11,9 @@ function UserInfoPage(){
     const {current_user,setUser}= useContext(UserContext);
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
-    return (<div>
-        <br/>
+    return (<div className='user-info-page'>
+        <Link to = "/home"><Button variant = "primary" style={{display: "inline"}} className ="home-btn" >Home</Button></Link>
+
         <h1 className='page-title'> User Information </h1>
         <br/>
         <br/>

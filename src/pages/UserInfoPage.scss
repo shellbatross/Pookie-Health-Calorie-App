@@ -32,3 +32,19 @@ input {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;
 }
+
+.user-info-page{
+    // display:flex;
+    flex-direction: column;
+    transform: scale(3.9);
+    transform-origin: 0 0;
+    margin-top: 150px;
+    margin-left: 8%; //13
+    position:absolute;
+    top: 0; /*[wherever you want it]*/
+    left: 0; /*[wherever you want it]*/
+} 
+
+.home-btn{
+    // margin-left: -8%;
+}
