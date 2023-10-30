@@ -170,7 +170,7 @@ function UpdateForm(){
     <Form className = "full-form">
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Distance</Form.Label>
-        <Form.Control type="email" rows={1}placeholder="10 miles" onChange={handleChange1}/>
+        <Form.Control type="number" rows={1}placeholder="10 miles" onChange={handleChange1}/>
       </Form.Group>
       
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

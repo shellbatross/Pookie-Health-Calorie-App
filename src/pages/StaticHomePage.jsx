@@ -50,8 +50,9 @@ function StaticHomePage(){
         </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
+        <pookie-box>Heeeyyyyyyyyyyyyyyyyyyyyyyyy</pookie-box>
         
-    </div>  
+        </div>  
     <div className = "form-wrapper">
       <UpdateForm></UpdateForm>
         
