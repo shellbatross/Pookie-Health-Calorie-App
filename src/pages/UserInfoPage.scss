@@ -6,9 +6,21 @@
 }
 
 label {
-    border: 2px solid white;
+    border: 11px solid white;
     float:left;
     width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-overflow: clip;
+    font-size:x-large
+}
+
+label-2 {
+    border: 1px solid white;
+    float:left;
+    width:60px;
     clear:left;
     text-align:right;
     padding-right:10px;
@@ -21,10 +33,19 @@ input {
     float:left;
     border: 2px solid rgb(134, 76, 153);
 }
+.level {
+    border-color:rgb(134, 76, 153);
+    border: 1px solid rgb(134, 76, 153);
+}
+
+.sexx {
+    border-color:rgb(134, 76, 153);
+    border: 1px solid rgb(134, 76, 153);
+}
 
 .button {
     text-align: center;
-    background-color: rgb(151, 200, 225);
+    background-color: rgb(180, 142, 191);
     border-radius: 4px;
     padding: 10px 10px;
     color: black;

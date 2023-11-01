@@ -25,20 +25,44 @@ function UserInfoPage(){
         <input type="text" id="age" name="age" placeholder="ex: 23"></input> <br></br>
         <br/>
         <br/>
+        <div>
         <label htmlFor="sex">Sex: </label>
-        <input type="text" id="sex" name="sex" placeholder="ex: Female"></input> <br></br>
+        <select id="dropdown" className='sexx'>
+                    <option value="Unselected">No Option Selected</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+        </select> 
+        </div>
         <br/>
         <br/>
         <label htmlFor="weight">Weight (lbs): </label>
         <input type="text" id="weight" name="weight" placeholder="ex: 150"></input> <br></br>
         <br/>
         <br/>
-        <label htmlFor="height">Height (ft in): </label>
-        <input type="text" id="height" name="height" placeholder="ex: 5 3"></input> <br></br>
-        <br/>
-        <br/>
         <label htmlFor="calorie">Caloric Intake: </label>
         <input type="text" id="calorie" name="calorie" placeholder="ex: 2000"></input> <br></br>
+        <br/>
+        <br/>
+        
+        <div> 
+        <label htmlFor="Fitness Level">Fitness Level: </label>
+        <select id="dropdown" className='level'>
+                    <option value="Unselected">No Option Selected</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced or Athlete</option>
+        </select> 
+        </div>
+        <div>
+        <label htmlFor="height">Height ft: </label>
+        <input type="text" id="height-ft" name="height" placeholder="5"></input>
+        <label htmlFor="height"> in: </label>
+        <input type="text" id="height=in" name="height" placeholder="5"></input> <br></br>
+        <br/>
+        <br/>
+        </div>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <div class="text-center">
