@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext,useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {UserContext} from "../context/UserContext";
@@ -14,6 +14,8 @@ function SetWorkoutPage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);  
+  
+    
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     let workouts = ["Running","Biking","Lifting"]

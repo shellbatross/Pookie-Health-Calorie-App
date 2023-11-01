@@ -25,6 +25,7 @@ import BikePage from './pages/BikePage';
 import LiftPage from './pages/LiftPage';
 import UserContextLayout from './context/UserContextLayout';
 import WorkoutContextLayout from './context/TimeContextLayout';
+import FormContextLayout from './context/FormContextLayout';
 //I fucking hate hash routing i fucking hate hash routing
 //Need to let people go between tabs -> idkno put a header or something(?) also does the home page even count
 
@@ -54,6 +55,7 @@ window.addEventListener('load', clearStorage);
     <Route path = "/tab6" element = {<Tab6></Tab6>}></Route>
     <Route element = {<UserContextLayout></UserContextLayout>}>
     <Route element = {<TimeContextLayout></TimeContextLayout>}>
+    <Route element = {<FormContextLayout></FormContextLayout>}>
     <Route path = "/helper" element = {<Time></Time>}></Route>
     <Route path = "/setworkout" element = {<SetWorkoutPage/>}></Route>
     <Route path = "/goals" element = {<GoalsPage/>}></Route>
@@ -62,6 +64,7 @@ window.addEventListener('load', clearStorage);
     <Route path = "/run" element = {<RunPage/>}></Route>
     <Route path = "/bike" element = {<BikePage/>}></Route>
     <Route path = "/lift" element = {<LiftPage/>}></Route>
+    </Route>
     </Route>
     </Route>
     </Routes> 

@@ -2,16 +2,19 @@ import React from "react";
 import {useState,useContext} from "react";
 import {UserContext} from "../context/UserContext";
 import {TimeContext} from "../context/TimeContext";
+import {FormContext} from "../context/FormContext";
 import EndDayButton from "../components/EndDayButton";
 import CircleProgress from "../components/CircleProgress";
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
+
 import speechbubble from "../ass-ets/speechbubble.png";
 import PookieExp from "../components/PookieExp";
 import {Link} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import UpdateForm from "../components/UpdateForm";
+import UpdateCalorieForm from "../components/UpdateCalorieForm";
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
 import Confetti from "react-confetti";
 import messages from "../ass-ets/PookieMessages";
@@ -22,6 +25,7 @@ function StaticHomePage(){
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
     const {current_time,setTime} = useContext(TimeContext);
+    const {getForm,setGetForm}= useContext(FormContext);
 
     const day = current_time
     //Inspect, check console in browser you'll see what I mean
@@ -30,7 +34,7 @@ function StaticHomePage(){
 
         
         <div className="whole-site">
-            
+             
         <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} ></Confetti>
         <br/>
         
@@ -67,13 +71,22 @@ function StaticHomePage(){
         <pookie-box>{messages['motivate'][0]}</pookie-box>
         
         </div>  
-    <div className = "form-wrapper">
+      
+    <div className = "bottom-stuff" >
+      {getForm === ""?  <div className = "choice-buttons" style ={{display:"flex"}}>
+        <Button variant="primary" className = "track-workout-button" onClick ={()=>{setGetForm("workout")}}>Track workout
+      </Button>
+      <Button variant="secondary" className = "track-calories-button"onClick ={()=>{setGetForm("calories")}}>Track calories</Button>
+      </div>: getForm =="workout" ? <div className = "form-wrapper">
       <UpdateForm></UpdateForm>
-        
-   
-    </div>
-    <EndDayButton></EndDayButton>
         </div>
+        :
+        <div className = "form-wrapper"><UpdateCalorieForm></UpdateCalorieForm></div>}       
+        
+        </div>
+        <EndDayButton></EndDayButton>
+        </div>
+        
         
     )
 }

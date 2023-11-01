@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
+import { FormContext } from "../context/FormContext";
 import { go_up_down_map } from "../ass-ets/WorkoutConstants";
 
 function UpdateForm(){
@@ -19,11 +20,13 @@ function UpdateForm(){
 
     */
     const {current_user,setUser}= useContext(UserContext)
+    const {getForm,setGetForm}=useContext(FormContext)
     const {current_time,setTime}= useContext(TimeContext)
     const [input1,setInput1] = useState("")
     const [input2,setInput2] = useState("")
     const [needError, setNeedError]=useState("false")
     const workout_ring_key = String(current_time)
+    console.log(console.log(getForm))
     let error_modal = <></>
     useEffect(() => {
         if(current_user["workout_set"]!=""){
@@ -66,7 +69,7 @@ function UpdateForm(){
         }
         
       }
-      //regardless set to local storage 
+      //regardless set to local storage and close the form
       localStorage.setItem("user",JSON.stringify(current_user))
       }, [current_user]);
 
@@ -139,8 +142,9 @@ function UpdateForm(){
           })
 
         }
-        //Regardless of what happens update localstorage object
+        //Regardless of what happens update localstorage object, and then close the form
         localStorage.setItem("user",JSON.stringify(current_user))
+        setGetForm("");
         }
 
 
