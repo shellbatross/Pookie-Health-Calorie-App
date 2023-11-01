@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom';
 import {UserContext} from './UserContext';
 import {useState} from 'react';
 import WorkoutContextLayout from './TimeContextLayout';
+import { caloricIntake } from '../ass-ets/CalorieConstants';
+
 const UserContextLayout = () => {
     const user = 'justin';
     const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shraddha':'shredder', 'stephanie':'shell'}
@@ -9,16 +11,18 @@ const UserContextLayout = () => {
     //Get from local storage if there, if not make it and store it
     const [current_user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || {
       'username': user_names[user],
-      'height': '',
-      'weight':'',
+      'sex': "M",
+      'height': '5\'4',
+      'age': "21",
+      'weight':'158',
       'workout_set':'Running',  
       'workout_goal_set': 'Running Pace',
       'active_workouts': {'Running': {'current':2, 'goal':5}},
       'active_workout_goals': {'Running': {'current': 12, 'goal': 8}},
-      'calories': {'current':238, 'goal':400},
+      'calories': {'current':238, 'goal':Math.floor(caloricIntake("M",21,158,170))},
       'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
-      'workout_pace':{ "Running": {"10/25/2023": {"goal": 8 ,"avg_reached": 11}, 
-      "10/26/2023":{"goal": 8,  "avg_reached": 10}},
+      'workout_pace':{ "Running": {"10/25/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []}, 
+      "10/26/2023":{"goal": 8,  "avg_reached": 10, "all_paces": []}},
       "Biking":{},
       "Lifting":{},
       "Other": {}

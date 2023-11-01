@@ -95,6 +95,7 @@
 .h2{
   font-family: 'Noto Sans TC';
   font-size: 50px;
+
 }
 .workoutgoal::before {
   animation: workoutgoal-progress 2s 1 forwards;
@@ -110,10 +111,19 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
 }
 
+.button-tooltip > .tooltip-inner{
+  font-size: 50px;
+  max-height: none;
+}
+
 h2 {
   text-align: center;
   white-space: nowrap;
-  font-family: 'Noto Sans TC'
+  font-family: 'Noto Sans TC';
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+
   
 }
 

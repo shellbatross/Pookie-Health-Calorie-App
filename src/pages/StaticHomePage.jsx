@@ -1,6 +1,7 @@
 import React from "react";
 import {useState,useContext} from "react";
 import {UserContext} from "../context/UserContext";
+import {TimeContext} from "../context/TimeContext";
 import EndDayButton from "../components/EndDayButton";
 import CircleProgress from "../components/CircleProgress";
 import Button from 'react-bootstrap/Button';
@@ -20,6 +21,9 @@ function StaticHomePage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
+    const {current_time,setTime} = useContext(TimeContext);
+
+    const day = current_time
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     return(
@@ -27,7 +31,7 @@ function StaticHomePage(){
         
         <div className="whole-site">
             
-        <Confetti></Confetti>
+        <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} ></Confetti>
         <br/>
         
         <br/>
@@ -39,14 +43,22 @@ function StaticHomePage(){
         </div>
         <PookieExp></PookieExp>
         <div className="circles">
-        
+        <div className = "leftCircle">
+        <h2>{current_user["active_workouts"] === ""? "":current_user["active_workouts"][current_user["workout_set"]]["current"]+ " / "+ 
+        current_user["active_workouts"][current_user["workout_set"]]["goal"]}</h2>
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout",current_user]}}></CircleProgress>
+        </div>
         <div className = "middleCircle">
-        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories Burned","progress-bar-circle-center dailygoal",current_user]}}></CircleProgress>
-        
+        <h2>{current_user["calories"] === ""? "":current_user["calories"]["current"] + " / "+ current_user["calories"]["goal"]}</h2>
+        <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories","progress-bar-circle-center dailygoal",current_user]}}></CircleProgress>   
         </div>
         
-        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Workout Goal:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>
+        <div className = "rightCircle">
+        <h2>{typeof(current_user["workout_pace"][current_user["workout_set"]]) === 'undefined' ? "":
+        current_user["workout_pace"][current_user["workout_set"]][day]["avg_reached"]+ " / "+ 
+        current_user["workout_pace"][current_user["workout_set"]][day]["goal"]}</h2>
+        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Pace:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>
+        </div>
         </div>
         </div>
         <div className = "pookie-inline-wrapper">

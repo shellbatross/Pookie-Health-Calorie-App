@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {UserContext} from "../context/UserContext";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
@@ -9,6 +9,14 @@ function UserInfoPage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
+    const [input, setInput] =useState("");
+
+    function handleChange(event){
+        setInput(event.target.value)
+    }
+    function handleClick(event){
+        setUser({...current_user, weight: String(input)})
+    }
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     return (<div className='user-info-page'>
@@ -36,7 +44,7 @@ function UserInfoPage(){
         <br/>
         <br/>
         <label htmlFor="weight">Weight (lbs): </label>
-        <input type="text" id="weight" name="weight" placeholder="ex: 150"></input> <br></br>
+        <input type="text" id="weight" name="weight" placeholder="ex: 150" onChange = {handleChange}></input> <br></br>
         <br/>
         <br/>
         <label htmlFor="calorie">Caloric Intake: </label>
@@ -66,7 +74,7 @@ function UserInfoPage(){
         <br/>
         <br/>
         <div class="text-center">
-            <button type="button" className ='button' >Submit</button>
+            <button type="button" className ='button' onClick = {handleClick} >Submit</button>
         </div>
         
     </div>)

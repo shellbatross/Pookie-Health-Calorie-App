@@ -15,7 +15,9 @@
     display: flex;
     flex: row;
 }
-
+.confetti{
+    transform: scale(10.0);
+}
 .bike {
     transform: scale(1.7);
     margin-left: 160px;

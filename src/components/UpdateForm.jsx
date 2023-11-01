@@ -103,7 +103,7 @@ function UpdateForm(){
               workout_pace:{
                 ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
-                  "goal": current_user["workout_goal_set"], "avg_reached": parseInt(String(input2))
+                  "goal": current_user["workout_goal_set"], "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
                 }
 
                 }
@@ -125,7 +125,8 @@ function UpdateForm(){
             workout_pace:{
               ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
-                "goal": current_user["workout_goal_set"], "avg_reached":current_user["workout_pace"][key][workout_ring_key]["avg_reached"] +parseInt(String(input2))
+                "goal": current_user["workout_pace"][key][workout_ring_key]["goal"], 
+                "avg_reached":current_user["workout_pace"][key][workout_ring_key]["avg_reached"] +parseInt(String(input2))
                 }
 
                 }
@@ -138,27 +139,6 @@ function UpdateForm(){
           })
 
         }
-        /*
-        //Update as normal
-        let key = String(current_user["workout_set"])
-        setUser({...current_user, active_workouts:{
-            ...current_user["active_workouts"],[key]:{
-            ...current_user["active_workouts"][key], current: parseInt(current_user["active_workouts"][key]["current"])+parseInt(input1)
-            }}})
-        
-        //Then check if we went over goal => store ring. If workout ring is closed then workout_goal is closed too, if just goal
-        //is closed we keep workout_ring and ask them for a new goal
-        let workout_progress_key = current_user["active_workouts"][[current_user["workout_set"]]]
-        if(workout_progress_key["current"]>=workout_progress_key["goal"]){
-          setUser({...current_user, rings:{
-            ...current_user["rings"],[workout_ring_key]:{
-                ...current_user["rings"][workout_ring_key],workout:
-                    parseInt(current_user["rings"][current_time]["workout"])+parseInt("1")
-            } 
-        },workout_set: "",workout_goal_set:"", active_workouts: "" })
-        return
-          }
-          */
         //Regardless of what happens update localstorage object
         localStorage.setItem("user",JSON.stringify(current_user))
         }
