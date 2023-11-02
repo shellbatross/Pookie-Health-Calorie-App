@@ -1,3 +1,26 @@
 .red-x-calories{
     cursor:pointer;
 }
+
+.submitbutton {
+    text-align: center;
+    background-color: rgb(160, 113, 176);
+    border-radius: 67px;
+    color: white;
+    float: right;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: xxxx-large;
+    align-items: center;
+    width: 100px;
+    padding-left: 100px;
+    padding-right: 380px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 400px;
+    border: 4px solid black;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+  }

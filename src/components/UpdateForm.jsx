@@ -154,17 +154,32 @@ function UpdateForm(){
         
     <Form className = "full-form">
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
-
+  
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Distance</Form.Label>
-        <Form.Control type="number" rows={1}placeholder="10 miles" onChange={handleChange1}/>
+        <div className="container">
+        <div className="row">
+        <div className="col">
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>&nbsp;Run Distance</Form.Label>
+        </div>
+        <div className="col">
+        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '55px', border: '3px solid purple'}}/>
+        </div>
+        </div>
+        </div>
       </Form.Group>
       
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Duration</Form.Label>
-        <Form.Control as="textarea" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2}/>
+        <div className="container">
+        <div className="row">
+        <div className="col">
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>&nbsp;Run Duration</Form.Label>
+        </div>
+        <div className="col">
+        <Form.Control as="textarea" classNamme="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '10px', paddingRight: '70px'}}/>
+        </div>
+        </div>
+        </div>
         <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
-
       </Form.Group>
     </Form>
     {error_modal}
