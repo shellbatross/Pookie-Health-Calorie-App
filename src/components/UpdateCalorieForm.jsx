@@ -1,6 +1,6 @@
 import React from "react";
 import { useState,useContext,useEffect } from "react";
-import "./UpdateForm.scss"
+import "./UpdateCalorieForm.scss"
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal';
@@ -8,6 +8,8 @@ import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
 import { go_up_down_map } from "../ass-ets/WorkoutConstants";
+import redx from "../ass-ets/redx.png";
+
 
 function UpdateCalorieForm(){
     //Some of the most scuffed code i've done in a frontend lmao
@@ -36,6 +38,7 @@ function UpdateCalorieForm(){
         <div>
         
     <Form className = "full-form">
+      <img src = {redx} className= "red-x-calories"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Calories ingested</Form.Label>
         <Form.Control type="number" rows={1}placeholder="300 calories" onChange={handleChange1}/>

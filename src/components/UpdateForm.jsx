@@ -8,6 +8,7 @@ import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
 import { go_up_down_map } from "../ass-ets/WorkoutConstants";
+import redx from "../ass-ets/redx.png"
 
 function UpdateForm(){
     //Some of the most scuffed code i've done in a frontend lmao
@@ -152,6 +153,7 @@ function UpdateForm(){
         <div>
         
     <Form className = "full-form">
+      <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Run Distance</Form.Label>
         <Form.Control type="number" rows={1}placeholder="10 miles" onChange={handleChange1}/>
