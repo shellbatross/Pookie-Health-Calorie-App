@@ -38,7 +38,7 @@ function UpdateCalorieForm(){
         <div>
         
     <Form className = "full-form">
-      <img src = {redx} className= "red-x-calories"  onClick={()=>{setGetForm("")}}></img>
+      <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Calories ingested</Form.Label>
         <Form.Control type="number" rows={1}placeholder="300 calories" onChange={handleChange1}/>

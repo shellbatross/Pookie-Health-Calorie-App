@@ -30,6 +30,9 @@ function StaticHomePage(){
     const day = current_time
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
+
+    // TODO: logic for confetti PLS
+    // TODO: cursor: pointer for other clickable thingies
     return(
 
         

@@ -18,12 +18,14 @@ function GoalsPage(){
 
     console.log(current_user);
     console.log(current_time);
+
     //You can access whatever user info you want like this
     let running_pace_info = (current_user["workout_pace"]["Running"])
     //Turn it into array like this for info you may need 
     let values = Object.keys(running_pace_info)
 
     console.log(values)
+
     const graphs = {"Workout": [3, 5, 9, 0, 2, 6, 4],  // e.g. running goal of 5mi
                     "Calories": [15, 16, 13, 14, 14, 18, 17],  // e.g. caloric intake of 1700 but the graph hates huge numbers so scaled down
                     "Pace": [13, 12, 12, 10, 9, 10, 8, 9]};  // e.g. pace goal of 8m/mi
