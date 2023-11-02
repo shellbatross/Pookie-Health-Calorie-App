@@ -25,23 +25,19 @@ function LiftPage(){
     }
 
     return (<div className = "all-items">
-    <img src={lift} className="lift"></img>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='workoutbox'>
-      <option>Start setting your workout here!</option>
-      <option value="Running">Running</option>
-      <option value="Biking">Biking</option>
-      <option value="Lifting">Lifting</option>
-    </Form.Select>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='goalbox'>
-      <option>Choose your goal!</option>
-      <option value="Distance">Distance</option>
-      <option value="Speed">Speed</option>
-      <option value="Reps">Reps</option>
-    </Form.Select>
-    <form id="numberform" className="numberbox">
+    <img src={lift} className="lifter"></img>
+    <div className='lifttitle'>Lifting Workout Settings</div>
+    <div className='repstitle'>Reps</div>
+    <div className='repsdescription'>Enter the amount of reps</div>
+    <form id="distanceform" className="distancebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <Button variant = "secondary" className="submit"> Submit</Button>
+    <div className='weighttitle'>Weight</div>
+    <div className='weightdescription'>Enter the weight that you want to lift (Pounds)</div>
+    <form id="paceform" className="pacebox">
+        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
+    </form>
+    <Button variant = "secondary" className="submitlift"> Submit</Button>
     
     </div>)
 

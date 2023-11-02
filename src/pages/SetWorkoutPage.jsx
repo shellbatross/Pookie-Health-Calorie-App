@@ -58,7 +58,7 @@ function SetWorkoutPage(){
     <form className="goalnumberbox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <Button variant = "secondary" className="submit"> Submit</Button>
+    <Button variant = "secondary" className="submitcustom"> Submit</Button>
     
     </div>)
 

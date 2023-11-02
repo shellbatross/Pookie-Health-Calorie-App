@@ -71,30 +71,33 @@
 .personaldescription {
     font-size: 60px;
     margin-left: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
 .personalbox {
     transform: scale(4.6);
     width:500px;
-    margin-left: 950px;
+    margin-left: 230px;
+    margin-bottom: 100px;
 }
 
 .goalnumber {
     font-size: 80px;
     margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .goalnumberbox {
     transform: scale(4.6);
-    margin-top: 100px;
+    margin-top: 200px;
     width:500px;
-    margin-left: 950px;
+    margin-left: 230px;
 }
 
-.submit {
+.submitcustom {
     transform: scale(5);
     margin-top: 200px;
-    margin-right: 300px;
+    margin-left: 200px;
+    color: white;
+    background-color: rgb(149, 98, 166);
 }

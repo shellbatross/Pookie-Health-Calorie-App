@@ -1,0 +1,58 @@
+.lifter {
+    transform: scale(1.05);
+    margin-bottom: 200px;
+    margin-left: 500px;
+}
+
+.lifttitle {
+    font-size: 150px;
+    white-space: nowrap;
+    align-self: left;
+    font-weight: bold;
+}
+
+.repstitle {
+    font-size: 120px;
+    white-space: nowrap;
+    align-self: left;
+}
+
+.repsdescription {
+    font-size: 100px;
+    align-self: left;
+}
+
+.distancebox {
+    transform: scale(4);
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 600px;
+}
+
+.weighttitle {
+    font-size: 120px;
+    white-space: nowrap;
+    align-self: left;
+}
+
+.weightdescription {
+    font-size: 100px;
+    align-self: left;
+}
+
+.pacebox {
+    transform: scale(4);
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 600px;
+}
+
+.submitlift {
+    transform: scale(5);
+    margin-top: 200px;
+    margin-left: 780px;
+    color: white;
+    background-color: rgb(149, 98, 166);
+}

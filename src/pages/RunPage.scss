@@ -1,0 +1,58 @@
+.run {
+    transform: scale(1.4);
+    margin-bottom: 200px;
+    margin-left: 500px;
+}
+
+.runtitle {
+    font-size: 150px;
+    white-space: nowrap;
+    align-self: left;
+    font-weight: bold;
+}
+
+.distancetitle {
+    font-size: 120px;
+    white-space: nowrap;
+    align-self: left;
+}
+
+.distancedescription {
+    font-size: 100px;
+    align-self: left;
+}
+
+.rundistancebox {
+    transform: scale(4);
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 600px;
+}
+
+.pacetitle {
+    font-size: 120px;
+    white-space: nowrap;
+    align-self: left;
+}
+
+.pacedescription {
+    font-size: 100px;
+    align-self: left;
+}
+
+.runpacebox {
+    transform: scale(4);
+    margin-top: 200px;
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 600px;
+}
+
+.submitrun {
+    transform: scale(5);
+    margin-top: 200px;
+    margin-left: 780px;
+    color: white;
+    background-color: rgb(149, 98, 166);
+}

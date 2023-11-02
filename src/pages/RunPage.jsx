@@ -27,22 +27,18 @@ function RunPage(){
 
     return (<div className = "all-items">
     <img src={run} className="run"></img>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='workoutbox'>
-      <option>Start setting your workout here!</option>
-      <option value="Running">Running</option>
-      <option value="Biking">Biking</option>
-      <option value="Lifting">Lifting</option>
-    </Form.Select>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='goalbox'>
-      <option>Choose your goal!</option>
-      <option value="Distance">Distance</option>
-      <option value="Speed">Speed</option>
-      <option value="Reps">Reps</option>
-    </Form.Select>
-    <form id="numberform" className="numberbox">
+    <div className='runtitle'>Running Workout Settings</div>
+    <div className='distancetitle'>Distance</div>
+    <div className='distancedescription'>Enter the distance you want to run (miles)</div>
+    <form id="distanceform" className="rundistancebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <Button variant = "secondary" className="submit"> Submit</Button>
+    <div className='pacetitle'>Pace</div>
+    <div className='pacedescription'>Enter the pace that you want to run at (miles per hour)</div>
+    <form id="paceform" className="runpacebox">
+        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
+    </form>
+    <Button variant = "secondary" className="submitrun"> Submit</Button>
     
     </div>)
 

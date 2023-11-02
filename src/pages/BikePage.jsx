@@ -26,23 +26,19 @@ function BikePage(){
 
 
     return (<div className = "all-items">
-    <img src={bike} className="bike"></img>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='workoutbox'>
-      <option>Start setting your workout here!</option>
-      <option value="Running">Running</option>
-      <option value="Biking">Biking</option>
-      <option value="Lifting">Lifting</option>
-    </Form.Select>
-    <Form.Select aria-label="Default select example" onChange={(event) => setNew(event.target.value)} className='goalbox'>
-      <option>Choose your goal!</option>
-      <option value="Distance">Distance</option>
-      <option value="Speed">Speed</option>
-      <option value="Reps">Reps</option>
-    </Form.Select>
-    <form id="numberform" className="numberbox">
+    <img src={bike} className="biker"></img>
+    <div className='biketitle'>Biking Workout Settings</div>
+    <div className='distancetitle'>Distance</div>
+    <div className='distancedescription'>Enter the distance you want to bike (miles)</div>
+    <form id="distanceform" className="bikedistancebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <Button variant = "secondary" className="submit"> Submit</Button>
+    <div className='pacetitle'>Pace</div>
+    <div className='pacedescription'>Enter the pace that you want to bike at (miles per hour)</div>
+    <form id="paceform" className="bikepacebox">
+        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
+    </form>
+    <Button variant = "secondary" className="submitbike"> Submit</Button>
     
     </div>)
 
