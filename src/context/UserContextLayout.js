@@ -11,10 +11,12 @@ const UserContextLayout = () => {
     //Get from local storage if there, if not make it and store it
     const [current_user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || {
       'username': user_names[user],
+      'name':'Justin',
       'sex': "M",
       'height': '5\'4',
       'age': "21",
       'weight':'158',
+      'fitness_level':"Im stronk bitch",
       'workout_set':'Running',  
       'workout_goal_set': 'Running Pace',
       'active_workouts': {'Running': {'current':2, 'goal':5}},
