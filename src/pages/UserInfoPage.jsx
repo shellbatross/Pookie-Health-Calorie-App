@@ -3,6 +3,7 @@ import {UserContext} from "../context/UserContext";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import "./UserInfoPage.scss"
+import pookie from "../ass-ets/pookie_level2.png";
 
 function UserInfoPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -25,35 +26,37 @@ function UserInfoPage(){
         <h1 className='page-title'> User Information </h1>
         <br/>
         <br/>
-        <label htmlFor="name">Name: </label>
+        <div class="container">
+        <label-2 for="name"> Name </label-2>
         <input type="text" id="name" name="name" placeholder="ex: Sally Bob"></input> <br></br>
-        <br/>
-        <br/>
-        <label htmlFor="age">Age: </label>
+        </div>
+
+        <div class="container">
+        <label-2 htmlFor="age">Age </label-2>
         <input type="text" id="age" name="age" placeholder="ex: 23"></input> <br></br>
-        <br/>
-        <br/>
-        <div>
-        <label htmlFor="sex">Sex: </label>
+        </div>
+
+        <div class="container">
+        <label-2 htmlFor="weight">Weight (lbs) </label-2>
+        <input type="text" id="weight" name="weight" placeholder="ex: 150" onChange = {handleChange}></input> <br></br>
+        </div>
+
+        <div class="container">
+        <label-2 htmlFor="calorie">Caloric Intake </label-2>
+        <input type="text" id="calorie" name="calorie" placeholder="ex: 2000"></input> <br></br>
+        </div>
+ 
+        <div class="container">
+        <label-2 htmlFor="sex">Sex: </label-2>
         <select id="dropdown" className='sexx'>
                     <option value="Unselected">No Option Selected</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
         </select> 
         </div>
-        <br/>
-        <br/>
-        <label htmlFor="weight">Weight (lbs): </label>
-        <input type="text" id="weight" name="weight" placeholder="ex: 150" onChange = {handleChange}></input> <br></br>
-        <br/>
-        <br/>
-        <label htmlFor="calorie">Caloric Intake: </label>
-        <input type="text" id="calorie" name="calorie" placeholder="ex: 2000"></input> <br></br>
-        <br/>
-        <br/>
         
-        <div> 
-        <label htmlFor="Fitness Level">Fitness Level: </label>
+        <div class="container">
+             <label-2 htmlFor="Fitness Level">Fitness Level </label-2>
         <select id="dropdown" className='level'>
                     <option value="Unselected">No Option Selected</option>
                     <option value="Beginner">Beginner</option>
@@ -61,21 +64,14 @@ function UserInfoPage(){
                     <option value="Advanced">Advanced or Athlete</option>
         </select> 
         </div>
-        <div>
-        <label htmlFor="height">Height ft: </label>
-        <input type="text" id="height-ft" name="height" placeholder="5"></input>
-        <label htmlFor="height"> in: </label>
-        <input type="text" id="height=in" name="height" placeholder="5"></input> <br></br>
-        <br/>
-        <br/>
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div class="text-center">
+        <br></br>
+        <br></br>
+        <div class="center">
             <button type="button" className ='button' onClick = {handleClick} >Submit</button>
         </div>
+        <div className = "pookie-inline-wrapper">
+        <img src = {pookie} className = "pookie" style={{marginLeft:'150px', width: '250px', height: '280px' }}></img>  
+        </div>  
         
     </div>)
 

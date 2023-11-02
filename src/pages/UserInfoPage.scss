@@ -2,10 +2,16 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-overflow: clip;
     text-align: center;
-    padding-left: 100px; 
+    padding-left: 150px; 
 }
 
-label {
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+label-2 {
     border: 11px solid white;
     float:left;
     width:180px;
@@ -14,44 +20,65 @@ label {
     padding-right:10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-overflow: clip;
-    font-size:x-large
-}
-
-label-2 {
-    border: 1px solid white;
-    float:left;
-    width:60px;
-    clear:left;
-    text-align:right;
-    padding-right:10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-overflow: clip;
-    font-size:x-large
+    font-size:x-large;
+    padding-top: 0.01mm;
+    font-size: 20pt;
+    white-space: nowrap;
 }
 
 input {
     float:left;
     border: 2px solid rgb(134, 76, 153);
+    float: top;
+    font-weight: 10000;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+select {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    color: black;
+    width: 1700;
 }
 .level {
     border-color:rgb(134, 76, 153);
-    border: 1px solid rgb(134, 76, 153);
+    border: 2px solid rgb(134, 76, 153);
 }
 
 .sexx {
     border-color:rgb(134, 76, 153);
-    border: 1px solid rgb(134, 76, 153);
+    border: 2px solid rgb(134, 76, 153);
 }
 
 .button {
     text-align: center;
-    background-color: rgb(180, 142, 191);
-    border-radius: 4px;
-    padding: 10px 10px;
+    background-color: rgb(219, 196, 226);
+    border-radius: 67px;
+    padding: 20px 20px;
     color: black;
     float: right;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;
+    align-items:flex-end;
+    width: 100px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    text-align: center; 
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding-left: 120px;
 }
 
 .user-info-page{
@@ -62,10 +89,10 @@ input {
     margin-top: 150px;
     margin-left: 8%; //13
     position:absolute;
-    top: 0; /*[wherever you want it]*/
+    top: 10; /*[wherever you want it]*/
     left: 0; /*[wherever you want it]*/
 } 
 
 .home-btn{
-    // margin-left: -8%;
+    //margin-left: -8%;
 }
