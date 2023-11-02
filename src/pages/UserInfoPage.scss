@@ -57,10 +57,12 @@ select {
 
 .button {
     text-align: center;
-    background-color: rgb(219, 196, 226);
+    background-color: rgb(160, 113, 176);
     border-radius: 67px;
-    padding: 20px 20px;
-    color: black;
+    //padding: 20px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
     float: right;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: large;

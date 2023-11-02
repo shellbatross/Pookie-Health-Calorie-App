@@ -40,17 +40,18 @@ function UserInfoPage(){
         <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" >Home</Button></Link>
 
         <h1 className='page-title'> User Information </h1>
-        <Accordion >
+        <br></br>
+        <Accordion style={{paddingLeft: '30px', marginLeft: '100px'}}>
       <Accordion.Item eventKey="0">
-        <Accordion.Header style ={{fontWeight:"bold "}}>Your current information</Accordion.Header>
+        <Accordion.Header style ={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '24px !important', border: "1px solid rgb(134, 76, 153)", backgroundColor: 'purple', fontWeight:"bold "}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Current Information</Accordion.Header>
         <Accordion.Body>
         <ul>
-          <li>Name: {current_user["name"]}</li>
-          <li>Height: {current_user["height"]}</li>
-          <li>Weight: {current_user["weight"]}</li>
-          <li>Age: {current_user["age"]}</li>
-          <li>Sex: {current_user["sex"]}</li>
-          <li>Fitness Level: {current_user["fitness_level"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Name: {current_user["name"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Height: {current_user["height"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight: {current_user["weight"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Age: {current_user["age"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Sex: {current_user["sex"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Fitness Level: {current_user["fitness_level"]}</li>
 
           </ul>
         </Accordion.Body>
@@ -101,10 +102,6 @@ function UserInfoPage(){
         <div class="center">
             <button type="button" className ='button' onClick = {handleClick} >Submit</button>
         </div>
-        <div className = "pookie-inline-wrapper">
-        <img src = {pookie} className = "pookie" style={{marginLeft:'150px', width: '250px', height: '280px' }}></img>  
-        </div>  
-        
     </div>)
 
 }

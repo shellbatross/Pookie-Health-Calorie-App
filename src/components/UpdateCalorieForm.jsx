@@ -40,8 +40,16 @@ function UpdateCalorieForm(){
     <Form className = "full-form">
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label style = {{fontFamily: "Noto Sans TC"}}>Calories ingested</Form.Label>
-        <Form.Control type="number" rows={1}placeholder="300 calories" onChange={handleChange1}/>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px'}}>Caloric Intake&nbsp;&nbsp;&nbsp;</Form.Label>
+          </div>
+          <div className="col">
+           <Form.Control type="number" rows={1}placeholder="300" onChange={handleChange1} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
+          </div>
+        </div>
+        </div>
         <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
     </Form>
