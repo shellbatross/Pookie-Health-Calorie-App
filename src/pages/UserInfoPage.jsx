@@ -37,7 +37,7 @@ function UserInfoPage(){
     //Inspect, check console in browser you'll see what I mean
     return (<div className='user-info-page'>
         
-        <Link to = "/home"><Button variant = "primary" style={{display: "inline"}} className ="home-btn" >Home</Button></Link>
+        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" >Home</Button></Link>
 
         <h1 className='page-title'> User Information </h1>
         <Accordion >
