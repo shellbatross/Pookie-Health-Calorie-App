@@ -36,9 +36,12 @@ function UpdateCalorieForm(){
         setGetForm("");
         
     }
+    
     return(
         <div>
         
+
+      {/* TODO: will change the red x to purple to match out app <3 ---b */}
     <Form className = "full-form">
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

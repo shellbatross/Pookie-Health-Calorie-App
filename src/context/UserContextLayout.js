@@ -25,9 +25,14 @@ const UserContextLayout = () => {
       'calories': {'current':238, 'goal':Math.floor(caloricIntake("M",21,158,170))},
       'calories_per_day':{"10/25/2023": {"intake": 1700}},
       'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
-      'workout_pace':{ "Running": {"10/25/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []}, 
-      "10/26/2023":{"goal": 8,  "avg_reached": 10, "all_paces": []}
-    },
+      'workout_pace':{ 
+        "Running": {"10/21/2023": {"goal": 8 ,"avg_reached": 13, "all_paces": []},
+                    "10/22/2023": {"goal": 8 ,"avg_reached": 12, "all_paces": []},
+                    "10/23/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []},
+                    "10/24/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []},
+                    "10/25/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []}, 
+                    "10/26/2023":{"goal": 8,  "avg_reached": 8, "all_paces": []}
+                    },
       "Biking":{},
       "Lifting":{},
       "Other": {}

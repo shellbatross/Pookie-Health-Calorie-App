@@ -22,9 +22,9 @@ function GoalsPage(){
     //You can access whatever user info you want like this
     let running_pace_info = (current_user["workout_pace"]["Running"])
     //Turn it into array like this for info you may need 
-    let values = Object.keys(running_pace_info)
+    let dates = Object.keys(running_pace_info)
 
-    console.log(values)
+    console.log("Running pace dates: ", dates);
 
     const graphs = {"Workout": [3, 5, 9, 0, 2, 6, 4],  // e.g. running goal of 5mi
                     "Calories": [15, 16, 13, 14, 14, 18, 17],  // e.g. caloric intake of 1700 but the graph hates huge numbers so scaled down
@@ -41,17 +41,27 @@ function GoalsPage(){
         return Math.max(...selectedGraph) + 1;
     }
 
+    function maxXValue(){
+        return dates.length;
+    }
+
     function progValues() {
         var currGoal = 5;
         // TODO: stop hardcoding this value...
         var goalsMet = [];
 
-        for(var i = 0; i < selectedGraph.length; i++){
-            goalsMet[i] = selectedGraph[i] || 0;
+        // for(var i = 0; i < selectedGraph.length; i++){
+        //     goalsMet[i] = selectedGraph[i] || 0;
+
+        // }
+
+        
+        for(var i = 0; i < dates.length; i++){
+            goalsMet[i] = running_pace_info[dates[i]]["avg_reached"] || 0;
 
         }
 
-        console.log("List of selected graph values:", selectedGraph);
+        console.log("list of values:", goalsMet);
 
         // for(var i = 0; i < days.length; i++) {}
             // let incr = (parseInt(days[i].value) >= currGoal) ? 1 : 0;
@@ -146,7 +156,7 @@ function GoalsPage(){
 
             layout={ {width: 550, height: 450, title: 'Goals Met Over the Past 7 Days', tickmode: 'linear',
                 yaxis: {autorange: false, range: [0,  maxYValue()], dtick: 1, title: {text: 'Goals Met'}},
-                xaxis: {autorange: false, range: [1, 7], dtick: 1, title: {text: 'Days'}}}}
+                xaxis: {autorange: false, range: [1, maxXValue()], dtick: 1, title: {text: 'Days'}}}}
         /> 
 
         {/* TODO: still need to make the graph change labels based on what 

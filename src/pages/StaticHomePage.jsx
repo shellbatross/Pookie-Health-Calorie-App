@@ -35,6 +35,7 @@ function StaticHomePage(){
 
     // TODO: logic for confetti PLS
     // TODO: cursor: pointer for other clickable thingies
+    // TODO: labels for any button, undos for any action
     return(
 
         
