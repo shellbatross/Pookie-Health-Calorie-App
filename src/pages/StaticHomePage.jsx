@@ -5,6 +5,8 @@ import {TimeContext} from "../context/TimeContext";
 import {FormContext} from "../context/FormContext";
 import EndDayButton from "../components/EndDayButton";
 import CircleProgress from "../components/CircleProgress";
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
@@ -38,7 +40,7 @@ function StaticHomePage(){
         
         <div className="whole-site">
              
-        <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} ></Confetti>
+        <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} width = {window.innerWidth} ></Confetti>
         <br/>
         
         <br/>

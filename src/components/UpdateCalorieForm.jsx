@@ -3,6 +3,8 @@ import { useState,useContext,useEffect } from "react";
 import "./UpdateCalorieForm.scss"
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
@@ -53,7 +55,9 @@ function UpdateCalorieForm(){
         <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
     </Form>
+     <Keyboard physicalKeyboardHighlightPress = "true" physicalKeyboardHighlight = "true" className="keyboard" theme={"hg-theme-default hg-layout-default myTheme"}></Keyboard>
     </div>
+   
     )
 
 }
