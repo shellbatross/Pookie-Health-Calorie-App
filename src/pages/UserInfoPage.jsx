@@ -31,9 +31,9 @@ function UserInfoPage(){
             sex: sex === null ? "": sex,
             fitness_level: fitnessLevel=== null ? "": fitnessLevel,
         }))
-        localStorage.setItem("user",JSON.stringify(current_user))
     
     }
+    localStorage.setItem("user",JSON.stringify(current_user))
     //Inspect, check console in browser you'll see what I mean
     return (<div className='user-info-page'>
         
