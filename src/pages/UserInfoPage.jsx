@@ -37,7 +37,7 @@ function UserInfoPage(){
     //Inspect, check console in browser you'll see what I mean
     return (<div className='user-info-page'>
         
-        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" >Home</Button></Link>
+        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}>Home</Button></Link>
 
         <h1 className='page-title'> User Information </h1>
         <br></br>

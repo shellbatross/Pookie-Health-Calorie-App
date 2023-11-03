@@ -42,25 +42,33 @@ function UpdateCalorieForm(){
 
         
     }
+<<<<<<< HEAD
     localStorage.setItem("user",JSON.stringify(current_user))
+=======
+    
+>>>>>>> 18fa8fca13b38f3f5375df80d7f8cca4802b26dc
     return(
         <div>
         
-    <Form className = "full-form">
+    <Form className = "full-form" style={{marginLeft: 'auto', marginRight: 'auto', paddingLeft: '-555px', paddingRight: '-120px', paddingBottom: '280px'}}>
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{paddingLeft: '1000px'}}>
       <div className="container">
         <div className="row">
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px'}}>Caloric Intake&nbsp;&nbsp;&nbsp;</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-650px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
+<<<<<<< HEAD
            <Form.Control type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
+=======
+           <Form.Control type="number" rows={1}placeholder="300" onChange={handleChange1} style={{ marginRight: '555px', border: '3px solid purple', marginLeft: '-430px', borderRadius: '3px'}}/>
+>>>>>>> 18fa8fca13b38f3f5375df80d7f8cca4802b26dc
           </div>
         </div>
         </div>
-        <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
+      <Button input type = "button" variant = "warning" style={{marginLeft: '455px', borderRadius: '23px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
     </Form>
     </div>
    
