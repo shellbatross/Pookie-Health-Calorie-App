@@ -13,8 +13,8 @@ function SetWorkoutPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
-    const {current_user,setUser}= useContext(UserContext);  
-  
+    const {current_user,setUser}= useContext(UserContext);
+
     
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
