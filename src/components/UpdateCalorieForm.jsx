@@ -40,23 +40,21 @@ function UpdateCalorieForm(){
     return(
         <div>
         
-
-      {/* TODO: will change the red x to purple to match out app <3 ---b */}
-    <Form className = "full-form">
+    <Form className = "full-form" style={{marginLeft: 'auto', marginRight: 'auto', paddingLeft: '-555px', paddingRight: '-120px', paddingBottom: '280px'}}>
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{paddingLeft: '1000px'}}>
       <div className="container">
         <div className="row">
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px'}}>Caloric Intake&nbsp;&nbsp;&nbsp;</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-650px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
-           <Form.Control type="number" rows={1}placeholder="300" onChange={handleChange1} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
+           <Form.Control type="number" rows={1}placeholder="300" onChange={handleChange1} style={{ marginRight: '555px', border: '3px solid purple', marginLeft: '-430px', borderRadius: '3px'}}/>
           </div>
         </div>
         </div>
-        <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
+      <Button input type = "button" variant = "warning" style={{marginLeft: '455px', borderRadius: '23px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
     </Form>
      <Keyboard physicalKeyboardHighlightPress = "true" physicalKeyboardHighlight = "true" className="keyboard" theme={"hg-theme-default hg-layout-default myTheme"}></Keyboard>
     </div>

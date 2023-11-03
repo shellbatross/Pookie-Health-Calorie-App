@@ -78,11 +78,11 @@ function StaticHomePage(){
         
         </div>  
       
-    <div className = "bottom-stuff" >
-      {getForm === ""?  <div className = "choice-buttons" style ={{display:"flex"}}>
-        <Button variant="primary" className = "track-workout-button" onClick ={()=>{setGetForm("workout")}}>Track workout
+    <div className = "bottom-stuff" style ={{display:"flex", justifyContent: 'space-between'}}>
+      {getForm === ""?  <div className = "choice-buttons" style={{ display: 'flex', gap: '250px', marginLeft: '-500px'}}>
+        <Button variant="primary" className = "track-workout-button" style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', flex: 1, marginRight: '20px', paddingLeft: '100px', paddingRight: '100px', borderRadius: '30px'}} onClick ={()=>{setGetForm("workout")}}>Track workout
       </Button>
-      <Button variant="secondary" className = "track-calories-button"onClick ={()=>{setGetForm("calories")}}>Track calories</Button>
+      <Button variant="secondary" className = "track-calories-button" style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', flex: 1, paddingLeft: '100px', paddingRight: '100px', borderRadius: '30px'}} onClick ={()=>{setGetForm("calories")}}>Track calories</Button>
       </div>: getForm =="workout" ? <div className = "form-wrapper">
       <UpdateForm></UpdateForm>
         </div>
@@ -90,7 +90,11 @@ function StaticHomePage(){
         <div className = "form-wrapper"><UpdateCalorieForm></UpdateCalorieForm></div>}       
         
         </div>
-        <EndDayButton></EndDayButton>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <EndDayButton ></EndDayButton>
         </div>
         
         

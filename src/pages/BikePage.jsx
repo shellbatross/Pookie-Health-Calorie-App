@@ -28,6 +28,8 @@ function BikePage(){
     return (<div className = "all-items">
     <img src={bike} className="biker"></img>
     <div className='biketitle'>Biking Workout Settings</div>
+    <br></br>
+    <br></br>
     <div className='distancetitle'>Distance</div>
     <div className='distancedescription'>Enter the distance you want to bike (miles)</div>
     <form id="distanceform" className="bikedistancebox">

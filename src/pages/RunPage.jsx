@@ -28,6 +28,8 @@ function RunPage(){
     return (<div className = "all-items">
     <img src={run} className="run"></img>
     <div className='runtitle'>Running Workout Settings</div>
+    <br></br>
+    <br></br>
     <div className='distancetitle'>Distance</div>
     <div className='distancedescription'>Enter the distance you want to run (miles)</div>
     <form id="distanceform" className="rundistancebox">

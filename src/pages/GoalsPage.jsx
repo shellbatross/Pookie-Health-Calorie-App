@@ -102,7 +102,7 @@ function GoalsPage(){
 
     // TODO: see if i can remove the submit button completely..
     return (<div className="page">
-        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" >Home</Button></Link>
+        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}>Home</Button></Link>
 
         <h2 className="gptitle">Weekly Goal Progress</h2> <br />
         <h4 className="goal-num">Current goal: 5 miles </h4>

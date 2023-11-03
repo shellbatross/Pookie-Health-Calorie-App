@@ -27,6 +27,8 @@ function LiftPage(){
     return (<div className = "all-items">
     <img src={lift} className="lifter"></img>
     <div className='lifttitle'>Lifting Workout Settings</div>
+    <br></br>
+    <br></br>
     <div className='repstitle'>Reps</div>
     <div className='repsdescription'>Enter the amount of reps</div>
     <form id="distanceform" className="distancebox">

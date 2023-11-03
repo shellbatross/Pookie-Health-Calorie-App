@@ -155,27 +155,27 @@ function UpdateForm(){
     <Form className = "full-form">
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
   
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>&nbsp;Run Distance</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1040px'}}>Run Distance</Form.Label>
         </div>
         <div className="col">
-        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '55px', border: '3px solid purple'}}/>
+        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-225px', marginRight: '-100px', border: '3px solid purple', paddingLeft: '100px'}}/>
         </div>
         </div>
         </div>
       </Form.Group>
       
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" style={{marginLeft: 'auto', marginRight: 'auto', paddingLeft: '-555px', paddingRight: '-120px'}}>
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>&nbsp;Run Duration</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-40px'}}>&nbsp;Run Duration</Form.Label>
         </div>
         <div className="col">
-        <Form.Control as="textarea" classNamme="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '10px', paddingRight: '70px'}}/>
+        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '10px', paddingRight: '70px'}}/>
         </div>
         </div>
         </div>
