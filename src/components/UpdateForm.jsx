@@ -29,6 +29,7 @@ function UpdateForm(){
     const workout_ring_key = String(current_time)
     console.log(console.log(getForm))
     let error_modal = <></>
+    console.log(current_time)
     useEffect(() => {
         if(current_user["workout_set"]!=""){
         const workout_set = current_user["workout_set"]
@@ -72,7 +73,7 @@ function UpdateForm(){
       }
       //regardless set to local storage and close the form
       localStorage.setItem("user",JSON.stringify(current_user))
-      }, [current_user]);
+      }, [current_user]); 
 
     function handleChange1(event){
         setInput1(event.target.value);
@@ -107,7 +108,7 @@ function UpdateForm(){
               workout_pace:{
                 ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
-                  "goal": current_user["workout_goal_set"], "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
+                  "goal": current_user["active_workout_goals"]["workout_set"]["goal"], "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
                 }
 
                 }

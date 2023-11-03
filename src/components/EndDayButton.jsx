@@ -9,6 +9,7 @@ function EndDayButton(){
     const {current_user,setUser}=useContext(UserContext)
 
     function handleChange(){
+
         let time = current_time
         let arr_info = time.split("/")
         for(let i=0; i<arr_info.length;i++){
@@ -37,7 +38,19 @@ function EndDayButton(){
         arr_info[0]=String(arr_info[0])
         arr_info[2]=String(arr_info[2])
         setTime(arr_info.join("/"))
-        setUser({...current_user, workout_goal_set:"",workout_set: ""})
+        //save calories and reset shit
+        setUser({...current_user, 
+            calories_per_day: {
+                ...current_user["calories_per_day"],[time]:{
+                    "intake":current_user["calories"]["current"]
+                }
+            },
+            calories: {"current":0,"goal":current_user["BMR"]},
+            workout_goal_set:"",
+            workout_set: "",
+            active_workouts: "",
+            active_workout_goals:""})
+
 
 
     }

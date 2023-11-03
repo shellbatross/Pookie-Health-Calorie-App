@@ -21,21 +21,28 @@ function UpdateCalorieForm(){
                            |、˜〵          -Steph
                           じしˍ,)ノ
 
-
+    Everyday it doesn't matter, check out of BMR
+    you close ring? Cool you got the calories you need in a day close.
     */
     const {current_user,setUser}= useContext(UserContext)
     const {getForm, setGetForm}=useContext(FormContext)
-    const [input1,setInput1] = useState("")
-    const [input2,setInput2] = useState("")
+    const [calories,setCalories] = useState(null)
 
-    function handleChange1(event){
-        setInput1(event.target.value);
-    }
 
     function UpdateStuff(){
-        setGetForm("");
+        //No idea if we are checking for errors yet
+        
+        setUser({...current_user,
+          calories: calories === null? current_user["calories"] : {
+            "current":current_user["calories"]["current"]+parseInt(calories),
+            "goal": current_user["BMR"]
+          }
+        
+        })
+
         
     }
+    localStorage.setItem("user",JSON.stringify(current_user))
     return(
         <div>
         
@@ -48,14 +55,13 @@ function UpdateCalorieForm(){
            <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px'}}>Caloric Intake&nbsp;&nbsp;&nbsp;</Form.Label>
           </div>
           <div className="col">
-           <Form.Control type="number" rows={1}placeholder="300" onChange={handleChange1} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
+           <Form.Control type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
           </div>
         </div>
         </div>
         <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
     </Form>
-     <Keyboard physicalKeyboardHighlightPress = "true" physicalKeyboardHighlight = "true" className="keyboard" theme={"hg-theme-default hg-layout-default myTheme"}></Keyboard>
     </div>
    
     )

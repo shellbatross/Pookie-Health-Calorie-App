@@ -3,6 +3,7 @@ import {UserContext} from './UserContext';
 import {useState} from 'react';
 import WorkoutContextLayout from './TimeContextLayout';
 import { caloricIntake } from '../ass-ets/CalorieConstants';
+import { TimeContext } from './TimeContext';
 
 const UserContextLayout = () => {
     const user = 'justin';
