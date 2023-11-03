@@ -46,21 +46,21 @@ function UpdateCalorieForm(){
     return(
         <div>
         
-    <Form className = "full-form">
+    <Form className = "full-form" style={{marginLeft: '1400px', display: 'flex', alignItems: 'center' }}>
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ display: 'flex', alignItems: 'center' }}>
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px'}}>Caloric Intake&nbsp;&nbsp;&nbsp;</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-900px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
-           <Form.Control type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '105px', border: '3px solid purple' }}/>
+           <Form.Control type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-390px', border: '3px solid purple'}}/>
           </div>
         </div>
         </div>
-        <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
+      <Button input type = "button" variant = "warning" style={{display: "inline", marginLeft: '-900px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
     </Form>
     </div>
    

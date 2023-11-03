@@ -38,38 +38,44 @@ function SetWorkoutPage(){
   
               }
         })
-       
-        }
 
+    }
     
-    localStorage.setItem("user",JSON.stringify(current_user))
-    return (<div className = "all-items">
-    <div className='title'>Choose a Workout</div>
-    <div className='directions'>Click an Icon or Submit Custom Workout Below</div>
-    <div className='images'>
+    return (<div className = "set-workout-page">
+    <br/> 
+    <br/>
+    <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{marginLeft: '50px', fontSize: '100px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)', width: '400px', borderRadius: '33px', paddingTop: '20px', paddingBottom: '20px'}}>Home</Button></Link>
+    <div className='title' style={{fontSize: '170px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft:'550px'}}>Choose a Workout</div>
+    <div className='directions' style={{marginLeft: '130px'}}>Click an Icon or Submit a Custom Workout Below</div>
+    <div className='images' style={{transform: 'scale(0.7)'}}>
     <Link to = "/bike"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={bike} className="bike"></img></Button></Link>
     <Link to = "/run"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={runner} className="runner"></img></Button></Link>
     <Link to = "/lift"><Button variant = "primary" style={{display: "inline"}} className ="runbutton" ><img src={lift} className="lift"></img></Button></Link>
     </div>
-    <div className='customworkout'>Submit a Custom Workout</div>
-    <div className='disclaimer'>Disclaimer: The app does not track calories for custom workouts</div>
-    <Form.Select aria-label="Default select example" onChange={e=>setWorkoutType(e.target.value)} className='goalbox'>
+    <div className='customworkout' style={{borderBottom: '3px solid black', display: 'inline-block' , fontSize: '130px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft:'590px', marginTop: '5px'}}>Custom Workout Form</div>
+    <div className='disclaimer' style={{fontSize: '80px', marginLeft:'100px'}}>Disclaimer: The app does not track calories for custom workouts!</div>
+    <Form.Select aria-label="Default select example" onChange={(e) => setWorkoutType(e.target.value)} className='goalbox' style={{marginLeft: '1000px', border: '2px solid purple'}}>
       <option>Choose your goal here!</option>
       <option value="Duration">Duration</option>
       <option value="Speed">Speed</option>
       <option value="Reps">Reps</option>
       <option value="Distance">Distance</option>
     </Form.Select>
-    <div className='personal'>Enter your personal best for your goal</div>
-    <div className='personaldescription'>i.e. if you chose duration for your goal, enter your longest duration session</div>
+    <br></br>
+    <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '100px', textAlign: 'center', marginLeft: '160px'}}>Enter your personal best for your goal</div>
+    <div className='personaldescription' style={{fontSize: '70px', textAlign: 'center' }}>i.e. if you chose duration for your goal, enter your longest duration session</div>
+    <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
     <form className="personalbox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPersonalBest(e.target.value)}/>  <br />
     </form>
-    <div className='goalnumber'>Enter your goal</div>
-    <form className="goalnumberbox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setGoal(e.target.value)}/>  <br />
+    </div>
+    <div className='goalnumber'  style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '100px', textAlign: 'center', marginLeft: '150px'}}>Enter your goal</div>
+    <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
+    <form className="goalnumberbox" style={{textAlign: 'center' }}>
+        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
-    <Button variant = "secondary" className="submitcustom" onClick = {setStuff}> Submit</Button>
+    </div>
+    <Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}}> Submit</Button>
     
     </div>)
 

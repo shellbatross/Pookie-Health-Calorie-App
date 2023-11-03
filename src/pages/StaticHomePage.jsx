@@ -47,9 +47,9 @@ function StaticHomePage(){
         <br/>
         <div className = "button-circle-wrapper">
         <div className = "main-buttons">
-        <Link to = "/goals"><Button variant = "primary" style={{display: "inline"}} className ="goalsbutton" >Goals🏅</Button></Link>
-        <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline"}} className = "caloriesbutton">Workout🏃‍♀️</Button></Link>
-        <Link to ="/userinfo"><Button variant = "info" style={{display: "inline"}} className = "workoutgoalsbutton">User Info📁</Button></Link>
+        <Link to = "/goals"><Button variant = "primary" style={{display: "inline", borderRadius: '20px'}} className ="goalsbutton" >Goals🏅</Button></Link>
+        <Link to = "/setworkout"><Button variant = "secondary" style={{display: "inline", borderRadius: '20px'}} className = "caloriesbutton">Workout🏃‍♀️</Button></Link>
+        <Link to ="/userinfo"><Button variant = "info" style={{display: "inline", borderRadius: '20px'}} className = "workoutgoalsbutton">User Info📁</Button></Link>
         </div>
         <PookieExp></PookieExp>
         <div className="circles">

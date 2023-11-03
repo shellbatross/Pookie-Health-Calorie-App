@@ -111,9 +111,9 @@ function GoalsPage(){
 
         <div class="flex-parent jc-center">
         {/* <div className="graph-btn"> */}
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" > Workout</Button>   &nbsp;
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" > Pace</Button>  &nbsp;
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="calories-graph" > Calories</Button>
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Pace</Button>  &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="calories-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Calories</Button>
         </div>
 
         {/* https://www.w3schools.com/bootstrap/bootstrap_forms.asp  bootstrap form style */}
