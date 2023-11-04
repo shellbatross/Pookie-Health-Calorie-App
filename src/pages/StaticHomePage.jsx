@@ -86,11 +86,14 @@ function StaticHomePage(){
         <Button variant="primary" className = "track-workout-button" style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', flex: 1, marginRight: '20px', paddingLeft: '100px', paddingRight: '100px', borderRadius: '30px'}} onClick ={()=>{setGetForm("workout")}}>Track workout
       </Button>
       <Button variant="secondary" className = "track-calories-button" style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', flex: 1, paddingLeft: '100px', paddingRight: '100px', borderRadius: '30px'}} onClick ={()=>{setGetForm("calories")}}>Track calories</Button>
-      </div>: getForm =="workout" ? <div className = "form-wrapper">
-      <UpdateForm></UpdateForm>
+      </div>: getForm =="workout" ? 
+        <div className = "form-wrapper">
+          <UpdateForm></UpdateForm>
         </div>
         :
-        <div className = "form-wrapper"><UpdateCalorieForm></UpdateCalorieForm></div>}       
+        <div className = "form-wrapper">
+          <UpdateCalorieForm></UpdateCalorieForm>
+        </div>} 
         
         </div>
         <br></br>
