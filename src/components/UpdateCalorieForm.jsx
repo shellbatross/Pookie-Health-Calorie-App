@@ -65,28 +65,33 @@ function UpdateCalorieForm(){
     <Form noValidate
           validated={validated}
           onSubmit={handleSubmit} 
-          className = "full-form" style={{marginLeft: '1400px', display: 'flex', alignItems: 'center' }}>
+          className = "full-form" 
+          // style={{marginLeft: '1400px', display: 'flex', alignItems: 'center' }}
+          >
 
     {/* <InputGroup className="my-2"> */}
             
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
-      <Form.Group className="mb-3" controlId="calories-input1">
+      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
       <div className="container">
-        <div className="row" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="row" 
+        // style={{ display: 'flex', alignItems: 'center' }}
+        >
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-900px'}}>Caloric Intake</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1100px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
            <Form.Control required 
-            type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-390px', border: '3px solid purple'}}/>
+            type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-560px', border: '3px solid purple'}}/>
 
-          <Form.Control.Feedback
+          <Form.Control.Feedback 
+          style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
               type="invalid"
               role="alert"
               data-validity={validity}
             >
-              Input required
+              Required
             </Form.Control.Feedback>
 
           </div>
@@ -94,7 +99,9 @@ function UpdateCalorieForm(){
         </div>
       </Form.Group>
       {/* </InputGroup> */}
-      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '-900px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+      <div id="outer"> <div id="inner"> 
+        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+      </div></div>
     </Form>
     </div>
 

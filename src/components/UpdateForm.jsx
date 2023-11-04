@@ -1,8 +1,9 @@
 import React from "react";
 import { useState,useContext,useEffect } from "react";
-import "./UpdateForm.scss"
+// import {setValidated, setValidity} from "./UpdateCalorieForm.jsx";
+import "./UpdateForm.scss";
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
@@ -161,23 +162,33 @@ function UpdateForm(){
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1040px'}}>Run Distance</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1100px', textAlign: 'left'}}>Run Distance</Form.Label>
         </div>
         <div className="col">
-        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-225px', marginRight: '-100px', border: '3px solid purple', paddingLeft: '100px'}}/>
+        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-700px', marginRight: '0px', border: '3px solid purple', paddingLeft: '20px'}}/>
+
+        {/* <Form.Control.Feedback 
+          style={{ marginLeft: '-120px'}}
+              className="font-weight-bold"
+              type="invalid"
+              role="alert"
+              data-validity={validity}
+            >
+              Required
+            </Form.Control.Feedback> */}
         </div>
         </div>
         </div>
       </Form.Group>
       
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" style={{marginLeft: 'auto', marginRight: 'auto', paddingLeft: '-555px', paddingRight: '-120px'}}>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" style={{marginLeft: 'auto', marginRight: 'auto'}}>
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-40px'}}>&nbsp;Run Duration</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '0px', textAlign: 'left'}}>&nbsp;Run Duration</Form.Label>
         </div>
         <div className="col">
-        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '10px', paddingRight: '70px'}}/>
+        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
         </div>
         </div>
         </div>
