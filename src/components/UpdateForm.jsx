@@ -30,50 +30,6 @@ function UpdateForm(){
     let error_modal = <></>
     console.log(current_user)
     //Bunch of useffects to keep track on each aspect of user,see if ring closes to update and confetti god this is so scuffed
-    useEffect(() => {
-        if(current_user["workout_set"]!=""){
-        const workout_set = current_user["workout_set"]
-        const active_workout_sub_obj = current_user["active_workouts"][workout_set]
-        const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set]
-        const goal_expression = String(active_workout_goal_sub_obj["current"]) + go_up_down_map[workout_set]+ String(active_workout_goal_sub_obj["goal"])
-        const ring_obj = current_user["rings"][workout_ring_key]
-        //If they closed the workout ring
-        if (active_workout_sub_obj["current"] >= active_workout_sub_obj["goal"]){
-          //They might also have closed the workout goal ring or not, I have to set whole obj at once if they did aaa
-          if (eval(goal_expression)){
-            console.log("hiss")
-            setUser({...current_user,
-              //Update rings closed 
-              rings:{
-              ...current_user["rings"],[workout_ring_key]:{
-                "workout":ring_obj["workout"]+1, 
-                "calories":ring_obj["calories"], 
-                "workout_goal":ring_obj["workout_goal"]+1}},
-              //Also reset stuff
-              active_workout_goals:"",active_workouts:"",workout_set:""
-            })
-            
-          
-          }
-          console.log("hass")
-          setUser({...current_user,
-            //Update rings closed 
-            rings:{
-            ...current_user["rings"],[workout_ring_key]:{
-              "workout":ring_obj["workout"]+1, 
-              "calories":ring_obj["calories"], 
-              "workout_goal":ring_obj["workout_goal"]}},
-            //Also reset stuff
-            active_workout_goals:"",active_workouts:"",workout_set:""
-          })
-          
-
-        }
-        
-      }
-      //regardless set to local storage and close the form
-      localStorage.setItem("user",JSON.stringify(current_user))
-      }, [current_user]); 
 
     function handleChange1(event){
         setInput1(event.target.value);
@@ -102,8 +58,7 @@ function UpdateForm(){
             ...current_user["rings"],[workout_ring_key]:{"workout":0, "calories":0, "workout_goal":0}},
             //Go update the new values of the current workout
             active_workouts:{
-              ...current_user["active_workouts"],[key]:{
-              ...current_user["active_workouts"][key], current: parseInt(current_user["active_workouts"][key]["current"])+parseInt(input1)}},
+              ...current_user["active_workouts"],[key]:{"current": parseInt(input1), "goal": current_user["active_workouts"][key]["goal"]}},
               //Go all the way inside pace, workout, and make a date for the new info of this workout
               workout_pace:{
                 ...current_user["workout_pace"],[key]:{
@@ -143,12 +98,11 @@ function UpdateForm(){
           
           
           })
-
         }
-        //Regardless of what happens update localstorage object, and then close the form
-        localStorage.setItem("user",JSON.stringify(current_user))
+        //Close the form
         setGetForm("");
         }
+        
 
 
     return(

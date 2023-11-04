@@ -1,5 +1,5 @@
 import React from "react";
-import {useState,useContext} from "react";
+import {useState,useContext,useEffect} from "react";
 import {ConfettiContext} from "../context/ConfettiContext";
 import {UserContext} from "../context/UserContext";
 import {TimeContext} from "../context/TimeContext";
@@ -26,17 +26,47 @@ function StaticHomePage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
+    
     const {current_user,setUser}= useContext(UserContext);
     const {confetti,setConfetti}=useContext(ConfettiContext);
     const {current_time,setTime} = useContext(TimeContext);
     const {getForm,setGetForm}= useContext(FormContext);
-
+    const workout_ring_key = String(current_time)
     const day = current_time
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_time)
+    useEffect(() => {
+      if(current_user["workout_set"]!=""){
+      console.log("meow")
+      const workout_set = current_user["workout_set"]
+      const active_workout_sub_obj = current_user["active_workouts"][workout_set]
+      const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set]
+      const ring_obj = current_user["rings"][workout_ring_key]
+      //If they closed the workout ring
+      console.log(active_workout_sub_obj["current"])
+      console.log(active_workout_sub_obj["goal"])
+      if (active_workout_sub_obj["current"] >= active_workout_sub_obj["goal"]){
+        console.log("meoweow")
+        //They might also have closed the workout goal ring or not, I have to set whole obj at once if they did aaa
+        setUser({...current_user,
+          //Update rings closed 
+          rings:{
+          ...current_user["rings"],[workout_ring_key]:{
+            "workout":ring_obj["workout"]+1, 
+            "calories":ring_obj["calories"], 
+            "workout_goal":ring_obj["workout_goal"]}},
+          //Also reset stuff
+          active_workout_goals:"",active_workouts:"",workout_set:""
+        })
 
-    // TODO: logic for confetti PLS ok - steph ∠( ᐛ 」∠)＿
+      }
+    }
+    //regardless set to local storage and close the form
+    localStorage.setItem("user",JSON.stringify(current_user))
+    }, [current_user]); 
+
+    // TODO: logic for confetti PLS ok confetti is now for 2 seconds if u close a ring only- steph ∠( ᐛ 」∠)＿
     // TODO: cursor: pointer for other clickable thingies ok what things - steph _(:τ」∠)_
     // TODO: labels for any button, undos for any action  -what labels, i thought i did undos before? _(:τ」∠)_
     return(

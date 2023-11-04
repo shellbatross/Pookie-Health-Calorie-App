@@ -19,12 +19,12 @@ function BikePage(){
             ...current_user,
             workout_goal_set: "Distance",
             workout_set: "Biking",
-            active_workouts: {"Biking":{"current":0,"goal":distance}},
-            active_workout_goals: {"Biking":{"current":0,"goal":pace}},
-            workout_pace:{
+            active_workouts: {"Biking":{"current":0,"goal":parseInt(distance)}},
+            active_workout_goals: {"Biking":{"current":0,"goal":parseInt(pace)}},
+            workout_pace:{  
                 ...current_user["workout_pace"],["Biking"]:{
                   ...current_user["workout_pace"]["Biking"],[current_time]:{
-                    "goal": pace, "avg_reached" : 0, "all_paces":[]
+                    "goal": parseInt(pace), "avg_reached" : 0, "all_paces":[]
                   }
   
                   }

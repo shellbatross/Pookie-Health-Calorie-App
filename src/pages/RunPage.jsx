@@ -23,12 +23,12 @@ function RunPage(){
             ...current_user,
             workout_goal_set: "Distance",
             workout_set: "Running",
-            active_workouts: {"Running":{"current":0,"goal":distance}},
-            active_workout_goals: {"Running":{"current":0,"goal":pace}},
+            active_workouts: {"Running":{"current":0,"goal":parseInt(distance)}},
+            active_workout_goals: {"Running":{"current":0,"goal":parseInt(pace)}},
             workout_pace:{
                 ...current_user["workout_pace"],["Running"]:{
                   ...current_user["workout_pace"]["Running"],[current_time]:{
-                    "goal": pace, "avg_reached" : 0, "all_paces":[]
+                    "goal": parseInt(pace), "avg_reached" : 0, "all_paces":[]
                   }
   
                   }

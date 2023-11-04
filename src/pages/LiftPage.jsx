@@ -21,12 +21,12 @@ function LiftPage(){
             ...current_user,
             workout_goal_set: "Reps",
             workout_set: "Lifting",
-            active_workouts: {"Lifting":{"current":0,"goal":reps}},
-            active_workout_goals: {"Lifting":{"current":0,"goal":weight}},
+            active_workouts: {"Lifting":{"current":0,"goal":parseInt(reps)}},
+            active_workout_goals: {"Lifting":{"current":0,"goal":parseInt(weight)}},
             workout_pace:{
                 ...current_user["workout_pace"],["Lifting"]:{
                   ...current_user["workout_pace"]["Lifting"],[current_time]:{
-                    "goal": weight, "avg_reached" : 0, "all_paces":[]
+                    "goal": parseInt(weight), "avg_reached" : 0, "all_paces":[]
                   }
   
                   }
