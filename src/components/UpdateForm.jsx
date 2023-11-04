@@ -38,8 +38,18 @@ function UpdateForm(){
     function handleChange2(event){
         setInput2(event.target.value);
     }
+    
+    
+    function GetAvg(all_elems,new_elem){
+      all_elems.push(new_elem)
+      let new_arr = all_elems
+      const sum = new_arr.reduce((a,b)=> a+b, 0)
+      const avg = Math.floor(sum/new_arr.length)
+      return avg
+    }
 
-    function UpdateStuff(){
+    function UpdateStuff(e){
+        e.preventDefault();
         //Check if any workout has been set at all, if theres nothing then give a warning
         if (current_user["workout_set"]===""){
           console.log("work on warning bitch")
@@ -49,31 +59,19 @@ function UpdateForm(){
         
         let key = String(current_user["workout_set"])
         console.log(workout_ring_key in current_user["rings"]);
-        //This looks god awful, but if its first time in the day i need to make a set of space for new info on this brand
-        //new god awful wretched beautiful day
-        if (workout_ring_key in current_user["rings"] === false){
-          console.log("hereee")
+
+        //Might need a new date to store workout data too
+        if(workout_ring_key in current_user["workout_pace"][key]===false){
           setUser({...current_user,
-            //Set space for a new ring at the date
-            rings:{
-            ...current_user["rings"],[workout_ring_key]:{"workout":0, "calories":0, "workout_goal":0}},
-            //Go update the new values of the current workout
-            active_workouts:{
-              ...current_user["active_workouts"],[key]:{"current": parseInt(input1), "goal": current_user["active_workouts"][key]["goal"]}},
-              //Go all the way inside pace, workout, and make a date for the new info of this workout
-              workout_pace:{
-                ...current_user["workout_pace"],[key]:{
-                ...current_user["workout_pace"][key],[workout_ring_key]:{
-                  "goal": current_user["active_workout_goals"][current_user["workout_set"]]["goal"], 
-                  "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
-                }
-
-                }
-              }
-
-          })
+            workout_pace:{
+              ...current_user["workout_pace"],[key]:{
+              ...current_user["workout_pace"][key],[workout_ring_key]:{
+                "goal": current_user["active_workout_goals"][current_user["workout_set"]]["goal"], 
+                "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
+              }  
+          }}})
         }
-        else{
+          
           console.log(current_user["workout_pace"][key][workout_ring_key]["avg_reached"])
           //Just update stuff
           setUser({...current_user, 
@@ -88,18 +86,15 @@ function UpdateForm(){
               ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
                 "goal": current_user["workout_pace"][key][workout_ring_key]["goal"], 
-                "avg_reached":current_user["workout_pace"][key][workout_ring_key]["avg_reached"] +parseInt(String(input2))
+                "avg_reached":GetAvg(current_user["workout_pace"][key][workout_ring_key]["all_paces"],parseInt(input2)),
+                "all_paces": current_user["workout_pace"][key][workout_ring_key]["all_paces"]
                 }
-
                 }
 
             }
             //Went to go get snack
           
-          
-          
           })
-        }
         //Close the form
         setGetForm("");
         }

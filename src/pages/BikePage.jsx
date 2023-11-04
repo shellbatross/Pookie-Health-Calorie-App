@@ -13,18 +13,19 @@ function BikePage(){
     const {current_time,setTime}=useContext(TimeContext);
     const [distance,setDistance]=useState(null);
     const [pace,setPace]=useState(null);
-    
+    console.log(distance)
+    console.log(pace)
     function setStuff(){
         setUser({
             ...current_user,
             workout_goal_set: "Distance",
             workout_set: "Biking",
             active_workouts: {"Biking":{"current":0,"goal":parseInt(distance)}},
-            active_workout_goals: {"Biking":{"current":0,"goal":parseInt(pace)}},
+            active_workout_goals: {"Biking":{"current":"good luck!","goal":parseInt(pace)}},
             workout_pace:{  
                 ...current_user["workout_pace"],["Biking"]:{
                   ...current_user["workout_pace"]["Biking"],[current_time]:{
-                    "goal": parseInt(pace), "avg_reached" : 0, "all_paces":[]
+                    "goal": parseInt(pace), "avg_reached":0 , "all_paces":[]
                   }
   
                   }

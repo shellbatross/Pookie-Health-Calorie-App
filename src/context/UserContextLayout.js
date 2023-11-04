@@ -31,8 +31,7 @@ const UserContextLayout = () => {
                     "10/22/2023": {"goal": 8 ,"avg_reached": 12, "all_paces": []},
                     "10/23/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []},
                     "10/24/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []},
-                    "10/25/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []}, 
-                    "10/26/2023":{"goal": 8,  "avg_reached": 8, "all_paces": []}
+                    "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": [12,13,14,17]}
                     },
       "Biking":{},
       "Lifting":{},

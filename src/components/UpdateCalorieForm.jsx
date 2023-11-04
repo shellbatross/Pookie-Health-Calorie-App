@@ -100,7 +100,7 @@ function UpdateCalorieForm(){
       </Form.Group>
       {/* </InputGroup> */}
       <div id="outer"> <div id="inner"> 
-        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbuttonCalories" onClick = {UpdateStuff}>Submit</Button>
       </div></div>
     </Form>
     </div>

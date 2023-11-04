@@ -11,7 +11,7 @@ import 'react-simple-keyboard/build/css/index.css';
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
-
+import { go_up_down_map } from "../ass-ets/WorkoutConstants";
 import speechbubble from "../ass-ets/speechbubble.png";
 import PookieExp from "../components/PookieExp";
 import {Link} from "react-router-dom";
@@ -36,6 +36,14 @@ function StaticHomePage(){
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_time)
+    
+    function fireConfetti(){
+      setConfetti("true")
+      setTimeout(() => {
+       setConfetti("False")
+    }, 10000);
+    }
+
     useEffect(() => {
       if(current_user["workout_set"]!=""){
       console.log("meow")
@@ -43,11 +51,53 @@ function StaticHomePage(){
       const active_workout_sub_obj = current_user["active_workouts"][workout_set]
       const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set]
       const ring_obj = current_user["rings"][workout_ring_key]
+      const goal_expression = String(active_workout_goal_sub_obj["current"]) 
+      + go_up_down_map[workout_set]+ String(active_workout_goal_sub_obj["goal"])
+      console.log(goal_expression)
+
       //If they closed the workout ring
       console.log(active_workout_sub_obj["current"])
       console.log(active_workout_sub_obj["goal"])
+      //Close pace ring
+      if (String(active_workout_goal_sub_obj["current"])!== "good luck!" && eval(goal_expression)){
+        fireConfetti();
+        //Close workout too 
+        if (active_workout_sub_obj["current"] >= active_workout_sub_obj["goal"]){
+          setUser({...current_user,
+            //Update rings closed 
+            rings:{
+            ...current_user["rings"],[workout_ring_key]:{
+              "workout":ring_obj["workout"]+1, 
+              "calories":ring_obj["calories"], 
+              "workout_goal":ring_obj["workout_goal"]+1 }},
+            //Also reset stuff
+            active_workout_goals:"",active_workouts:"",workout_set:""
+          })
+        }
+        //else they closed just the workout pace goal whatever you all wanna call it
+        else{
+          setUser({...current_user,
+            //Update rings closed 
+            rings:{
+            ...current_user["rings"],[workout_ring_key]:{
+              "workout":ring_obj["workout"], 
+              "calories":ring_obj["calories"], 
+              "workout_goal":ring_obj["workout_goal"]+1}},
+            //Also reset stuff
+            active_workout_goals: {
+            ...current_user["active_workout_goals"],[current_user["workout_set"]]:{
+              "current":"Reached","goal":"Reached"
+            }}
+          })
+
+        }
+
+
+      }
+
       if (active_workout_sub_obj["current"] >= active_workout_sub_obj["goal"]){
-        console.log("meoweow")
+        fireConfetti();
+
         //They might also have closed the workout goal ring or not, I have to set whole obj at once if they did aaa
         setUser({...current_user,
           //Update rings closed 
@@ -74,7 +124,7 @@ function StaticHomePage(){
         
         <div className="whole-site">
              
-        {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} width = {window.innerWidth} ></Confetti>: <></>}
+        {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} width = {window.innerWidth} ></Confetti>: <></>}
         <br/>
         
         <br/>

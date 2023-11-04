@@ -37,9 +37,12 @@ function EndDayButton(){
         arr_info[1] = String(arr_info[1]+1)
         arr_info[0]=String(arr_info[0])
         arr_info[2]=String(arr_info[2])
-        setTime(arr_info.join("/"))
-        //save calories and reset shit
-        setUser({...current_user, 
+        const new_day = arr_info.join("/")
+        setTime(new_day)
+        //save calories and reset shit, actually no matter what make a ring placeholderif (workout_ring_key in current_user["rings"] === false){
+        setUser({...current_user,
+            rings:{
+                ...current_user["rings"],[new_day]:{"workout":0, "calories":0, "workout_goal":0}},
             calories_per_day: {
                 ...current_user["calories_per_day"],[time]:{
                     "intake":current_user["calories"]["current"]
@@ -52,7 +55,7 @@ function EndDayButton(){
             active_workout_goals:""})
 
 
-            localStorage.setItem("time",JSON.stringify(arr_info.join("/")))
+            localStorage.setItem("time",JSON.stringify(new_day))
     }
     
     return(
