@@ -35,9 +35,9 @@ function RunPage(){
   
               }
         })
-        localStorage.setItem("user",JSON.stringify(current_user))
        
         }
+        localStorage.setItem("user",JSON.stringify(current_user))
 
 
     return (<div className = "all-items">

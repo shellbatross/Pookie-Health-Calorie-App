@@ -23,8 +23,8 @@ import SetWorkoutPage from './pages/SetWorkoutPage';
 import RunPage from './pages/RunPage';
 import BikePage from './pages/BikePage';
 import LiftPage from './pages/LiftPage';
+import ConfettiContextLayout from './context/ConfettiContextLayout.js';
 import UserContextLayout from './context/UserContextLayout';
-import WorkoutContextLayout from './context/TimeContextLayout';
 import FormContextLayout from './context/FormContextLayout';
 //I fucking hate hash routing i fucking hate hash routing
 //Need to let people go between tabs -> idkno put a header or something(?) also does the home page even count
@@ -38,6 +38,7 @@ function App() {
     if (session == null) {
     
         localStorage.removeItem('user');
+        localStorage.removeItem('time');
 
     }
     sessionStorage.setItem('register', 1);
@@ -56,6 +57,7 @@ window.addEventListener('load', clearStorage);
     <Route element = {<UserContextLayout></UserContextLayout>}>
     <Route element = {<TimeContextLayout></TimeContextLayout>}>
     <Route element = {<FormContextLayout></FormContextLayout>}>
+    <Route element = {<ConfettiContextLayout></ConfettiContextLayout>}>
     <Route path = "/helper" element = {<Time></Time>}></Route>
     <Route path = "/setworkout" element = {<SetWorkoutPage/>}></Route>
     <Route path = "/goals" element = {<GoalsPage/>}></Route>
@@ -64,6 +66,7 @@ window.addEventListener('load', clearStorage);
     <Route path = "/run" element = {<RunPage/>}></Route>
     <Route path = "/bike" element = {<BikePage/>}></Route>
     <Route path = "/lift" element = {<LiftPage/>}></Route>
+    </Route>
     </Route>
     </Route>
     </Route>

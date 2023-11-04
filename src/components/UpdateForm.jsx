@@ -27,9 +27,9 @@ function UpdateForm(){
     const [input2,setInput2] = useState("")
     const [needError, setNeedError]=useState("false")
     const workout_ring_key = String(current_time)
-    console.log(console.log(getForm))
     let error_modal = <></>
-    console.log(current_time)
+    console.log(current_user)
+    //Bunch of useffects to keep track on each aspect of user,see if ring closes to update and confetti god this is so scuffed
     useEffect(() => {
         if(current_user["workout_set"]!=""){
         const workout_set = current_user["workout_set"]
@@ -108,7 +108,8 @@ function UpdateForm(){
               workout_pace:{
                 ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
-                  "goal": current_user["active_workout_goals"]["workout_set"]["goal"], "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
+                  "goal": current_user["active_workout_goals"][current_user["workout_set"]]["goal"], 
+                  "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
                 }
 
                 }

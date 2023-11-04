@@ -31,9 +31,9 @@ function BikePage(){
   
               }
         })
-        localStorage.setItem("user",JSON.stringify(current_user))
        
         }
+        localStorage.setItem("user",JSON.stringify(current_user))
 
     
 

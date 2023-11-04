@@ -40,6 +40,7 @@ function SetWorkoutPage(){
         })
 
     }
+    localStorage.setItem("user",JSON.stringify(current_user))
     
     return (<div className = "set-workout-page">
     <br/> 

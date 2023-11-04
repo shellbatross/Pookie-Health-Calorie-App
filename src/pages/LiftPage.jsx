@@ -33,9 +33,9 @@ function LiftPage(){
   
               }
         })
-        localStorage.setItem("user",JSON.stringify(current_user))
        
         }
+        localStorage.setItem("user",JSON.stringify(current_user))
 
     return (<div className = "all-items">
     <img src={lift} className="lifter"></img>

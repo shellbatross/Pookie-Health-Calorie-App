@@ -52,8 +52,9 @@ function EndDayButton(){
             active_workout_goals:""})
 
 
-
+            localStorage.setItem("time",JSON.stringify(arr_info.join("/")))
     }
+    
     return(
       <div className = "whole-progress-bar">
         <Button variant="primary" className="end-day-button" onClick={handleChange} style={{marginLeft: '160px', fontSize: '80px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}><b>End Day</b></Button>{' '}

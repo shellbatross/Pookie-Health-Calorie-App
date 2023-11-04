@@ -1,5 +1,6 @@
 import React from "react";
 import {useState,useContext} from "react";
+import {ConfettiContext} from "../context/ConfettiContext";
 import {UserContext} from "../context/UserContext";
 import {TimeContext} from "../context/TimeContext";
 import {FormContext} from "../context/FormContext";
@@ -26,22 +27,24 @@ function StaticHomePage(){
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
     const {current_user,setUser}= useContext(UserContext);
+    const {confetti,setConfetti}=useContext(ConfettiContext);
     const {current_time,setTime} = useContext(TimeContext);
     const {getForm,setGetForm}= useContext(FormContext);
 
     const day = current_time
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
+    console.log(current_time)
 
-    // TODO: logic for confetti PLS
-    // TODO: cursor: pointer for other clickable thingies
-    // TODO: labels for any button, undos for any action
+    // TODO: logic for confetti PLS ok - steph ∠( ᐛ 」∠)＿
+    // TODO: cursor: pointer for other clickable thingies ok what things - steph _(:τ」∠)_
+    // TODO: labels for any button, undos for any action  -what labels, i thought i did undos before? _(:τ」∠)_
     return(
 
         
         <div className="whole-site">
              
-        <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} width = {window.innerWidth} ></Confetti>
+        {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} gravity = {10} width = {window.innerWidth} ></Confetti>: <></>}
         <br/>
         
         <br/>
