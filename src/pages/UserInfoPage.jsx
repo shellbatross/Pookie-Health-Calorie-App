@@ -103,7 +103,7 @@ function UserInfoPage(){
             <button type="button" className ='button' onClick = {handleClick} >Submit</button>
         </div>
 
-        <Link to = "/termsandconditions"><Button variant = "secondary" className="terms"> Terms and Conditions</Button></Link>
+        <Link to = "/termsandconditions"><Button variant = "secondary" className="termsbutton"> Terms and Conditions</Button></Link>
     </div>)
 
 }

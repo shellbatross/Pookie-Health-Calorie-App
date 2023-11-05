@@ -94,3 +94,11 @@ select {
     top: 10; /*[wherever you want it]*/
     left: 0; /*[wherever you want it]*/
 } 
+
+.termsbutton {
+    transform: scale(1);
+    color: white;
+    background-color: rgb(149, 98, 166);
+    margin-top: 190px;
+    margin-left: -40px;
+}

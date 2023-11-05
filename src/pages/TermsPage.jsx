@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 function TermsPage() {
     return (<div className = "all-items">
         <div className='termstitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Terms and Conditions</div>
-        <Accordion defaultActiveKey="0" className='accordion' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>
+        <Accordion defaultActiveKey="0" className='accordionterms' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>
         <Accordion.Item eventKey="1">
             <Accordion.Header>Acceptance of Terms and Conditions</Accordion.Header>
             <Accordion.Body>
@@ -39,7 +39,7 @@ function TermsPage() {
             </Accordion.Body>
         </Accordion.Item>
         </Accordion>
-        <Link to = "/home"><Button variant = "secondary" className="home"> Home</Button></Link>
+        <Link to = "/userinfo"><Button variant = "secondary" className="backtouserinfo"> Back to User Info</Button></Link>
         
         </div>)
         }
