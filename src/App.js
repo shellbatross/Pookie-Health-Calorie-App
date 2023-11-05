@@ -23,6 +23,7 @@ import SetWorkoutPage from './pages/SetWorkoutPage';
 import RunPage from './pages/RunPage';
 import BikePage from './pages/BikePage';
 import LiftPage from './pages/LiftPage';
+import TermsPage from './pages/TermsPage';
 import ConfettiContextLayout from './context/ConfettiContextLayout.js';
 import UserContextLayout from './context/UserContextLayout';
 import FormContextLayout from './context/FormContextLayout';
@@ -66,6 +67,7 @@ window.addEventListener('load', clearStorage);
     <Route path = "/run" element = {<RunPage/>}></Route>
     <Route path = "/bike" element = {<BikePage/>}></Route>
     <Route path = "/lift" element = {<LiftPage/>}></Route>
+    <Route path = "/termsandconditions" element = {<TermsPage/>}></Route>
     </Route>
     </Route>
     </Route>

@@ -1,9 +1,7 @@
 import React, {useContext,useState} from 'react';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from '../context/TimeContext';
-
 import run from '../ass-ets/running-icon-on-transparent-background-hi.png';
 import "./RunPage.scss"
 import {Link} from "react-router-dom";
