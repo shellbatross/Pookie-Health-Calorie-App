@@ -80,7 +80,7 @@ function UserInfoPage(){
         </div>
  
         <div class="container">
-        <label-2 htmlFor="sex">Sex: </label-2>
+        <label-2 htmlFor="sex">Sex </label-2>
         <select id="dropdown" className='sexx' onChange= {e=>setSex(e.target.value)} >
                     <option value="Unselected">No Option Selected</option>
                     <option value="F" >Female</option>
@@ -100,10 +100,14 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <div class="center">
-            <button type="button" className ='button' onClick = {handleClick} >Submit</button>
+            <button type="button" style={{fontSize: '27px'}} className ='button' onClick = {handleClick} >Submit</button>
         </div>
-
-        <Link to = "/termsandconditions"><Button variant = "secondary" className="termsbutton"> Terms and Conditions</Button></Link>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px', marginLeft: '20px', marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
     </div>)
 
 }

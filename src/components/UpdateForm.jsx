@@ -38,18 +38,8 @@ function UpdateForm(){
     function handleChange2(event){
         setInput2(event.target.value);
     }
-    
-    
-    function GetAvg(all_elems,new_elem){
-      all_elems.push(new_elem)
-      let new_arr = all_elems
-      const sum = new_arr.reduce((a,b)=> a+b, 0)
-      const avg = Math.floor(sum/new_arr.length)
-      return avg
-    }
 
-    function UpdateStuff(e){
-        e.preventDefault();
+    function UpdateStuff(){
         //Check if any workout has been set at all, if theres nothing then give a warning
         if (current_user["workout_set"]===""){
           console.log("work on warning bitch")
@@ -59,19 +49,31 @@ function UpdateForm(){
         
         let key = String(current_user["workout_set"])
         console.log(workout_ring_key in current_user["rings"]);
-
-        //Might need a new date to store workout data too
-        if(workout_ring_key in current_user["workout_pace"][key]===false){
+        //This looks god awful, but if its first time in the day i need to make a set of space for new info on this brand
+        //new god awful wretched beautiful day
+        if (workout_ring_key in current_user["rings"] === false){
+          console.log("hereee")
           setUser({...current_user,
-            workout_pace:{
-              ...current_user["workout_pace"],[key]:{
-              ...current_user["workout_pace"][key],[workout_ring_key]:{
-                "goal": current_user["active_workout_goals"][current_user["workout_set"]]["goal"], 
-                "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
-              }  
-          }}})
+            //Set space for a new ring at the date
+            rings:{
+            ...current_user["rings"],[workout_ring_key]:{"workout":0, "calories":0, "workout_goal":0}},
+            //Go update the new values of the current workout
+            active_workouts:{
+              ...current_user["active_workouts"],[key]:{"current": parseInt(input1), "goal": current_user["active_workouts"][key]["goal"]}},
+              //Go all the way inside pace, workout, and make a date for the new info of this workout
+              workout_pace:{
+                ...current_user["workout_pace"],[key]:{
+                ...current_user["workout_pace"][key],[workout_ring_key]:{
+                  "goal": current_user["active_workout_goals"][current_user["workout_set"]]["goal"], 
+                  "avg_reached": parseInt(String(input2)),"all_paces":[parseInt(String(input2))]
+                }
+
+                }
+              }
+
+          })
         }
-          
+        else{
           console.log(current_user["workout_pace"][key][workout_ring_key]["avg_reached"])
           //Just update stuff
           setUser({...current_user, 
@@ -86,15 +88,18 @@ function UpdateForm(){
               ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
                 "goal": current_user["workout_pace"][key][workout_ring_key]["goal"], 
-                "avg_reached":GetAvg(current_user["workout_pace"][key][workout_ring_key]["all_paces"],parseInt(input2)),
-                "all_paces": current_user["workout_pace"][key][workout_ring_key]["all_paces"]
+                "avg_reached":current_user["workout_pace"][key][workout_ring_key]["avg_reached"] +parseInt(String(input2))
                 }
+
                 }
 
             }
             //Went to go get snack
           
+          
+          
           })
+        }
         //Close the form
         setGetForm("");
         }
@@ -103,7 +108,6 @@ function UpdateForm(){
 
     return(
         <div>
-        
     <Form className = "full-form">
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
   
@@ -111,10 +115,10 @@ function UpdateForm(){
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1100px', textAlign: 'left'}}>Run Distance</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1040px', textAlign: 'left'}}>Run Distance&nbsp;&nbsp;&nbsp;&nbsp;</Form.Label>
         </div>
         <div className="col">
-        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-700px', marginRight: '0px', border: '3px solid purple', paddingLeft: '20px'}}/>
+        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-800px', marginRight: '1300px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateX(350px)'}}/>
 
         {/* <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
@@ -134,10 +138,10 @@ function UpdateForm(){
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '0px', textAlign: 'left'}}>&nbsp;Run Duration</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>Run Duration</Form.Label>
         </div>
         <div className="col">
-        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '0.001px'}}/>
         </div>
         </div>
         </div>

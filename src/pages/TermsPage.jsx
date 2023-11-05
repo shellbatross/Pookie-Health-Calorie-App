@@ -39,7 +39,7 @@ function TermsPage() {
             </Accordion.Body>
         </Accordion.Item>
         </Accordion>
-        <Link to = "/userinfo"><Button variant = "secondary" className="backtouserinfo"> Back to User Info</Button></Link>
+        <Link to = "/userinfo"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '20px', backgroundColor: 'rgb(75, 89, 181)', textAlign: 'center'}} className="backtouserinfo"> Back to User Info</Button></Link>
         
         </div>)
         }

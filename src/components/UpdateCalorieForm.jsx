@@ -73,17 +73,17 @@ function UpdateCalorieForm(){
     {/* <InputGroup className="my-2"> */}
             
       <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
-      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
+      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1550px', marginTop: '-30px'}}>
       <div className="container">
         <div className="row" 
         // style={{ display: 'flex', alignItems: 'center' }}
         >
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1100px'}}>Caloric Intake</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1600px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
            <Form.Control required 
-            type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-560px', border: '3px solid purple'}}/>
+            type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-800px', border: '3px solid purple', width: '300px'}}/>
 
           <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
