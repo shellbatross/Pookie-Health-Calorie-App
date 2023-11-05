@@ -76,8 +76,7 @@ function SetWorkoutPage(){
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
     </div>
-    <Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}}> Submit</Button>
-    
+    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}}> Submit</Button></Link>
     </div>)
 
     }

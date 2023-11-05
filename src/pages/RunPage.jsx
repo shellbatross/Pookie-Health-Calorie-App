@@ -58,7 +58,7 @@ function RunPage(){
     <form id="paceform" className="runpacebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPace(e.target.value)} />  <br />
     </form>
-    <Button variant = "secondary" className="submitrun" onClick = {setStuff}> Submit</Button>
+    <Link to = "/home"><Button variant = "secondary" className="submitrun" onClick = {setStuff}> Submit</Button></Link>
     
     </div>)
 
