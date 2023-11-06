@@ -27,10 +27,33 @@ function UpdateForm(){
     const [input1,setInput1] = useState("")
     const [input2,setInput2] = useState("")
     const [needError, setNeedError]=useState("false")
+
+
+  
+
     const workout_ring_key = String(current_time)
     let error_modal = <></>
     console.log(current_user)
     //Bunch of useffects to keep track on each aspect of user,see if ring closes to update and confetti god this is so scuffed
+
+    const [validated, setValidated] = useState(false);
+    // Hook to store the result of the validation
+    const [validity, setValidity] = useState(false);
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      console.log("============= PLEASEEEEEEEEEEEEEEEEEEEEEEE");
+      const form = e.currentTarget;
+
+        
+      console.log("form : ", form);
+      // Persist the result of the validation
+      setValidity(form.checkValidity());
+      console.log("form validation: ", form.checkValidity());
+
+      setValidated(true);
+    };
 
     function handleChange1(event){
         setInput1(event.target.value);
@@ -101,26 +124,33 @@ function UpdateForm(){
           })
         }
         //Close the form
-        setGetForm("");
+        setGetForm(""); // TODO: idk i had this hidden a second ago
         }
         
 
-
     return(
         <div>
-    <Form className = "full-form">
+        
+    <Form noValidate
+          validated={validated}
+          onSubmit={handleSubmit} 
+          className = "full-form">
+
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
   
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
+      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
         <div className="container">
         <div className="row">
         <div className="col">
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1040px', textAlign: 'left'}}>Run Distance&nbsp;&nbsp;&nbsp;&nbsp;</Form.Label>
         </div>
         <div className="col">
-        <Form.Control type="number" classNamme="homepage-input" rows={1}placeholder="10" onChange={handleChange1} style={{ marginLeft: '-800px', marginRight: '1300px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateX(350px)'}}/>
+        <Form.Control required type="number" className="homepage-input" rows={1} placeholder="10" 
+        // onChange={handleChange1} 
+        onInput={e=>setInput1(e.target.value)}
+        style={{ marginLeft: '-700px', marginRight: '0px', border: '3px solid purple', paddingLeft: '20px'}}/>
 
-        {/* <Form.Control.Feedback 
+        <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
               type="invalid"
@@ -128,25 +158,41 @@ function UpdateForm(){
               data-validity={validity}
             >
               Required
-            </Form.Control.Feedback> */}
+            </Form.Control.Feedback>
+
         </div>
         </div>
         </div>
       </Form.Group>
       
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+      <Form.Group className="mb-3" style={{marginLeft: 'auto', marginRight: 'auto'}}>
         <div className="container">
         <div className="row">
         <div className="col">
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>Run Duration</Form.Label>
         </div>
         <div className="col">
-        <Form.Control as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" onChange = {handleChange2} style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '0.001px'}}/>
+        <Form.Control required as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" 
+        // onChange = {handleChange2} 
+        onInput={e=>setInput2(e.target.value)}
+        style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        
+        <Form.Control.Feedback 
+          style={{ marginLeft: '-120px'}}
+              className="font-weight-bold"
+              type="invalid"
+              role="alert"
+              data-validity={validity}
+            >
+              Required
+            </Form.Control.Feedback>
+
         </div>
         </div>
         </div>
-        <Button input type = "button" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       </Form.Group>
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+
     </Form>
     {error_modal}
     </div>

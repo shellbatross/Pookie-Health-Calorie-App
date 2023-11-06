@@ -7,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import Modal from 'react-bootstrap/Modal';
+// import { validated, setValidated, validity, setValidity, handleSubmit } from '../ass-ets/Validation.js';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
@@ -52,10 +53,16 @@ function UpdateCalorieForm(){
         e.preventDefault();
     
         const form = e.currentTarget;
+
+        
+        console.log("form : ", form);
         // Persist the result of the validation
         setValidity(form.checkValidity());
+        console.log("form validation: ", form.checkValidity());
+
         setValidated(true);
       };
+
 
 
     localStorage.setItem("user",JSON.stringify(current_user))
@@ -100,9 +107,9 @@ function UpdateCalorieForm(){
         </div>
       </Form.Group>
       {/* </InputGroup> */}
-      <div id="outer"> <div id="inner"> 
-        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
-      </div></div>
+      {/* <div id="outer"> <div id="inner">  */}
+        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbuttonCalories" onClick = {UpdateStuff}>Submit</Button>
+      {/* </div></div> */}
     </Form>
     </div>
 
