@@ -16,3 +16,17 @@ export const go_up_down_map = {
     "Lifting": ">=",
     "Other": ">=",
 }
+
+export const formWorkoutText = {
+    "Running": {"input1":"Run Distance", "input2":"Run Duration", "placeholder1":"10", "placeholder2":"40","metric1":"miles","metric2":"minutes"},
+    "Biking": {"input1":"Biking Distance", "input2":"Biking Duration", "placeholder1":"10", "placeholder2":"40","metric1":"miles","metric2":"minutes"},
+    "Lifting": {"input1":"Reps", "input2":"Weight", "placeholder1":"10", "placeholder2":"40","metric1":"reps","metric2":"pounds"},
+}
+
+export const otherWorkoutText = {
+    "Duration":{"metric":"Distance"},
+    "Speed":{"metric":"Distance"}
+}
+export function formulaForPace(distance,time){
+    return Math.floor(time/distance)
+}

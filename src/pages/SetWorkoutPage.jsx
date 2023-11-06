@@ -24,10 +24,10 @@ function SetWorkoutPage(){
     function setStuff(){
         setUser({
             ...current_user,
-            workout_goal_set:   workoutType === null ? current_user["workout_goal_set"]: workoutType,
+            workout_goal_set: workoutType,
             workout_set: "Other",
             active_workouts: {"Other":{"current":0,"goal":goal}},
-            active_workout_goals: {"Other":{"current":pb,"goal":goal}},
+            active_workout_goals: {"Other":{"current":"good luck!","goal":goal}},
             workout_pace:{
                 ...current_user["workout_pace"],["Other"]:{
                   ...current_user["workout_pace"]["Other"],[current_time]:{
@@ -39,8 +39,10 @@ function SetWorkoutPage(){
               }
         })
 
+        
+        localStorage.setItem("user",JSON.stringify(current_user))
     }
-    localStorage.setItem("user",JSON.stringify(current_user))
+    
     
     return (<div className = "set-workout-page">
     <br/> 
@@ -63,20 +65,22 @@ function SetWorkoutPage(){
       <option value="Distance">Distance</option>
     </Form.Select>
     <br></br>
-    <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '100px', textAlign: 'center', marginLeft: '160px'}}>Enter your personal best for your goal</div>
-    <div className='personaldescription' style={{fontSize: '70px', textAlign: 'center' }}>i.e. if you chose duration for your goal, enter your longest duration session</div>
+    <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '90px', textAlign: 'center', marginLeft: '160px' }}>Enter how much or how long or this workout you are doing</div>
+    <div className='personaldescription' style={{fontSize: '60px', textAlign: 'center' }}>i.e. How many sit ups you are doing, how many miles you are swimming</div>
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
     <form className="personalbox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPersonalBest(e.target.value)}/>  <br />
+        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setGoal(e.target.value)}/>  <br />
     </form>
     </div>
     <div className='goalnumber'  style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '100px', textAlign: 'center', marginLeft: '150px'}}>Enter your goal</div>
+    <div className='personaldescription' style={{fontSize: '60px', textAlign: 'center' }}>i.e. Record of how many sit ups you have ever done, how fast you want to swim</div>
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
-    <form className="goalnumberbox" style={{textAlign: 'center' }}>
+        
+    <form className="goalnumberbox" style={{textAlign: 'center',marginTop: "-5px"}}>
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
     </div>
-    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}}> Submit</Button></Link>
+    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}} onClick={setStuff}> Submit</Button></Link>
     </div>)
 
     }

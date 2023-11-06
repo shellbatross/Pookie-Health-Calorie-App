@@ -48,20 +48,27 @@ function UpdateCalorieForm(){
       const [validated, setValidated] = useState(false);
       // Hook to store the result of the validation
       const [validity, setValidity] = useState(false);
-    
+
       const handleSubmit = (e) => {
         e.preventDefault();
     
+        console.log("============= PLEASEEEEEEEEEEEEEEEEEEEEEEE");
         const form = e.currentTarget;
-
-        
+  
+          
         console.log("form : ", form);
         // Persist the result of the validation
         setValidity(form.checkValidity());
         console.log("form validation: ", form.checkValidity());
-
+  
         setValidated(true);
+  
+        if(form.checkValidity()){
+          UpdateStuff();
+        }
       };
+    
+ 
 
 
 

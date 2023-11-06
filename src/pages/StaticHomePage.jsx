@@ -107,7 +107,7 @@ function StaticHomePage(){
             "calories":ring_obj["calories"], 
             "workout_goal":ring_obj["workout_goal"]}},
           //Also reset stuff
-          active_workout_goals:"",active_workouts:"",workout_set:""
+          active_workout_goals:"",active_workouts:"",workout_set:"", workout_goal_set:""
         })
 
       }
@@ -124,7 +124,7 @@ function StaticHomePage(){
         
         <div className="whole-site">
              
-        {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} width = {window.innerWidth} ></Confetti>: <></>}
+        {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} width = {window.innerWidth} gravity = {1}></Confetti>: <></>}
         <br/>
         
         <br/>
@@ -150,7 +150,7 @@ function StaticHomePage(){
         <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{typeof(current_user["workout_pace"][current_user["workout_set"]]) === 'undefined' ? "":
         current_user["workout_pace"][current_user["workout_set"]][day]["avg_reached"]+ " / "+ 
         current_user["workout_pace"][current_user["workout_set"]][day]["goal"]}</h2>
-        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Pace:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>
+        <CircleProgress className = "workoutGoalCircle" props = {{"info":["Goal of Workout:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>
         </div>
         </div>
         </div>

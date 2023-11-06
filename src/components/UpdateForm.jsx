@@ -8,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
-import { go_up_down_map } from "../ass-ets/WorkoutConstants";
+import { formulaForPace, formWorkoutText } from "../ass-ets/WorkoutConstants";
 import redx from "../ass-ets/redx.png";
 
 function UpdateForm(){
@@ -27,11 +27,12 @@ function UpdateForm(){
     const [input1,setInput1] = useState("")
     const [input2,setInput2] = useState("")
     const [needError, setNeedError]=useState("false")
-
-
-  
-
     const workout_ring_key = String(current_time)
+    
+
+
+
+
     let error_modal = <></>
     console.log(current_user)
     //Bunch of useffects to keep track on each aspect of user,see if ring closes to update and confetti god this is so scuffed
@@ -53,6 +54,8 @@ function UpdateForm(){
       console.log("form validation: ", form.checkValidity());
 
       setValidated(true);
+
+      UpdateStuff();
     };
 
     function handleChange1(event){
@@ -63,6 +66,7 @@ function UpdateForm(){
     }
 
     function UpdateStuff(){
+        console.log("entered UpdateStuff");
         //Check if any workout has been set at all, if theres nothing then give a warning
         if (current_user["workout_set"]===""){
           console.log("work on warning bitch")
@@ -124,16 +128,49 @@ function UpdateForm(){
           })
         }
         //Close the form
-        setGetForm(""); // TODO: idk i had this hidden a second ago
+        setGetForm("");
         }
         
 
     return(
-        <div>
-        
+      <div>{current_user["workout_set"] === "" ? 
+      <div>
     <Form noValidate
           validated={validated}
           onSubmit={handleSubmit} 
+          className = "full-form" 
+          // style={{marginLeft: '1400px', display: 'flex', alignItems: 'center' }}
+          >
+
+    {/* <InputGroup className="my-2"> */}
+            
+      <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
+      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1550px', marginTop: '-30px'}}>
+      <div className="container">
+        <div className="row" 
+        // style={{ display: 'flex', alignItems: 'center' }}
+        >
+          <div className="col">
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1800px',marginTop: "5px"}}>You need to go set a workout!</Form.Label>
+          </div>
+        </div>
+        </div>
+      </Form.Group>
+      {/* </InputGroup> */}
+      {/* <div id="outer"> <div id="inner">  */}
+       
+      {/* </div></div> */}
+    </Form>
+    </div>
+      
+      : current_user["workout_set"] === "Other" ? 
+      
+      
+      <div>
+        
+    <Form noValidate
+          validated={validated}
+          onSubmit={handleSubmit}
           className = "full-form">
 
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
@@ -141,14 +178,14 @@ function UpdateForm(){
       <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
         <div className="container">
         <div className="row">
+
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1040px', textAlign: 'left'}}>Run Distance&nbsp;&nbsp;&nbsp;&nbsp;</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left'}}>{current_user["workout_goal_set"]}</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required type="number" className="homepage-input" rows={1} placeholder="10" 
-        // onChange={handleChange1} 
+        <Form.Control required type="number" className="homepage-input" rows={1} 
         onInput={e=>setInput1(e.target.value)}
-        style={{ marginLeft: '-700px', marginRight: '0px', border: '3px solid purple', paddingLeft: '20px'}}/>
+        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px'}}/>
 
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
@@ -164,19 +201,75 @@ function UpdateForm(){
         </div>
         </div>
       </Form.Group>
-      
       <Form.Group className="mb-3" style={{marginLeft: 'auto', marginRight: 'auto'}}>
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>Run Duration</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>Time/Distance</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required as="textarea" className="homepage-input" rows={1} placeholder ="01:30 hours:minutes" 
+        <Form.Control required type="number" className="homepage-input" rows={1} 
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
         style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        <Form.Control.Feedback 
+          style={{ marginLeft: '-120px'}}
+              className="font-weight-bold"
+              type="invalid"
+              role="alert"
+              data-validity={validity}
+            >
+              Required
+            </Form.Control.Feedback>
+
+        </div>
         
+        </div>
+    
+        </div>
+      </Form.Group>
+      
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" >Submit</Button>
+
+    </Form>
+    {error_modal}
+    </div>
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      :
+
+      <div>
+        
+    <Form noValidate
+          validated={validated}
+          onSubmit={handleSubmit}
+          className = "full-form">
+
+      <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
+  
+      <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
+        <div className="container">
+        <div className="row">
+
+        <div className="col">
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left'}}>{formWorkoutText[current_user["workout_set"]]["input1"]}</Form.Label>
+        </div>
+        <div className="col">
+        <Form.Control required type="number" className="homepage-input" rows={1} placeholder={formWorkoutText[current_user["workout_set"]]["placeholder1"]+ " "+ formWorkoutText[current_user["workout_set"]]["metric1"]}
+        onInput={e=>setInput1(e.target.value)}
+        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px'}}/>
+
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
@@ -191,11 +284,45 @@ function UpdateForm(){
         </div>
         </div>
       </Form.Group>
-      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+      <Form.Group className="mb-3" style={{marginLeft: 'auto', marginRight: 'auto'}}>
+        <div className="container">
+        <div className="row">
+        <div className="col">
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>{formWorkoutText[current_user["workout_set"]]["input2"] }</Form.Label>
+        </div>
+        <div className="col">
+        <Form.Control required type="number" className="homepage-input" rows={1} placeholder ={formWorkoutText[current_user["workout_set"]]["placeholder2"] + " "+formWorkoutText[current_user["workout_set"]]["metric2"] }
+        // onChange = {handleChange2} 
+        onInput={e=>setInput2(e.target.value)}
+        style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        <Form.Control.Feedback 
+          style={{ marginLeft: '-120px'}}
+              className="font-weight-bold"
+              type="invalid"
+              role="alert"
+              data-validity={validity}
+            >
+              Required
+            </Form.Control.Feedback>
+
+        </div>
+        
+        </div>
+    
+        </div>
+      </Form.Group>
+      
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" >Submit</Button>
 
     </Form>
     {error_modal}
     </div>
+    
+      
+      }
+      </div>
+ 
+
     )
 
 }
