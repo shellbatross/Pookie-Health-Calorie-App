@@ -48,7 +48,6 @@ window.addEventListener('load', clearStorage);
   return (
     <Router>
     <Routes>
-    <Route exact path = "/"  element = {<Homepage></Homepage>}></Route>
     <Route path = "/tab1"  element = {<Tab1></Tab1>}></Route>
     <Route path = "/tab2" element = {<Tab2></Tab2>}></Route>
     <Route path = "/tab3" element = {<Tab3></Tab3>}></Route>
@@ -59,6 +58,7 @@ window.addEventListener('load', clearStorage);
     <Route element = {<TimeContextLayout></TimeContextLayout>}>
     <Route element = {<FormContextLayout></FormContextLayout>}>
     <Route element = {<ConfettiContextLayout></ConfettiContextLayout>}>
+    <Route exact path = "/"  element = {<StaticHomePage></StaticHomePage>}></Route>
     <Route path = "/helper" element = {<Time></Time>}></Route>
     <Route path = "/setworkout" element = {<SetWorkoutPage/>}></Route>
     <Route path = "/goals" element = {<GoalsPage/>}></Route>
