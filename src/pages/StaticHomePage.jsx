@@ -59,7 +59,7 @@ function StaticHomePage(){
       console.log(active_workout_sub_obj["current"])
       console.log(active_workout_sub_obj["goal"])
       //Close pace ring
-      if (String(active_workout_goal_sub_obj["current"])!== "good luck!" && eval(goal_expression)){
+      if (String(active_workout_goal_sub_obj["current"])!== "good luck!" && String(active_workout_goal_sub_obj["current"])!== "Reached"  && eval(goal_expression)){
         fireConfetti();
         //Close workout too 
         if (active_workout_sub_obj["current"] >= active_workout_sub_obj["goal"]){
@@ -84,10 +84,7 @@ function StaticHomePage(){
               "calories":ring_obj["calories"], 
               "workout_goal":ring_obj["workout_goal"]+1}},
             //Also reset stuff
-            active_workout_goals: {
-            ...current_user["active_workout_goals"],[current_user["workout_set"]]:{
-              "current":"Reached","goal":"Reached"
-            }}
+            active_workout_goals:"",active_workouts:"",workout_set:""
           })
 
         }

@@ -8,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
-import { formulaForPace, formWorkoutText } from "../ass-ets/WorkoutConstants";
+import { formulaForPace, formWorkoutText, anythingThatNeedsPace } from "../ass-ets/WorkoutConstants";
 import redx from "../ass-ets/redx.png";
 
 function UpdateForm(){
@@ -40,6 +40,33 @@ function UpdateForm(){
     const [validated, setValidated] = useState(false);
     // Hook to store the result of the validation
     const [validity, setValidity] = useState(false);
+    
+    function getCurrent(){
+    let all_info = current_user["active_workout_goals"][current_user["workout_set"]]["all"]
+    console.log(all_info)
+    let current_pace = 0
+    let current = 0
+    if (current_user["workout_goal_set"] in anythingThatNeedsPace || current_user["workout_set"] in anythingThatNeedsPace){
+      current_pace = formulaForPace(parseInt(input1),parseInt(input2))
+      all_info.push(parseInt(current_pace))
+      const sum_of_paces = all_info.reduce((a,b)=>b+a,0);
+
+      current = Math.floor(sum_of_paces/all_info.length)
+      
+    }
+    else{
+      all_info.push(parseInt(input2))
+      const sum_of_stuff = all_info.reduce((a,b)=>b+a,0);
+      current = Math.floor(sum_of_stuff/all_info.length)
+    }
+
+    return current
+    }
+
+    function pushV2(arr,elem){
+    arr.push(elem)
+    return arr}
+
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -97,8 +124,10 @@ function UpdateForm(){
 
                 }
               }
+              
+              }
 
-          })
+          )
         }
         else{
           console.log(current_user["workout_pace"][key][workout_ring_key]["avg_reached"])
@@ -115,13 +144,24 @@ function UpdateForm(){
               ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
                 "goal": current_user["workout_pace"][key][workout_ring_key]["goal"], 
-                "avg_reached":current_user["workout_pace"][key][workout_ring_key]["avg_reached"] +parseInt(String(input2))
+                "avg_reached":getCurrent(),
+                "all_paces":pushV2(current_user["workout_pace"][key][workout_ring_key]["all_paces"],(parseInt(input2)))
                 }
 
                 }
 
-            }
+            },
             //Went to go get snack
+
+            active_workout_goals:{
+              ...current_user["active_workouts"],[key]:
+              {"current": getCurrent(), 
+              "goal": current_user["active_workout_goals"][key]["goal"],
+              "all":pushV2(current_user["active_workout_goals"][key]["all"],(parseInt(input2)))
+            
+            }
+            
+            },
           
           
           

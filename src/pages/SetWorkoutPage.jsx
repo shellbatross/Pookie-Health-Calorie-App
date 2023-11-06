@@ -27,7 +27,7 @@ function SetWorkoutPage(){
             workout_goal_set: workoutType,
             workout_set: "Other",
             active_workouts: {"Other":{"current":0,"goal":goal}},
-            active_workout_goals: {"Other":{"current":"good luck!","goal":goal}},
+            active_workout_goals: {"Other":{"current":"good luck!","goal":goal, "all":[]}},
             workout_pace:{
                 ...current_user["workout_pace"],["Other"]:{
                   ...current_user["workout_pace"]["Other"],[current_time]:{

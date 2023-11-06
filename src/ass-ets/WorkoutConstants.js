@@ -17,6 +17,14 @@ export const go_up_down_map = {
     "Other": ">=",
 }
 
+export const anythingThatNeedsPace = {
+    "Running":true,
+    "Biking":true,
+    "Duration":true,
+    "Speed":true
+
+}
+
 export const formWorkoutText = {
     "Running": {"input1":"Run Distance", "input2":"Run Duration", "placeholder1":"10", "placeholder2":"40","metric1":"miles","metric2":"minutes"},
     "Biking": {"input1":"Biking Distance", "input2":"Biking Duration", "placeholder1":"10", "placeholder2":"40","metric1":"miles","metric2":"minutes"},
