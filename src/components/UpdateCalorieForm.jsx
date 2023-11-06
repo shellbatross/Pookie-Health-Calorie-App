@@ -93,7 +93,7 @@ function UpdateCalorieForm(){
             type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-800px', border: '3px solid purple', width: '300px'}}/>
 
           <Form.Control.Feedback 
-          style={{ marginLeft: '-120px'}}
+          style={{ marginLeft: '-420px'}}
               className="font-weight-bold"
               type="invalid"
               role="alert"
@@ -108,7 +108,7 @@ function UpdateCalorieForm(){
       </Form.Group>
       {/* </InputGroup> */}
       {/* <div id="outer"> <div id="inner">  */}
-        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbuttonCalories" onClick = {UpdateStuff}>Submit</Button>
+        <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", marginLeft: '400px'}} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
       {/* </div></div> */}
     </Form>
     </div>

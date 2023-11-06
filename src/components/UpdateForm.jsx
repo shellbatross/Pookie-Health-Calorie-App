@@ -53,6 +53,8 @@ function UpdateForm(){
       console.log("form validation: ", form.checkValidity());
 
       setValidated(true);
+
+      UpdateStuff();
     };
 
     function handleChange1(event){
@@ -63,6 +65,7 @@ function UpdateForm(){
     }
 
     function UpdateStuff(){
+        console.log("entered UpdateStuff");
         //Check if any workout has been set at all, if theres nothing then give a warning
         if (current_user["workout_set"]===""){
           console.log("work on warning bitch")
@@ -124,7 +127,7 @@ function UpdateForm(){
           })
         }
         //Close the form
-        setGetForm(""); // TODO: idk i had this hidden a second ago
+        setGetForm("");
         }
         
 
@@ -133,7 +136,7 @@ function UpdateForm(){
         
     <Form noValidate
           validated={validated}
-          onSubmit={handleSubmit} 
+          onSubmit={handleSubmit}
           className = "full-form">
 
       <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
@@ -191,7 +194,7 @@ function UpdateForm(){
         </div>
         </div>
       </Form.Group>
-      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" onClick = {UpdateStuff}>Submit</Button>
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" >Submit</Button>
 
     </Form>
     {error_modal}
