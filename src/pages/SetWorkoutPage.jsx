@@ -31,7 +31,7 @@ function SetWorkoutPage(){
             workout_pace:{
                 ...current_user["workout_pace"],["Other"]:{
                   ...current_user["workout_pace"]["Other"],[current_time]:{
-                    "goal": goal, "avg_reached" : pb, "all_paces":[]
+                    "goal": goal, "avg_reached" : 0, "all_paces":[]
                   }
   
                   }
