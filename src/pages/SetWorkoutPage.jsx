@@ -66,21 +66,21 @@ function SetWorkoutPage(){
     </Form.Select>
     <br></br>
     <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '90px', textAlign: 'center', marginLeft: '160px' }}>Enter how much or how long or this workout you are doing</div>
-    <div className='personaldescription' style={{fontSize: '60px', textAlign: 'center' }}>i.e. How many sit ups you are doing, how many miles you are swimming</div>
+    <div className='personaldescription' style={{fontSize: '68px', textAlign: 'center' }}>i.e. How many sit ups you are doing, how many miles you are swimming</div>
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
     <form className="personalbox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setGoal(e.target.value)}/>  <br />
     </form>
     </div>
     <div className='goalnumber'  style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '100px', textAlign: 'center', marginLeft: '150px'}}>Enter your goal</div>
-    <div className='personaldescription' style={{fontSize: '60px', textAlign: 'center' }}>i.e. Record of how many sit ups you have ever done, how fast you want to swim</div>
+    <div className='personaldescription' style={{fontSize: '68px', textAlign: 'center' }}>i.e. Record of how many sit ups you have ever done, how fast you want to swim</div>
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
         
     <form className="goalnumberbox" style={{textAlign: 'center',marginTop: "-5px"}}>
         <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
     </form>
     </div>
-    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px'}} onClick={setStuff}> Submit</Button></Link>
+    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px', fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}} onClick={setStuff}> Submit</Button></Link>
     </div>)
 
     }

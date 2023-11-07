@@ -57,7 +57,7 @@ function BikePage(){
     <form id="paceform" className="bikepacebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPace(e.target.value)} />  <br />
     </form>
-    <Link to = "/home"><Button variant = "secondary" className="submitbike" onClick = {setStuff}> Submit</Button></Link>
+    <Link to = "/home"><Button variant = "secondary" className="submitbike" onClick = {setStuff} style={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
     
     </div>)
 

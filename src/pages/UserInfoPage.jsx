@@ -100,7 +100,7 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <div class="center">
-            <button type="button" style={{fontSize: '27px'}} className ='button' onClick = {handleClick} >Submit</button>
+            <button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button>
         </div>
         <br></br>
         <br></br>

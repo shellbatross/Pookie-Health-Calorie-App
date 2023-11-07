@@ -55,7 +55,7 @@ function LiftPage(){
     <form id="paceform" className="pacebox">
         <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setWeight(e.target.value)}/>  <br />
     </form>
-    <Link to = "/home"><Button variant = "secondary" className="submitlift" onClick = {setStuff}> Submit</Button></Link>
+    <Link to = "/home"><Button variant = "secondary" className="submitlift" onClick = {setStuff} style={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
     
     </div>)
 
