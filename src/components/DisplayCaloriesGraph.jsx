@@ -33,19 +33,31 @@ function DisplayCaloriesGraph(){
     console.log("CALORIES LIST :   ", caloriesList);
     console.log("CALORIES : ", caloriesIn);
 
+    function maxYValue(){
+        let m = ((Math.ceil((Math.max(...caloriesIn))) % 5) + 1) * 5;
+        console.log("MAX X  :" , m);
+        return m;
+    }
+
+    function maxXValue(){
+        return dates.length + 1;
+    }
+
     return(<div className="display-calories-graph">
 
         <Plot className="graph" graphDiv="graph"
             data={[{
                 x: [1, 2, 3, 4, 5, 6, 7],
                 y: caloriesIn,
-                type: 'line',
-                marker: {color: 'red'},
+                type: 'bar',
+                marker: {color: '#9562a6'},
             }]}
 
             layout={ {width: 550, height: 450, title: 'Caloric Intake over Past 7 Days', tickmode: 'linear',
-                yaxis: {autorange: false, range: [0,  20], dtick: 1, title: {text: 'Calories'}},
-                xaxis: {autorange: false, range: [1, 8], dtick: 1, title: {text: 'Days'}}}}
+                yaxis: {autorange: false, range: [0, maxYValue()], dtick: 5, title: {text: 'Calories (in hundreds)'}},
+                xaxis: {autorange: false, range: [0, maxXValue()], dtick: 1, title: {text: 'Days'},
+                // colorway : ['#f3cec9', '#e7a4b6', '#cd7eaf']
+            }}}
         />
 
     </div>);

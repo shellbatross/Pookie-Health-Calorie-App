@@ -36,16 +36,33 @@ const UserContextLayout = () => {
         "10/24/2023": {'workout': 1, 'calories': 1, 'workout_goal': 1},
         "10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
       'workout_pace':{ 
-        "Running": {"10/21/2023": {"goal": 8 ,"avg_reached": 13, "all_paces": []},
-                    "10/22/2023": {"goal": 8 ,"avg_reached": 12, "all_paces": []},
-                    "10/23/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []},
-                    "10/24/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []},
-                    "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": [12,13,14,17]}
-                    },
-      "Biking":{"10/24/2023": {"goal": 8 ,"avg_reached": 16, "all_paces": []},
-        "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": []}},
-      "Lifting":{},
-      "Other": {}
+        "Running": {
+          "10/21/2023": {"goal": 8 ,"avg_reached": 13, "all_paces": []},
+          "10/22/2023": {"goal": 8 ,"avg_reached": 12, "all_paces": []},
+          "10/23/2023": {"goal": 8 ,"avg_reached": 10, "all_paces": []},
+          "10/24/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []},
+          "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": [12,13,14,17]}},
+
+      "Biking":{
+        "10/21/2023": {"goal": 10 ,"avg_reached": 15, "all_paces": []},
+        "10/22/2023": {"goal": 10 ,"avg_reached": 12, "all_paces": []},
+        "10/23/2023": {"goal": 10 ,"avg_reached": 13, "all_paces": []},
+        "10/24/2023": {"goal": 10 ,"avg_reached": 16, "all_paces": []},
+        "10/25/2023": {"goal": 10,"avg_reached": 14, "all_paces": []}},
+
+      "Lifting":{
+        "10/21/2023": {"goal": 6 ,"avg_reached": 3, "all_paces": []},
+        "10/22/2023": {"goal": 6 ,"avg_reached": 3, "all_paces": []},
+        "10/23/2023": {"goal": 6 ,"avg_reached": 4, "all_paces": []},
+        "10/24/2023": {"goal": 6 ,"avg_reached": 5, "all_paces": []},
+        "10/25/2023": {"goal": 6 ,"avg_reached": 4, "all_paces": []}},
+
+      "Other": {
+        "10/21/2023": {"goal": 30 ,"avg_reached": 19, "all_paces": []},
+        "10/22/2023": {"goal": 30 ,"avg_reached": 22, "all_paces": []},
+        "10/23/2023": {"goal": 30 ,"avg_reached": 23, "all_paces": []},
+        "10/24/2023": {"goal": 30 ,"avg_reached": 25, "all_paces": []},
+        "10/25/2023": {"goal": 30,"avg_reached": 27, "all_paces": []}}
       }
       
     }

@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Plot from 'react-plotly.js';
 import DisplayCaloriesGraph from "../components/DisplayCaloriesGraph.jsx";
 import DisplayWorkoutGraph from '../components/DisplayWorkoutGraph.jsx';
+import DisplayWorkoutGoalsGraph from '../components/DisplayWorkoutGoalsGraph.jsx';
 
 import './GoalsPage.scss';
 
@@ -13,8 +14,6 @@ let selectedGraph = [];
 let multipleLines = [];
 let graphType = "";
 const workoutTypes = ["Running", "Biking", "Lifting", "Other"];
-
-// TODO: make it so the graph is empty by default upon opening the page. may need to do as stephie does w the conditional form on homepage
 
 function GoalsPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -26,55 +25,30 @@ function GoalsPage(){
     console.log(current_user);
     console.log(current_time);
 
+    const [goals, setGoals] = useState({
+        x: [1, 2, 3, 4, 5, 6, 7],
+        y: progValues(),
+        // y: caloriesGraph(),
+        type: 'line',
+        mode: 'lines+markers',
+        marker: {color: 'red'},
+        name: 'Goals Progress'
+    });
 
-    //You can access whatever user info you want like this
-    // let days_by_attr = (current_user["workout_pace"]["Running"]);
-    //Turn it into array like this for info you may need 
-    // let dates = Object.keys(days_by_attr);
+    const [layout, setLayout] = useState({datarevision: 0});
 
-    // console.log("Running pace dates: ", dates);
-
-    // const graphs = {"Workout": [3, 5, 9, 0, 2, 6, 4],  // e.g. running goal of 5mi
-    //                 "Calories": [15, 16, 13, 14, 14, 18, 17],  // e.g. caloric intake of 1700 but the graph hates huge numbers so scaled down
-    //                 "Pace": [13, 12, 12, 10, 9, 10, 8, 9]};  // e.g. pace goal of 8m/mi
+    const [revision, setRevision] = useState(0);
 
     // user presses button to select what they want to be graphed (workout, pace, or calories)
     // this selects it
     function chooseGraph(gType){
-        // selectedGraph = graphs[graphType];
-        // console.log("Chosen Graph: ",selectedGraph);
         graphType = gType;
         console.log("Gtype = :", graphType);
+
+        goals.x = progValues();
+        setRevision(revision + 1);
+        layout.datarevision = revision + 1;
     }
-
-    function maxYValue(){
-        // return Math.max(...selectedGraph) + 1; // TODO: this needs to work without selectedGraph or i need to use selectedGraph properly
-        return 20; // TODO: fix
-    }
-
-    function maxXValue(){
-        // return dates.length;
-        return 7; // TODO: fix
-    }
-
-    // function foo(item, index){
-
-    //     let yValues = [];
-
-    //     for(var i = 0; i < dates.length; i++){
-    //         console.log("item: ", item);
-    //         let val = 9;
-    //         console.log("undefined somehow:", current_user["workout_pace"][item])
-            
-    //         // ["avg_reached"];
-    //         // let val = 7;
-    //         yValues[i] = val || 0;
-    //         selectedGraph[i] = val || 0;
-    //     }
-
-    //     multipleLines[index] = yValues;
-
-    // }
 
     function workoutGraph(){
         let WCG = [[],[],[]];
@@ -106,13 +80,9 @@ function GoalsPage(){
             name: 'Goal',
             type: 'bar'
         }];
-          
-        // let data = [trace1, trace2, trace3];
-        
+                  
         let layout = {barmode: 'stack'};
         
-        // Plot.newPlot('myDiv', data, layout);
-
         return [WCG, data, layout];
     }
 
@@ -177,131 +147,75 @@ function GoalsPage(){
         console.log("allLines 1:   ", allLines);
 
 
-        // for(var i = 0; i < days.length; i++) {}
-            // let incr = (parseInt(days[i].value) >= currGoal) ? 1 : 0;
-            // if (i === 0) {
-            //     goalsMet[i] = incr;
-            // } else {
-            //     goalsMet[i] = goalsMet[i - 1] + incr
-            // }
-
-            // for the literal value
-            // goalsMet[i] = parseInt(days[i].value) || 0;
-        // }
-
         return goalsMet;
         }
     }
 
-    // function caloriesGraph(){
-    //     let goalsMet = [];
-    //     selectedGraph = [];
-
-    //     let caloriesList = current_user['calories_per_day'];
-    //     let dates = Object.keys(caloriesList);
-
-    //     for(var i = 0; i < dates.length; i++){
-    //         let val = (caloriesList[dates[i]]["intake"] * 1.0) / 100;
-    //         goalsMet[i] = val || 0;
-    //         selectedGraph[i] = val || 0;
-    //     }
-
-    //     console.log("caloriesList :   ", caloriesList);
-    //     console.log("calories : ", goalsMet);
-    //     return goalsMet;
-    // }
-
-    // [WCG, data, layout] = workoutGraph();
-
-
     // https://legacy.reactjs.org/docs/hooks-state.html  used to understand hooks, referenced heavily
-    const [goals, setGoals] = useState({
-            x: [1, 2, 3, 4, 5, 6, 7],
-            y: progValues(),
-            // y: caloriesGraph(),
-            type: 'line',
-            mode: 'lines+markers',
-            marker: {color: 'red'},
-            name: 'Goals Progress'
-        });
+    // const [goals, setGoals] = useState({
+    //         x: [1, 2, 3, 4, 5, 6, 7],
+    //         y: progValues(),
+    //         // y: caloriesGraph(),
+    //         type: 'line',
+    //         mode: 'lines+markers',
+    //         marker: {color: 'red'},
+    //         name: 'Goals Progress'
+    //     });
 
-    const [layout, setLayout] = useState({datarevision: 0});
+    // const [layout, setLayout] = useState({datarevision: 0});
 
-    const [revision, setRevision] = useState(0);
+    // const [revision, setRevision] = useState(0);
 
-    const updateChart = () => { 
-        goals.x = progValues();
-        setRevision(revision + 1);
-        layout.datarevision = revision + 1;
-    };
+    // const updateChart = () => { 
+
+    // };
 
     // TODO: warn users if they don't have a week's worth of information. Should I allow it anyways?
-
-    // TODO: see if i can remove the submit button completely..
+    // TODO: change color of graphs if possible
+    // TODO: make some text for each of the graph types, just a description of what the graph shows 
     return (<div className="page">
         <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}>Home</Button></Link>
 
-        <h2 className="gptitle">Weekly Goal Progress</h2> <br />
-        <h4 className="goal-num">Current goal: 5 miles </h4>
+        &nbsp;
 
-        <p className="input-msg">Input 7 days worth of workout progress. </p> <br />
+        <h1 className="page-txt">Weekly Goal Progress</h1> <br />
+        <h4 className="page-txt">Input at least 7 days worth of workout progress. </h4> <br />
 
+
+        <h4 className="page-txt">Select a graph type to see your progress so far. </h4> <br />
         <div class="flex-parent jc-center">
-        {/* <div className="graph-btn"> */}
             <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp;
             <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Pace</Button>  &nbsp;
             <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="calories-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Calories</Button>
         </div>
 
-        {/* https://www.w3schools.com/bootstrap/bootstrap_forms.asp  bootstrap form style */}
-        {/* <form id="days-form" className="form-inline">
-        <label htmlFor="day1">Day 1:     </label>
-        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
-        
-        <label htmlFor="day2">Day 2:</label>
-        <input type="number" id="day2" name="days" min="0" placeholder="0" />  <br />
-
-        <label htmlFor="day3">Day 3:</label>
-        <input type="number" id="day3" name="days" min="0" placeholder="0" />  <br />
-
-        <label htmlFor="day4">Day 4:</label>
-        <input type="number" id="day4" name="days" min="0" placeholder="0" />  <br />
-
-        <label htmlFor="day5">Day 5:</label>
-        <input type="number" id="day5" name="days" min="0" placeholder="0" />  <br />
-        
-        <label htmlFor="day6">Day 6:</label>
-        <input type="number" id="day6" name="days" min="0" placeholder="0" />  <br />
-
-        <label htmlFor="day7">Day 7:</label>
-        <input type="number" id="day7" name="days" min="0" placeholder="0" />  
-        
-        </form> */}
         <br />
 
+        
+
+
         {/* https://www.w3schools.com/bootstrap/bootstrap_buttons.asp  bootstrap button style*/}
-        <button type="button" className ='button' onClick={() => updateChart()}>Submit</button> <br />
+
+        {/* <button type="button" className ='button' onClick={() => updateChart()}>Submit</button> <br /> */}
+
         {/* https://plotly.com/javascript/react/  used to understand Plot elements */}
         {/* https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb  heavily referenced information*/}
-        {graphType === "" ? <></> :   
+        {graphType === "Pace" ? <DisplayWorkoutGoalsGraph></DisplayWorkoutGoalsGraph> :   
             (graphType === "Calories" ? <DisplayCaloriesGraph></DisplayCaloriesGraph> : 
-                (graphType === "Workout" ? <DisplayWorkoutGraph></DisplayWorkoutGraph> : <></>))}
-        {/* <Plot className="graph" graphDiv="graph"
-            data={[{
-                x: [1, 2, 3, 4, 5, 6, 7],
-                y: progValues(),
-                type: 'line',
-                marker: {color: 'purple'},
-            }]}
-
-            layout={ {width: 550, height: 450, title: 'Goals Met Over the Past 7 Days', tickmode: 'linear',
-                yaxis: {autorange: false, range: [0,  maxYValue()], dtick: 1, title: {text: 'Goals Met'}},
-                xaxis: {autorange: false, range: [1, maxXValue()], dtick: 1, title: {text: 'Days'}}}}
-        />  */}
-
-        {/* TODO: still need to make the graph change labels based on what 
-            TODO: for calories, may be able to have the actual value (1700 instead of 17) if i change the y-axis tickmarks
-            TODO: add a horizontal line w their goal for whatever they selected (e.g. if running goal 5mi then y=5 on the graph*/}
+                (graphType === "Workout" ? <DisplayWorkoutGraph></DisplayWorkoutGraph> : 
+                
+                <Plot className="graph" graphDiv="graph"
+                data={[{
+                    x: [1, 2, 3, 4, 5, 6, 7],
+                    y: [0, 0, 0, 0, 0, 0, 0],
+                    type: 'line',
+                    marker: {color: 'blue'},
+                }]}
+    
+                layout={ {width: 550, height: 450, title: '', tickmode: 'linear',
+                    yaxis: {dtick: 1, title: {text: ''}},
+                    xaxis: {dtick: 1, title: {text: ''}}}}
+            /> ))}
 
     </div>)
 

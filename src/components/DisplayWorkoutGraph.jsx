@@ -35,17 +35,20 @@ function DisplayWorkoutGraph(){
         x: [1, 2, 3, 4, 5, 6, 7],
         y: WCG[0],
         name: 'Workout',
-        type: 'bar'
+        type: 'bar', 
+        marker: {'color': '#4b59b5'}
         }, {
         x: [1, 2, 3, 4, 5, 6, 7],
         y: WCG[1],
         name: 'Calories',
-        type: 'bar'
+        type: 'bar',
+        marker: {'color': '#54afd6'}
     }, {
         x: [1, 2, 3, 4, 5, 6, 7],
         y: WCG[2],
         name: 'Goal',
-        type: 'bar'
+        type: 'bar',
+        marker: {'color': '#97c8e1'}
     }];
             
     // let layout = {barmode: 'stack'};
@@ -56,7 +59,7 @@ function DisplayWorkoutGraph(){
             data={data}
 
             layout={ {width: 550, height: 450, title: 'Rings Completed over Past 7 Days', tickmode: 'linear',
-                yaxis: {dtick: 1, title: {text: '# of Rings'}},
+                yaxis: {dtick: 1, title: {text: 'Rings Closed'}},
                 xaxis: {dtick: 1, title: {text: 'Days'}},
                 barmode: 'stack'}}
         />
