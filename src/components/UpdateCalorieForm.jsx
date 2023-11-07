@@ -63,9 +63,6 @@ function UpdateCalorieForm(){
   
         setValidated(true);
   
-        if(form.checkValidity()){
-          UpdateStuff();
-        }
       };
     
  
