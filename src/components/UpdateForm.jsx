@@ -193,7 +193,7 @@ function UpdateForm(){
         // style={{ display: 'flex', alignItems: 'center' }}
         >
           <div className="col">
-           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1800px',marginTop: "5px"}}>You need to go set a workout!</Form.Label>
+           <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1800px',marginTop: "5px", transform: 'translateY(-70px)'}}>You need to go set a workout!</Form.Label>
           </div>
         </div>
         </div>
@@ -305,12 +305,12 @@ function UpdateForm(){
         <div className="row">
 
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left'}}>{formWorkoutText[current_user["workout_set"]]["input1"]}</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left', transform: 'translateY(-0.01px)'}}>{formWorkoutText[current_user["workout_set"]]["input1"]}</Form.Label>
         </div>
         <div className="col">
         <Form.Control required type="number" className="homepage-input" rows={1} placeholder={formWorkoutText[current_user["workout_set"]]["placeholder1"]+ " "+ formWorkoutText[current_user["workout_set"]]["metric1"]}
         onInput={e=>setInput1(e.target.value)}
-        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px'}}/>
+        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-150px)'}}/>
 
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
@@ -330,13 +330,13 @@ function UpdateForm(){
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>{formWorkoutText[current_user["workout_set"]]["input2"] }</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left', transform: 'translateY(-70px)'}}>{formWorkoutText[current_user["workout_set"]]["input2"] }</Form.Label>
         </div>
         <div className="col">
         <Form.Control required type="number" className="homepage-input" rows={1} placeholder ={formWorkoutText[current_user["workout_set"]]["placeholder2"] + " "+formWorkoutText[current_user["workout_set"]]["metric2"] }
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
-        style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        style={{ marginLeft: '40px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-80px)'}}/>
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
@@ -354,7 +354,7 @@ function UpdateForm(){
         </div>
       </Form.Group>
       
-      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" >Submit</Button>
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", transform: 'translateX(-150px)'}} className = "submitbutton" >Submit</Button>
 
     </Form>
     {error_modal}
