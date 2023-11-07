@@ -4,10 +4,17 @@ import { TimeContext } from '../context/TimeContext';
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Plot from 'react-plotly.js';
+import DisplayCaloriesGraph from "../components/DisplayCaloriesGraph.jsx";
+import DisplayWorkoutGraph from '../components/DisplayWorkoutGraph.jsx';
 
 import './GoalsPage.scss';
 
 let selectedGraph = [];
+let multipleLines = [];
+let graphType = "";
+const workoutTypes = ["Running", "Biking", "Lifting", "Other"];
+
+// TODO: make it so the graph is empty by default upon opening the page. may need to do as stephie does w the conditional form on homepage
 
 function GoalsPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
@@ -19,49 +26,156 @@ function GoalsPage(){
     console.log(current_user);
     console.log(current_time);
 
+
     //You can access whatever user info you want like this
-    let running_pace_info = (current_user["workout_pace"]["Running"])
+    // let days_by_attr = (current_user["workout_pace"]["Running"]);
     //Turn it into array like this for info you may need 
-    let dates = Object.keys(running_pace_info)
+    // let dates = Object.keys(days_by_attr);
 
-    console.log("Running pace dates: ", dates);
+    // console.log("Running pace dates: ", dates);
 
-    const graphs = {"Workout": [3, 5, 9, 0, 2, 6, 4],  // e.g. running goal of 5mi
-                    "Calories": [15, 16, 13, 14, 14, 18, 17],  // e.g. caloric intake of 1700 but the graph hates huge numbers so scaled down
-                    "Pace": [13, 12, 12, 10, 9, 10, 8, 9]};  // e.g. pace goal of 8m/mi
+    // const graphs = {"Workout": [3, 5, 9, 0, 2, 6, 4],  // e.g. running goal of 5mi
+    //                 "Calories": [15, 16, 13, 14, 14, 18, 17],  // e.g. caloric intake of 1700 but the graph hates huge numbers so scaled down
+    //                 "Pace": [13, 12, 12, 10, 9, 10, 8, 9]};  // e.g. pace goal of 8m/mi
 
     // user presses button to select what they want to be graphed (workout, pace, or calories)
     // this selects it
-    function chooseGraph(graphType){
-        selectedGraph = graphs[graphType];
-        console.log("Chosen Graph: ",selectedGraph);
+    function chooseGraph(gType){
+        // selectedGraph = graphs[graphType];
+        // console.log("Chosen Graph: ",selectedGraph);
+        graphType = gType;
+        console.log("Gtype = :", graphType);
     }
 
     function maxYValue(){
-        return Math.max(...selectedGraph) + 1;
+        // return Math.max(...selectedGraph) + 1; // TODO: this needs to work without selectedGraph or i need to use selectedGraph properly
+        return 20; // TODO: fix
     }
 
     function maxXValue(){
-        return dates.length;
+        // return dates.length;
+        return 7; // TODO: fix
+    }
+
+    // function foo(item, index){
+
+    //     let yValues = [];
+
+    //     for(var i = 0; i < dates.length; i++){
+    //         console.log("item: ", item);
+    //         let val = 9;
+    //         console.log("undefined somehow:", current_user["workout_pace"][item])
+            
+    //         // ["avg_reached"];
+    //         // let val = 7;
+    //         yValues[i] = val || 0;
+    //         selectedGraph[i] = val || 0;
+    //     }
+
+    //     multipleLines[index] = yValues;
+
+    // }
+
+    function workoutGraph(){
+        let WCG = [[],[],[]];
+        let ringsList = current_user["rings"];
+        let dates = Object.keys(ringsList);
+
+        for(var i = 0; i < dates.length; i++){
+            WCG[0][i] = ringsList[dates[i]]['workout'];
+            WCG[1][i] = ringsList[dates[i]]['calories'];
+            WCG[2][i] = ringsList[dates[i]]['workout_goal'];
+        }
+
+        console.log("RINGSS for W, C, G: ", WCG);
+
+        // graphing
+        var data = [{
+            x: [1, 2, 3, 4, 5, 6, 7],
+            y: WCG[0],
+            name: 'Workout',
+            type: 'bar'
+          }, {
+            x: [1, 2, 3, 4, 5, 6, 7],
+            y: WCG[1],
+            name: 'Calories',
+            type: 'bar'
+        }, {
+            x: [1, 2, 3, 4, 5, 6, 7],
+            y: WCG[2],
+            name: 'Goal',
+            type: 'bar'
+        }];
+          
+        // let data = [trace1, trace2, trace3];
+        
+        let layout = {barmode: 'stack'};
+        
+        // Plot.newPlot('myDiv', data, layout);
+
+        return [WCG, data, layout];
     }
 
     function progValues() {
-        var currGoal = 5;
+
+        console.log("please what the fuck is the graph type:  ", graphType);
+        if (graphType === "Calories"){
+            // return caloriesGraph();
+
+        } else if (graphType === "Workout") {
+            workoutGraph();
+        } else {
+
+        let currGoal = 5;
         // TODO: stop hardcoding this value...
-        var goalsMet = [];
+        let goalsMet = [];
+
+        let allLines = [];
+
+        // let loc = {...()};
+        // let dates = Object.keys(loc);
 
         // for(var i = 0; i < selectedGraph.length; i++){
         //     goalsMet[i] = selectedGraph[i] || 0;
 
         // }
 
-        
-        for(var i = 0; i < dates.length; i++){
-            goalsMet[i] = running_pace_info[dates[i]]["avg_reached"] || 0;
+        // RUNNING
 
+        let days_by_attr = (current_user["workout_pace"][workoutTypes[0]]);
+        let dates = Object.keys(days_by_attr);
+
+
+        for(var i = 0; i < dates.length; i++){
+            let val = days_by_attr[dates[i]]["avg_reached"];
+            goalsMet[i] = val || 0;
+            selectedGraph[i] = val || 0;
         }
 
-        console.log("list of values:", goalsMet);
+        // console.log("workoutType: ", workoutType);
+        allLines[0] = goalsMet;
+        console.log("allLines 0:   ", allLines);
+
+
+        // BIKING
+
+        days_by_attr = (current_user["workout_pace"]["Biking"]);
+        console.log("HELLO PLS BIKIG: ", current_user["workout_pace"])
+        dates = Object.keys(days_by_attr);
+
+        goalsMet = [];
+
+        for(var i = 0; i < dates.length; i++){
+            let val = days_by_attr[dates[i]]["avg_reached"];
+            goalsMet[i] = val || 0;
+            selectedGraph[i] = val || 0;
+
+            console.log("goalsmet: ", goalsMet);
+        }
+
+        allLines[1] = goalsMet;
+        console.log("allLines 1:   ", allLines);
+
 
         // for(var i = 0; i < days.length; i++) {}
             // let incr = (parseInt(days[i].value) >= currGoal) ? 1 : 0;
@@ -75,13 +189,36 @@ function GoalsPage(){
             // goalsMet[i] = parseInt(days[i].value) || 0;
         // }
 
-        return goalsMet
+        return goalsMet;
+        }
     }
+
+    // function caloriesGraph(){
+    //     let goalsMet = [];
+    //     selectedGraph = [];
+
+    //     let caloriesList = current_user['calories_per_day'];
+    //     let dates = Object.keys(caloriesList);
+
+    //     for(var i = 0; i < dates.length; i++){
+    //         let val = (caloriesList[dates[i]]["intake"] * 1.0) / 100;
+    //         goalsMet[i] = val || 0;
+    //         selectedGraph[i] = val || 0;
+    //     }
+
+    //     console.log("caloriesList :   ", caloriesList);
+    //     console.log("calories : ", goalsMet);
+    //     return goalsMet;
+    // }
+
+    // [WCG, data, layout] = workoutGraph();
+
 
     // https://legacy.reactjs.org/docs/hooks-state.html  used to understand hooks, referenced heavily
     const [goals, setGoals] = useState({
             x: [1, 2, 3, 4, 5, 6, 7],
             y: progValues(),
+            // y: caloriesGraph(),
             type: 'line',
             mode: 'lines+markers',
             marker: {color: 'red'},
@@ -146,7 +283,10 @@ function GoalsPage(){
         <button type="button" className ='button' onClick={() => updateChart()}>Submit</button> <br />
         {/* https://plotly.com/javascript/react/  used to understand Plot elements */}
         {/* https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb  heavily referenced information*/}
-        <Plot className="graph" graphDiv="graph"
+        {graphType === "" ? <></> :   
+            (graphType === "Calories" ? <DisplayCaloriesGraph></DisplayCaloriesGraph> : 
+                (graphType === "Workout" ? <DisplayWorkoutGraph></DisplayWorkoutGraph> : <></>))}
+        {/* <Plot className="graph" graphDiv="graph"
             data={[{
                 x: [1, 2, 3, 4, 5, 6, 7],
                 y: progValues(),
@@ -157,7 +297,7 @@ function GoalsPage(){
             layout={ {width: 550, height: 450, title: 'Goals Met Over the Past 7 Days', tickmode: 'linear',
                 yaxis: {autorange: false, range: [0,  maxYValue()], dtick: 1, title: {text: 'Goals Met'}},
                 xaxis: {autorange: false, range: [1, maxXValue()], dtick: 1, title: {text: 'Days'}}}}
-        /> 
+        />  */}
 
         {/* TODO: still need to make the graph change labels based on what 
             TODO: for calories, may be able to have the actual value (1700 instead of 17) if i change the y-axis tickmarks

@@ -24,8 +24,17 @@ const UserContextLayout = () => {
       'active_workouts': {'Running': {'current':2, 'goal':5}},
       'active_workout_goals': {'Running': {'current': 12, 'goal': 8,'all':[12,13,14,17]}},
       'calories': {'current':238, 'goal':Math.floor(caloricIntake("M",21,158,170))},
-      'calories_per_day':{"10/25/2023": {"intake": 1700}},
-      'rings': {"10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
+      'calories_per_day':{
+        "10/22/2023": {"intake": 1750},
+        "10/23/2023": {"intake": 1650},
+          "10/24/2023": {"intake": 1600},
+          "10/25/2023": {"intake": 1700}
+        },
+      'rings': {"10/21/2023": {'workout': 1, 'calories': 1, 'workout_goal': 2},
+      "10/22/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0},
+      "10/23/2023": {'workout': 0, 'calories': 1, 'workout_goal': 1},
+        "10/24/2023": {'workout': 1, 'calories': 1, 'workout_goal': 1},
+        "10/25/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0}},
       'workout_pace':{ 
         "Running": {"10/21/2023": {"goal": 8 ,"avg_reached": 13, "all_paces": []},
                     "10/22/2023": {"goal": 8 ,"avg_reached": 12, "all_paces": []},
@@ -33,7 +42,8 @@ const UserContextLayout = () => {
                     "10/24/2023": {"goal": 8 ,"avg_reached": 11, "all_paces": []},
                     "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": [12,13,14,17]}
                     },
-      "Biking":{},
+      "Biking":{"10/24/2023": {"goal": 8 ,"avg_reached": 16, "all_paces": []},
+        "10/25/2023": {"goal": 8 ,"avg_reached": 14, "all_paces": []}},
       "Lifting":{},
       "Other": {}
       }

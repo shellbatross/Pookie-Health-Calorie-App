@@ -82,7 +82,9 @@ function UpdateForm(){
 
       setValidated(true);
 
-      UpdateStuff();
+      if(form.checkValidity()){
+        UpdateStuff();
+      }
     };
 
     function handleChange1(event){
