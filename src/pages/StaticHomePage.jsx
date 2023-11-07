@@ -8,6 +8,7 @@ import EndDayButton from "../components/EndDayButton";
 import CircleProgress from "../components/CircleProgress";
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
+import {GrabMessage} from "../ass-ets/PookieMessages"
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
@@ -36,6 +37,8 @@ function StaticHomePage(){
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_time)
+
+    GrabMessage();
     
     function fireConfetti(){
       setConfetti("true")
@@ -154,8 +157,14 @@ function StaticHomePage(){
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
         
-        <pookie-box style={{borderRadius: '60px'}}>{messages['motivate'][0]}</pookie-box>
         
+        
+        
+        <pookie-box style={{borderRadius: '60px'}}>{GrabMessage()}</pookie-box>
+        
+
+
+
         </div>  
       
     <div className = "bottom-stuff" style ={{display:"flex", justifyContent: 'space-between'}}>
