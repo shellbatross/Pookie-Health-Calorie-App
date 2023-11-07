@@ -227,7 +227,7 @@ function UpdateForm(){
         <div className="col">
         <Form.Control required type="number" className="homepage-input" rows={1} 
         onInput={e=>setInput1(e.target.value)}
-        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px'}}/>
+        style={{ marginLeft: '-380px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-150px)'}}/>
 
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
@@ -247,13 +247,13 @@ function UpdateForm(){
         <div className="container">
         <div className="row">
         <div className="col">
-        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left'}}>Time/Distance</Form.Label>
+        <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left', transform: 'translateY(-90px)'}}>Time/Distance</Form.Label>
         </div>
         <div className="col">
         <Form.Control required type="number" className="homepage-input" rows={1} 
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
-        style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px'}}/>
+        style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-100px)'}}/>
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
@@ -271,7 +271,7 @@ function UpdateForm(){
         </div>
       </Form.Group>
       
-      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline" }} className = "submitbutton" >Submit</Button>
+      <Button role="button" input type = "submit" variant = "warning" style={{display: "inline", transform: 'translateX(-130px)'}} className = "submitbutton" >Submit</Button>
 
     </Form>
     {error_modal}
