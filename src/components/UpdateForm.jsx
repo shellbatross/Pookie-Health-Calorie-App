@@ -9,7 +9,7 @@ import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
 import { formulaForPace, formWorkoutText, anythingThatNeedsPace } from "../ass-ets/WorkoutConstants";
-import redx from "../ass-ets/redx.png";
+import purplex from "../ass-ets/purplex.png";
 
 function UpdateForm(){
     //Some of the most scuffed code i've done in a frontend lmao
@@ -186,7 +186,7 @@ function UpdateForm(){
 
     {/* <InputGroup className="my-2"> */}
             
-      <img src = {redx} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
+      <img src = {purplex} className= "red-x"  onClick={()=>{setGetForm("")}}></img>
       <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1550px', marginTop: '-30px'}}>
       <div className="container">
         <div className="row" 
@@ -215,7 +215,7 @@ function UpdateForm(){
           onSubmit={handleSubmit}
           className = "full-form">
 
-      <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
+      <img src = {purplex} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
   
       <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
         <div className="container">
@@ -298,7 +298,7 @@ function UpdateForm(){
           onSubmit={handleSubmit}
           className = "full-form">
 
-      <img src = {redx} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
+      <img src = {purplex} className = "red-x" onClick = {()=>{setGetForm("")}}></img>
   
       <Form.Group className="mb-3" style={{marginLeft:'500px', paddingLeft: '1000px'}}>
         <div className="container">
