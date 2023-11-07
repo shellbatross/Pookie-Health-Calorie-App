@@ -27,11 +27,11 @@ function SetWorkoutPage(){
             workout_goal_set: workoutType,
             workout_set: "Other",
             active_workouts: {"Other":{"current":0,"goal":goal}},
-            active_workout_goals: {"Other":{"current":"good luck!","goal":goal, "all":[]}},
+            active_workout_goals: {"Other":{"current":"good luck!","goal":pb, "all":[]}},
             workout_pace:{
                 ...current_user["workout_pace"],["Other"]:{
                   ...current_user["workout_pace"]["Other"],[current_time]:{
-                    "goal": goal, "avg_reached" : 0, "all_paces":[]
+                    "goal": pb, "avg_reached" : 0, "all_paces":[]
                   }
   
                   }
@@ -77,7 +77,7 @@ function SetWorkoutPage(){
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
         
     <form className="goalnumberbox" style={{textAlign: 'center',marginTop: "-5px"}}>
-        <input type="number" id="day1" name="days" min="0" placeholder="0" />  <br />
+        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPersonalBest(e.target.value)} />  <br />
     </form>
     </div>
     <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px', fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}} onClick={setStuff}> Submit</Button></Link>
