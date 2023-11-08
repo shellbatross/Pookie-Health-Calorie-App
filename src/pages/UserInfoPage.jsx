@@ -52,8 +52,8 @@ function UserInfoPage(){
         <Accordion.Body>
         <ul>
           <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Name: {current_user["name"]}</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Height: {current_user["height"]}</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight: {current_user["weight"]}</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Height: {current_user["height"]} cm</li>
+          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight: {current_user["weight"]} lbs</li>
           <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Age: {current_user["age"]}</li>
           <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Sex: {current_user["sex"]}</li>
           <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Fitness Level: {current_user["fitness_level"]}</li>
@@ -71,17 +71,17 @@ function UserInfoPage(){
 
         <div class="container">
         <label-2 htmlFor="age">Age </label-2>
-        <input type="text" id="age" name="age" placeholder="ex: 23" onInput={e=>setAge(e.target.value)}></input> <br></br>
+        <input type="number" id="age" name="age" placeholder="ex: 23" onInput={e=>setAge(e.target.value)}></input> <br></br>
         </div>
 
         <div class="container">
         <label-2 htmlFor="weight">Weight (lbs) </label-2>
-        <input type="text" id="weight" name="weight" placeholder="ex: 150" onInput={e=>setWeight(e.target.value)}></input> <br></br>
+        <input type="number" id="weight" name="weight" placeholder="ex: 150" onInput={e=>setWeight(e.target.value)}></input> <br></br>
         </div>
 
         <div class="container">
-        <label-2 htmlFor="calorie">Height </label-2>
-        <input type="text" id="calorie" name="calorie" placeholder="ex: 170" onInput={e=>setHeight(e.target.value)}></input> <br></br>
+        <label-2 htmlFor="calorie">Height (cm)</label-2>
+        <input type="number" id="calorie" name="calorie" placeholder="ex: 170" onInput={e=>setHeight(e.target.value)}></input> <br></br>
         </div>
  
         <div class="container">
@@ -112,7 +112,10 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <br></br>
-        <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px', marginLeft: '20px', marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
+        <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px',
+        marginLeft: '20px', 
+        // 110 to center ^
+        marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
         </form>
     </div>)
 

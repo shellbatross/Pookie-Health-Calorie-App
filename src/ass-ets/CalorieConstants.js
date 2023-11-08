@@ -5,6 +5,7 @@ export function caloricIntake(sex,age,weight,height) {
     console.log(age)
     console.log(weight)
     console.log(height)
+    weight = Math.floor(weight*0.45359237);
     let bmr = 0;
 
 

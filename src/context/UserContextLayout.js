@@ -18,7 +18,7 @@ const UserContextLayout = () => {
       'age': 21,
       'weight':158,
       'BMR': Math.floor(caloricIntake("M",21,158,170)),
-      'fitness_level':"Im stronk bitch",
+      'fitness_level':"Beginner",
       'workout_set':'Running',  
       'workout_goal_set': 'Running Pace',
       'active_workouts': {'Running': {'current':2, 'goal':5}},
