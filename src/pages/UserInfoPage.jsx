@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {UserContext} from "../context/UserContext";
+import { caloricIntake } from '../ass-ets/CalorieConstants';
 import {Link} from "react-router-dom";
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
@@ -22,15 +23,19 @@ function UserInfoPage(){
     //Oh right I need to put this into localstorage
     function handleClick(event){
         console.log(sex)
-        setUser(prevUserState=>({
-            ...prevUserState, 
-            name:   name === null ? "": name,
-            height: height === null ? "": height,
-            weight: weight === null ? "": weight,
-            age: age === null ? "": age,
-            sex: sex === null ? "": sex,
-            fitness_level: fitnessLevel=== null ? "": fitnessLevel,
-        }))
+        setUser({
+            ...current_user, 
+            name:   name === null ? current_user["name"]: name,
+            height: height === null ? current_user["height"]: height,
+            weight: weight === null ? current_user["weight"]: weight,
+            age: age === null ? current_user["age"]: age,
+            sex: sex === null ? current_user["sex"]: sex,
+            fitness_level: fitnessLevel=== null ? current_user["fitness_level"]: fitnessLevel,
+            BMR: Math.floor(caloricIntake(sex,age,weight,height)),
+            calories: {"current": current_user["calories"]["current"], "goal": Math.floor(caloricIntake(sex,age,weight,height))
+                
+            }
+        })
     
     }
     localStorage.setItem("user",JSON.stringify(current_user))
