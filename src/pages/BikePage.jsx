@@ -18,7 +18,7 @@ function BikePage(){
     function setStuff(){
         setUser({
             ...current_user,
-            workout_goal_set: "Distance",
+            workout_goal_set: "Speed",
             workout_set: "Biking",
             active_workouts: {"Biking":{"current":0,"goal":parseInt(distance)}},
             active_workout_goals: {"Biking":{"current":"good luck!","goal":parseInt(pace), "all":[]}},

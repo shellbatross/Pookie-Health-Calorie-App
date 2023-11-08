@@ -19,7 +19,7 @@ function RunPage(){
     function setStuff(){
         setUser({
             ...current_user,
-            workout_goal_set: "Distance",
+            workout_goal_set: "Speed",
             workout_set: "Running",
             active_workouts: {"Running":{"current":0,"goal":parseInt(distance)}},
             active_workout_goals: {"Running":{"current":"good luck!","goal":parseInt(pace), "all":[]}},

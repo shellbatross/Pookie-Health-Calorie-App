@@ -19,7 +19,7 @@ function LiftPage(){
     function setStuff(){
         setUser({
             ...current_user,
-            workout_goal_set: "Reps",
+            workout_goal_set: "Weight",
             workout_set: "Lifting",
             active_workouts: {"Lifting":{"current":0,"goal":parseInt(reps)}},
             active_workout_goals: {"Lifting":{"current":"good luck!","goal":parseInt(weight), "all":[]}},
@@ -48,14 +48,14 @@ function LiftPage(){
     <div className='repstitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Reps</div>
     <div className='repsdescription'>Enter the amount of reps</div>
     <form id="distanceform" className="distancebox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setReps(e.target.value)}/>  <br />
+        <input required type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setReps(e.target.value)}/>  <br />
     </form>
     <div className='weighttitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight</div>
     <div className='weightdescription'>Enter the weight that you want to lift (Pounds)</div>
     <form id="paceform" className="pacebox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setWeight(e.target.value)}/>  <br />
+        <input rquired type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setWeight(e.target.value)}/>  <br />
     </form>
-    <Link to = "/home"><Button variant = "secondary" className="submitlift" onClick = {setStuff} style={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
+    <Link to = "/home"><Button variant = "secondary" type className="submitlift" onClick = {setStuff} style={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
     
     </div>)
 

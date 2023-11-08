@@ -1,6 +1,10 @@
 //sex: M or F string
 //weight,height,age ints
 export function caloricIntake(sex,age,weight,height) {
+    console.log(sex)
+    console.log(age)
+    console.log(weight)
+    console.log(height)
     let bmr = 0;
 
 

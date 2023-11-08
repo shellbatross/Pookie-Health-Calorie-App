@@ -22,18 +22,17 @@ function UserInfoPage(){
     //My life really is just setting scuffed objects now 
     //Oh right I need to put this into localstorage
     function handleClick(event){
-        console.log(sex)
         setUser({
             ...current_user, 
-            name:   name === null ? current_user["name"]: name,
-            height: height === null ? current_user["height"]: height,
-            weight: weight === null ? current_user["weight"]: weight,
-            age: age === null ? current_user["age"]: age,
-            sex: sex === null ? current_user["sex"]: sex,
-            fitness_level: fitnessLevel=== null ? current_user["fitness_level"]: fitnessLevel,
-            BMR: Math.floor(caloricIntake(sex,age,weight,height)),
-            calories: {"current": current_user["calories"]["current"], "goal": Math.floor(caloricIntake(sex,age,weight,height))
-                
+            name:   !name ? current_user["name"]: name,
+            height: !height ? current_user["height"]: height,
+            weight: !weight ? current_user["weight"]: weight,
+            age: !age ? current_user["age"]: age,
+            sex: !sex ? current_user["sex"]: sex,
+            fitness_level: !fitnessLevel ? current_user["fitness_level"]: fitnessLevel,
+            BMR: !sex || !age || !weight || !height ? current_user["BMR"] : Math.floor(caloricIntake(sex,parseInt(age),parseInt(weight),parseInt(height))),
+            calories: {"current": current_user["calories"]["current"], "goal": !sex || !age || !weight || !height ? current_user["BMR"] : Math.floor(caloricIntake(sex,parseInt(age),parseInt(weight),parseInt(height)))
+        
             }
         })
     
@@ -46,6 +45,7 @@ function UserInfoPage(){
 
         <h1 className='page-title'> User Information </h1>
         <br></br>
+        <form>
         <Accordion style={{paddingLeft: '30px', marginLeft: '100px'}}>
       <Accordion.Item eventKey="0">
         <Accordion.Header style ={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '24px !important', border: "1px solid rgb(134, 76, 153)", backgroundColor: 'purple', fontWeight:"bold "}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Current Information</Accordion.Header>
@@ -105,7 +105,7 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <div class="center">
-            <button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button>
+            <Link to ="/home"><button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button></Link>
         </div>
         <br></br>
         <br></br>
@@ -113,6 +113,7 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px', marginLeft: '20px', marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
+        </form>
     </div>)
 
 }
