@@ -18,3 +18,55 @@ export function caloricIntake(sex,age,weight,height) {
 
     // TODO: calculate amr too (combines bmr with a value in relation to workout intensity desired)
 }
+
+//Burning calories: METS X 3.5 X BW (KG) / 200 = KCAL/MIN
+/*
+Running
+
+7 mph (8.5 min/mile) I am not doing this for every mile possible
+
+11.5
+
+conditioning exercise
+
+weight lifting (free weight, nautilus, or universal-type), powerlifting or bodybuilding, vigorous effort
+
+6.0
+
+Bicycling
+
+12-13.9 mph, moderate effort
+
+10.0
+
+Custom workout? Can't do that bro METS X 3.5 X BW (KG) / 200 = KCAL/MIN.
+*/
+
+
+function METSRunning(weight,time){
+    const pounds_in_kg = Math.floor(weight*0.45359237)
+    const tmp = (11.5*pounds_in_kg*3.5)/200
+    console.log(tmp)
+    const ans = Math.floor(tmp*time)
+    console.log(ans)
+    return ans
+}
+
+function METSBiking(weight,time){
+    const pounds_in_kg = Math.floor(weight*0.45359237)
+    const tmp = (10.0*pounds_in_kg*3.5)/200
+    console.log(tmp)
+    const ans = Math.floor(tmp*time)
+    console.log(ans)
+    return ans
+}
+
+function METSLifting(weight,reps){
+    const pounds_in_kg = Math.floor(weight*0.45359237)
+    const tmp = (6.0*pounds_in_kg*3.5)/200
+    const ans = Math.floor(tmp*reps)
+    return ans
+}
+
+export const MET_functions = {"Running":METSRunning, "Biking":METSBiking, "Lifting":METSLifting}
+

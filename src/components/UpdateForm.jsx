@@ -8,6 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import {UserContext} from "../context/UserContext";
 import { TimeContext } from "../context/TimeContext";
 import { FormContext } from "../context/FormContext";
+import { MET_functions } from "../ass-ets/CalorieConstants";
 import { formulaForPace, formWorkoutText, anythingThatNeedsPace } from "../ass-ets/WorkoutConstants";
 import purplex from "../ass-ets/purplex.png";
 
@@ -164,9 +165,15 @@ function UpdateForm(){
             }
             
             },
-          
-          
-          
+
+            calories: current_user["workout_set"]==="Other"? current_user["calories"] :
+            current_user["workout_set"]=== "Lifting" ?
+            {"current": current_user["calories"]["current"]-MET_functions[current_user["workout_set"]](parseInt(current_user["weight"]),parseInt(input1)),
+            "goal":current_user["calories"]["goal"]
+          } :
+            {"current": current_user["calories"]["current"]-MET_functions[current_user["workout_set"]](parseInt(current_user["weight"]),parseInt(input2)),
+            "goal":current_user["calories"]["goal"]
+          }
           })
         }
         //Close the form
