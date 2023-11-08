@@ -96,8 +96,8 @@ function GoalsPage(){
             workoutGraph();
         } else {
 
-        let currGoal = 5;
-        // TODO: stop hardcoding this value...
+        // let currGoal = 5;
+        // stop hardcoding this value...
         let goalsMet = [];
 
         let allLines = [];
@@ -170,28 +170,28 @@ function GoalsPage(){
 
     // };
 
-    // TODO: warn users if they don't have a week's worth of information. Should I allow it anyways?
-    // TODO: change color of graphs if possible
-    // TODO: make some text for each of the graph types, just a description of what the graph shows 
     return (<div className="page">
         <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}>Home</Button></Link>
 
         &nbsp;
 
-        <h1 className="page-txt">Weekly Goal Progress</h1> <br />
-        <h4 className="page-txt">Input at least 7 days worth of workout progress. </h4> <br />
+        <h1 className="page-txt"> Weekly Goal Progress </h1> <br />
+        <h4 className="top-info"> The following graphs can help you visualize your progress over the past week. </h4> <br />
 
-
-        <h4 className="page-txt">Select a graph type to see your progress so far. </h4> <br />
         <div class="flex-parent jc-center">
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp;
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Pace</Button>  &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp; &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Pace</Button>  &nbsp; &nbsp;
             <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="calories-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Calories</Button>
         </div>
 
         <br />
 
+        <div className="text-box">  
         
+            {graphType === "Pace" ? "Plots how much of your goal (e.g. pace) has been acheived per workout over the past 7 days or less. Click each point for the exact value." :   
+                (graphType === "Calories" ? "Plots your caloric intake for the past 7 days or less. Note that caloric information for a day is saved only after the day ends." : 
+                    (graphType === "Workout" ? "Plots the number of completed rings for each group (e.g. caloric intake) for the past 7 days or less." 
+                        : "Select a graph type to view and learn more."))} </div>
 
 
         {/* https://www.w3schools.com/bootstrap/bootstrap_buttons.asp  bootstrap button style*/}

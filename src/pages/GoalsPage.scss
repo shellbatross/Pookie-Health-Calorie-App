@@ -43,6 +43,26 @@ button.margin-right {
     text-align: center;
 }
 
+.top-info{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 500px;
+    text-align: center;
+    align-self: center;
+}
+
+.text-box{
+    border: 3px solid rgb(134, 76, 153);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    padding: 13px;
+    width: 400px;
+    height: 152px;
+}
+
 .goal-num{
     align-self: center;
 }

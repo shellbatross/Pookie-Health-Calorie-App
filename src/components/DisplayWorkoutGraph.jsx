@@ -21,12 +21,19 @@ function DisplayWorkoutGraph(){
     let WCG = [[],[],[]];
     let ringsList = current_user["rings"];
     let dates = Object.keys(ringsList);
+    dates = dates.slice(Math.max(dates.length - 7, 0));
 
     for(var i = 0; i < dates.length; i++){
         WCG[0][i] = ringsList[dates[i]]['workout'];
         WCG[1][i] = ringsList[dates[i]]['calories'];
         WCG[2][i] = ringsList[dates[i]]['workout_goal'];
     }
+
+    // let temp = Array(7 - dates.length).fill(0);
+
+    // WCG[0] = [...temp, ...WCG[0]];
+    // WCG[1] = [...temp, ...WCG[1]];
+    // WCG[2] = [...temp, ...WCG[2]];
 
     console.log("RINGSS for W, C, G: ", WCG);
 
@@ -60,7 +67,7 @@ function DisplayWorkoutGraph(){
 
             layout={ {width: 550, height: 450, title: 'Rings Completed over Past 7 Days', tickmode: 'linear',
                 yaxis: {dtick: 1, title: {text: 'Rings Closed'}},
-                xaxis: {dtick: 1, title: {text: 'Days'}},
+                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: 'Days'}},
                 barmode: 'stack'}}
         />
 

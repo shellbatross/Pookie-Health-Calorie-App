@@ -23,12 +23,18 @@ function DisplayCaloriesGraph(){
 
     let caloriesList = current_user['calories_per_day'];
     let dates = Object.keys(caloriesList);
+    dates = dates.slice(Math.max(dates.length - 7, 0));
+
 
     for(var i = 0; i < dates.length; i++){
-        let val = (caloriesList[dates[i]]["intake"] * 1.0) / 100;
+        // let val = (caloriesList[dates[i]]["intake"] * 1.0) / 100;
+        let val = caloriesList[dates[i]]["intake"];
         caloriesIn[i] = val || 0;
         selectedGraph[i] = val || 0;
     }
+
+    // let temp = Array(7 - dates.length).fill(0);
+    // caloriesIn = [...temp, ...caloriesIn];
 
     console.log("CALORIES LIST :   ", caloriesList);
     console.log("CALORIES : ", caloriesIn);
@@ -54,8 +60,8 @@ function DisplayCaloriesGraph(){
             }]}
 
             layout={ {width: 550, height: 450, title: 'Caloric Intake over Past 7 Days', tickmode: 'linear',
-                yaxis: {autorange: false, range: [0, maxYValue()], dtick: 5, title: {text: 'Calories (in hundreds)'}},
-                xaxis: {autorange: false, range: [0, maxXValue()], dtick: 1, title: {text: 'Days'},
+                yaxis: {dtick: 250, title: {text: 'Calories'}},
+                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: 'Days'},
                 // colorway : ['#f3cec9', '#e7a4b6', '#cd7eaf']
             }}}
         />

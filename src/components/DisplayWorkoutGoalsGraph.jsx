@@ -43,6 +43,7 @@ function DisplayWorkoutGoalsGraph(){
 
         let days_by_attr = (current_user["workout_pace"][workoutTypes[j]]);
         let dates = Object.keys(days_by_attr);
+        dates = dates.slice(Math.max(dates.length - 7, 0));
 
         for(var i = 0; i < dates.length; i++){
             let val = days_by_attr[dates[i]]["avg_reached"];
@@ -86,7 +87,7 @@ function DisplayWorkoutGoalsGraph(){
 
             layout={ {width: 550, height: 450, title: 'Workout Goals over Past 7 Days', tickmode: 'linear',
                 yaxis: {title: {text: 'Goal Reached'}},
-                xaxis: {dtick: 1, title: {text: 'Days'}}}}
+                xaxis: {autorange: false, range: [0.5, 7.5], dtick: 1, title: {text: 'Days'}}}}
         />
 
     </div>);
