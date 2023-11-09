@@ -65,9 +65,9 @@ function DisplayWorkoutGraph(){
         <Plot className="graph" graphDiv="graph"
             data={data}
 
-            layout={ {width: 550, height: 450, title: 'Rings Completed over Past 7 Days', tickmode: 'linear',
-                yaxis: {dtick: 1, title: {text: 'Rings Closed'}},
-                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: 'Days'}},
+            layout={ {width: 550, height: 450, title: '<b>Rings Completed over Past 7 Days</b>', tickmode: 'linear',
+                yaxis: {dtick: 1, title: {text: '<b>Rings Closed</b>'}},
+                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: '<b>Days</b>'}},
                 barmode: 'stack'}}
         />
 

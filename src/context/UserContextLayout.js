@@ -25,10 +25,11 @@ const UserContextLayout = () => {
       'active_workout_goals': {'Running': {'current': 12, 'goal': 8,'all':[12,13,14,17]}},
       'calories': {'current':238, 'goal':Math.floor(caloricIntake("M",21,158,170))},
       'calories_per_day':{
+        "10/21/2023": {"intake": 1790},
         "10/22/2023": {"intake": 1750},
         "10/23/2023": {"intake": 1650},
           "10/24/2023": {"intake": 1600},
-          "10/25/2023": {"intake": 1700}
+          // "10/25/2023": {"intake": 1700}
         },
       'rings': {"10/21/2023": {'workout': 1, 'calories': 1, 'workout_goal': 2},
       "10/22/2023": {'workout': 2, 'calories': 1, 'workout_goal': 0},

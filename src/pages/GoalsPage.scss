@@ -70,3 +70,8 @@ button.margin-right {
 .input-msg{
     align-self: center;
 }
+
+.graph-btn:active {
+    border-radius: 10px;
+    background-color: rgba(135, 180, 243, 0.65) !important;
+}

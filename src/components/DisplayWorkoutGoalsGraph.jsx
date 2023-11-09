@@ -85,9 +85,9 @@ function DisplayWorkoutGoalsGraph(){
         <Plot className="graph" graphDiv="graph"
             data={data}
 
-            layout={ {width: 550, height: 450, title: 'Workout Goals over Past 7 Days', tickmode: 'linear',
-                yaxis: {title: {text: 'Goal Reached'}},
-                xaxis: {autorange: false, range: [0.5, 7.5], dtick: 1, title: {text: 'Days'}}}}
+            layout={ {width: 550, height: 450, title: '<b>Workout Goals over Past 7 Days</b>', tickmode: 'linear',
+                yaxis: {title: {text: '<b>Goal Reached</b>'}},
+                xaxis: {autorange: false, range: [0.5, 7.5], dtick: 1, title: {text: '<b>Days</b>'}}}}
         />
 
     </div>);

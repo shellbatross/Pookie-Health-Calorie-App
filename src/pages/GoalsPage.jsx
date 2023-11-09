@@ -179,9 +179,9 @@ function GoalsPage(){
         <h4 className="top-info"> The following graphs can help you visualize your progress over the past week. </h4> <br />
 
         <div class="flex-parent jc-center">
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="workout-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp; &nbsp;
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="pace-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Pace</Button>  &nbsp; &nbsp;
-            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="calories-graph" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Calories</Button>
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="graph-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp; &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Pace")} className ="graph-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Goal </Button>  &nbsp; &nbsp;
+            <Button variant = "primary" size="lg" onClick={() => chooseGraph("Calories")} className ="graph-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Calories</Button>
         </div>
 
         <br />

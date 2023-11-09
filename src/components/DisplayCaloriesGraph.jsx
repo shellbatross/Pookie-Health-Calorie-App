@@ -59,9 +59,9 @@ function DisplayCaloriesGraph(){
                 marker: {color: '#9562a6'},
             }]}
 
-            layout={ {width: 550, height: 450, title: 'Caloric Intake over Past 7 Days', tickmode: 'linear',
-                yaxis: {dtick: 250, title: {text: 'Calories'}},
-                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: 'Days'},
+            layout={ {width: 550, height: 450, title: '<b>Caloric Intake over Past 7 Days</b>', tickmode: 'linear',
+                yaxis: {dtick: 250, title: {text: '<b>Calories</b>'}},
+                xaxis: {autorange: false, range: [0, 7.5], dtick: 1, title: {text: '<b>Days</b>'},
                 // colorway : ['#f3cec9', '#e7a4b6', '#cd7eaf']
             }}}
         />
