@@ -49,12 +49,12 @@ function RunPage(){
     <div className='distancetitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Distance</div>
     <div className='distancedescription'>Enter the distance you want to run (miles)</div>
     <form id="distanceform" className="rundistancebox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setDistance(e.target.value)}/>  <br />
+        <input type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setDistance(e.target.value)}/>  <br />
     </form>
     <div className='pacetitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Pace</div>
     <div className='pacedescription'>Enter the pace that you want to run at (miles per hour)</div>
     <form id="paceform" className="runpacebox">
-        <input type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setPace(e.target.value)} />  <br />
+        <input type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setPace(e.target.value)} />  <br />
     </form>
     <Link to = "/home"><Button variant = "secondary" className="submitrun" onClick = {setStuff} style ={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
     

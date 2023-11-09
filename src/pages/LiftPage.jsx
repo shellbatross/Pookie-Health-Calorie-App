@@ -48,12 +48,12 @@ function LiftPage(){
     <div className='repstitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Reps</div>
     <div className='repsdescription'>Enter the amount of reps</div>
     <form id="distanceform" className="distancebox">
-        <input required type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setReps(e.target.value)}/>  <br />
+        <input required type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setReps(e.target.value)}/>  <br />
     </form>
     <div className='weighttitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight</div>
     <div className='weightdescription'>Enter the weight that you want to lift (Pounds)</div>
     <form id="paceform" className="pacebox">
-        <input rquired type="number" id="day1" name="days" min="0" placeholder="0" onInput={e=>setWeight(e.target.value)}/>  <br />
+        <input required type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setWeight(e.target.value)}/>  <br />
     </form>
     <Link to = "/home"><Button variant = "secondary" type className="submitlift" onClick = {setStuff} style={{fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}}> Submit</Button></Link>
     
