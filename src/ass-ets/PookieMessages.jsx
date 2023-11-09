@@ -20,10 +20,10 @@ export function GrabMessage(){
     }
     
     let set = "Hi " + current_user["name"] + " you haven't set a workout yet! Head to the Workout tab to change that."
-    let run = ["Keep running " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try running a bit more " + current_user["name"] + ", you can do it!"]
-    let bike = ["Keep on biking " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try to bike some more " + current_user["name"] + ", you can do it!"]
-    let lift = ["Keep lifting " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Go for another set " + current_user["name"] + ", you can do it!"]
-    let custom = ["Keep working on your rings " + current_user["name"] + "! Log another workout to close your rings!", "Your rings are still incomplete. Go for another workout " + current_user["name"] + ", you can do it!"]
+    let run = ["Keep running " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try running a bit more " + current_user["name"] + ", you can do it!", "Try to focus on " + current_user["workout_goal_set"] + " when you go on your runs!"]
+    let bike = ["Keep on biking " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try to bike some more " + current_user["name"] + ", you can do it!", "Try to focus on " + current_user["workout_goal_set"] + " when you go biking!"]
+    let lift = ["Keep lifting " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Go for another set " + current_user["name"] + ", you can do it!", "Try to focus on " + current_user["workout_goal_set"] + " when you lift!"]
+    let custom = ["Keep working on your rings " + current_user["name"] + "! Log another workout to close your rings!", "Your rings are still incomplete. Go for another workout " + current_user["name"] + ", you can do it!", "Try to focus on " + current_user["workout_goal_set"] + " on your workouts!"]
     
     let msg = ""
     if(current_user["workout_set"] === "Running"){
