@@ -43,6 +43,7 @@ function EndDayButton(){
         setUser({...current_user,
             rings:{
                 ...current_user["rings"],[new_day]:{"workout":0, "calories":0, "workout_goal":0}},
+
             calories_per_day: {
                 ...current_user["calories_per_day"],[time]:{
                     "intake":current_user["calories"]["current"]
