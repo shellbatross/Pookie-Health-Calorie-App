@@ -100,7 +100,7 @@ function SetWorkoutPage(){
       <option value="Distance">Distance</option>
     </Form.Select>
     <br></br>
-    <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '90px', textAlign: 'center', marginLeft: '160px' }}>Enter how much or how long or this workout you are doing</div>
+    <div className='personal' style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '90px', textAlign: 'center', marginLeft: '160px' }}>Enter how much or how long of this workout you are doing</div>
     <div className='personaldescription' style={{fontSize: '68px', textAlign: 'center' }}>i.e. How many sit ups you are doing, how many miles you are swimming</div>
     <div style={{ display: 'flex', justifyContent: 'center', marginLeft: '-90px'}}>
     <form className="personalbox">
