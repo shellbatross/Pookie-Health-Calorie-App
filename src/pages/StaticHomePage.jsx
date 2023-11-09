@@ -159,15 +159,7 @@ function StaticHomePage(){
         </div>
         <div className = "pookie-inline-wrapper">
         <img src = {pookie} className = "pookie"></img>
-        
-        
-        
-        
         <pookie-box style={{borderRadius: '60px'}}>{GrabMessage()}</pookie-box>
-        
-
-
-
         </div>  
       
     <div className = "bottom-stuff" style ={{display:"flex", justifyContent: 'space-between'}}>
