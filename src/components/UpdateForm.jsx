@@ -234,7 +234,7 @@ function UpdateForm(){
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left'}}>{current_user["workout_goal_set"]}</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required type="number" className="homepage-input" rows={1} 
+        <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} 
         onInput={e=>setInput1(e.target.value)}
         style={{ marginLeft: '-380px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-150px)'}}/>
 
@@ -259,7 +259,7 @@ function UpdateForm(){
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left', transform: 'translateY(-90px)'}}>Time/Distance</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required type="number" className="homepage-input" rows={1} 
+        <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} 
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
         style={{ marginLeft: '55px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-100px)'}}/>
@@ -317,7 +317,7 @@ function UpdateForm(){
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', marginLeft: '-1080px', textAlign: 'left', transform: 'translateY(-0.01px)'}}>{formWorkoutText[current_user["workout_set"]]["input1"]}</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required type="number" className="homepage-input" rows={1} placeholder={formWorkoutText[current_user["workout_set"]]["placeholder1"]+ " "+ formWorkoutText[current_user["workout_set"]]["metric1"]}
+        <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} placeholder={formWorkoutText[current_user["workout_set"]]["placeholder1"]+ " "+ formWorkoutText[current_user["workout_set"]]["metric1"]}
         onInput={e=>setInput1(e.target.value)}
         style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-150px)'}}/>
 
@@ -342,7 +342,7 @@ function UpdateForm(){
         <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif',  marginLeft: '-10px', textAlign: 'left', transform: 'translateY(-70px)'}}>{formWorkoutText[current_user["workout_set"]]["input2"] }</Form.Label>
         </div>
         <div className="col">
-        <Form.Control required type="number" className="homepage-input" rows={1} placeholder ={formWorkoutText[current_user["workout_set"]]["placeholder2"] + " "+formWorkoutText[current_user["workout_set"]]["metric2"] }
+        <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} placeholder ={formWorkoutText[current_user["workout_set"]]["placeholder2"] + " "+formWorkoutText[current_user["workout_set"]]["metric2"] }
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
         style={{ marginLeft: '40px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-80px)'}}/>

@@ -93,7 +93,7 @@ function UpdateCalorieForm(){
            <Form.Label style = {{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize:'115px', marginLeft: '-1600px'}}>Caloric Intake</Form.Label>
           </div>
           <div className="col">
-           <Form.Control required 
+           <Form.Control required onWheel={(e) => e.target.blur()}
             type="number" rows={1}placeholder="300" onInput = {e=>setCalories(e.target.value)} style={{ marginLeft: '-800px', border: '3px solid purple', width: '300px'}}/>
 
           <Form.Control.Feedback 

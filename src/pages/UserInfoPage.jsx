@@ -71,17 +71,17 @@ function UserInfoPage(){
 
         <div class="container">
         <label-2 htmlFor="age">Age </label-2>
-        <input type="number" id="age" name="age" placeholder="ex: 23" onInput={e=>setAge(e.target.value)}></input> <br></br>
+        <input type="number" onWheel={(e) => e.target.blur()} id="age" name="age" placeholder="ex: 23" onInput={e=>setAge(e.target.value)}></input> <br></br>
         </div>
 
         <div class="container">
         <label-2 htmlFor="weight">Weight (lbs) </label-2>
-        <input type="number" id="weight" name="weight" placeholder="ex: 150" onInput={e=>setWeight(e.target.value)}></input> <br></br>
+        <input type="number" onWheel={(e) => e.target.blur()} id="weight" name="weight" placeholder="ex: 150" onInput={e=>setWeight(e.target.value)}></input> <br></br>
         </div>
 
         <div class="container">
         <label-2 htmlFor="calorie">Height (cm)</label-2>
-        <input type="number" id="calorie" name="calorie" placeholder="ex: 170" onInput={e=>setHeight(e.target.value)}></input> <br></br>
+        <input type="number" onWheel={(e) => e.target.blur()} id="calorie" name="calorie" placeholder="ex: 170" onInput={e=>setHeight(e.target.value)}></input> <br></br>
         </div>
  
         <div class="container">
