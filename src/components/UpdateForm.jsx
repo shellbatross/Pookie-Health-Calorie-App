@@ -147,7 +147,9 @@ function UpdateForm(){
               ...current_user["workout_pace"],[key]:{
                 ...current_user["workout_pace"][key],[workout_ring_key]:{
                 "goal": current_user["workout_pace"][key][workout_ring_key]["goal"], 
-                "avg_reached":getCurrent(),
+                "avg_reached": current_user["active_workout_goals"] === ""?
+                current_user["workout_pace"][key][workout_ring_key]["avg_reached"]
+                :getCurrent(),
                 "all_paces":pushV2(current_user["workout_pace"][key][workout_ring_key]["all_paces"],(parseInt(input2)))
                 }
 
@@ -156,7 +158,7 @@ function UpdateForm(){
             },
             //Went to go get snack
 
-            active_workout_goals:{
+            active_workout_goals: current_user["active_workout_goals"] === ""? "":{
               ...current_user["active_workouts"],[key]:
               {"current": getCurrent(), 
               "goal": current_user["active_workout_goals"][key]["goal"],

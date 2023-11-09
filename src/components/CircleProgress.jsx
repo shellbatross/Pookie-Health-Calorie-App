@@ -21,8 +21,8 @@ let workout_start_val = x[2]["active_workouts"][curr_workout]["current"]
 let workout_end_val =x[2]["active_workouts"][curr_workout]["goal"]
 workout_final_val = Math.floor(workout_start_val/workout_end_val*100)
 let curr_workout_goal = x[2]["active_workout_goals"][curr_workout]
-let start_workout_goal = curr_workout_goal["current"]
-let end_workout_goal = curr_workout_goal["goal"]
+let start_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["current"]
+let end_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["goal"]
 console.log(start_workout_goal,end_workout_goal)
 workout_goal_final = Math.floor(end_workout_goal/start_workout_goal*100)
 
