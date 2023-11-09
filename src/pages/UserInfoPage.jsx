@@ -22,6 +22,11 @@ function UserInfoPage(){
     //My life really is just setting scuffed objects now 
     //Oh right I need to put this into localstorage
     function handleClick(event){
+        let newBMR = Math.floor(caloricIntake(sex || current_user["sex"],
+            parseInt(age || current_user["age"]),
+            parseInt(weight || current_user["weight"]),
+            parseInt(height || current_user["height"])));
+        
         setUser({
             ...current_user, 
             name:   !name ? current_user["name"]: name,
@@ -30,10 +35,8 @@ function UserInfoPage(){
             age: !age ? current_user["age"]: age,
             sex: !sex ? current_user["sex"]: sex,
             fitness_level: !fitnessLevel ? current_user["fitness_level"]: fitnessLevel,
-            BMR: !sex || !age || !weight || !height ? current_user["BMR"] : Math.floor(caloricIntake(sex,parseInt(age),parseInt(weight),parseInt(height))),
-            calories: {"current": current_user["calories"]["current"], "goal": !sex || !age || !weight || !height ? current_user["BMR"] : Math.floor(caloricIntake(sex,parseInt(age),parseInt(weight),parseInt(height)))
-        
-            }
+            BMR: newBMR,
+            calories: {"current": current_user["calories"]["current"], "goal": newBMR}
         })
     
     }
