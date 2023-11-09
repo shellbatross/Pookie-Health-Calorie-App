@@ -116,7 +116,7 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px',
-        marginLeft: '20px', 
+        marginLeft: '130px', 
         // 110 to center ^
         marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
         </form>

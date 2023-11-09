@@ -23,7 +23,7 @@ export function GrabMessage(){
     let run = ["Keep running " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try running a bit more " + current_user["name"] + ", you can do it!"]
     let bike = ["Keep on biking " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Try to bike some more " + current_user["name"] + ", you can do it!"]
     let lift = ["Keep lifting " + current_user["name"] + "! Log another workout to help close your rings!", "Your rings are still incomplete. Go for another set " + current_user["name"] + ", you can do it!"]
-
+    let custom = ["Keep working on your rings " + current_user["name"] + "! Log another workout to close your rings!", "Your rings are still incomplete. Go for another workout " + current_user["name"] + ", you can do it!"]
     
     let msg = ""
     if(current_user["workout_set"] === "Running"){
@@ -38,6 +38,10 @@ export function GrabMessage(){
 
     if(current_user["workout_set"] === "Biking"){
         msg = bike[Math.floor(Math.random()*bike.length)];
+    }
+
+    if(current_user["workout_set"] === "Other"){
+        msg = custom[Math.floor(Math.random()*custom.length)];
     }
 
     if(current_user["workout_set"] === ""){
