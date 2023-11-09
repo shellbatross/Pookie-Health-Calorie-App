@@ -58,7 +58,7 @@ function RunPage(){
               }
         })
         localStorage.setItem("user",JSON.stringify(current_user))
-        navigator("/run");
+        navigator("/home");
         }
         localStorage.setItem("user",JSON.stringify(current_user))
 
