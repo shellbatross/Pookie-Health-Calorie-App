@@ -38,6 +38,7 @@ function StaticHomePage(){
     //Inspect, check console in browser you'll see what I mean
     console.log(current_user)
     console.log(current_time)
+    let calorie_reached = false
 
     GrabMessage();
     
@@ -49,6 +50,20 @@ function StaticHomePage(){
     }
 
     useEffect(() => {
+      if (current_user["calories"]["current"]>= current_user["calories"]["goal"] &&  
+      current_user["rings"][workout_ring_key] != undefined &&current_user["rings"][workout_ring_key]["calories"] != 1){
+        calorie_reached = true
+        const ring_obj_2= current_user["rings"][workout_ring_key]
+        console.log(ring_obj_2)
+        setUser({...current_user,
+          //Update rings closed 
+          rings:{
+          ...current_user["rings"],[workout_ring_key]:{
+            "workout":ring_obj_2["workout"], 
+            "calories":1, 
+            "workout_goal":ring_obj_2["workout_goal"]}}
+        })  
+      }
       if(current_user["workout_set"]!=""){
       console.log("meow")
       const workout_set = current_user["workout_set"]
