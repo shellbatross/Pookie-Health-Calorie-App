@@ -83,9 +83,7 @@ function UpdateForm(){
 
       setValidated(true);
 
-      if(form.checkValidity()){
-        UpdateStuff();
-      }
+      UpdateStuff();
     };
 
     function handleChange1(event){
@@ -319,7 +317,7 @@ function UpdateForm(){
         <div className="col">
         <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} placeholder={formWorkoutText[current_user["workout_set"]]["placeholder1"]+ " "+ formWorkoutText[current_user["workout_set"]]["metric1"]}
         onInput={e=>setInput1(e.target.value)}
-        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-150px)'}}/>
+        style={{ marginLeft: '-400px', marginRight: '950px', border: '3px solid purple', paddingLeft: '20px', transform: 'translateY(-160px)'}}/>
 
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
@@ -345,7 +343,11 @@ function UpdateForm(){
         <Form.Control required type="number" onWheel={(e) => e.target.blur()} className="homepage-input" rows={1} placeholder ={formWorkoutText[current_user["workout_set"]]["placeholder2"] + " "+formWorkoutText[current_user["workout_set"]]["metric2"] }
         // onChange = {handleChange2} 
         onInput={e=>setInput2(e.target.value)}
+<<<<<<< Updated upstream
         style={{ marginLeft: '40px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-80px)'}}/>
+=======
+        style={{ marginLeft: '40px', border: '3px solid purple', paddingLeft: '20px', paddingRight: '70px', transform: 'translateY(-100px)'}}/>
+>>>>>>> Stashed changes
         <Form.Control.Feedback 
           style={{ marginLeft: '-120px'}}
               className="font-weight-bold"
