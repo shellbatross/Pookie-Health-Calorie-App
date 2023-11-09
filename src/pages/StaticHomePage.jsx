@@ -12,7 +12,7 @@ import {GrabMessage} from "../ass-ets/PookieMessages"
 import Button from 'react-bootstrap/Button';
 import "./StaticHomePage.scss"
 import pookie from "../ass-ets/pookie_level2.png";
-import { go_up_down_map } from "../ass-ets/WorkoutConstants";
+import { go_up_down_map, killTheApp } from "../ass-ets/WorkoutConstants";
 import speechbubble from "../ass-ets/speechbubble.png";
 import PookieExp from "../components/PookieExp";
 import {Link} from "react-router-dom";
@@ -20,6 +20,7 @@ import Form from 'react-bootstrap/Form';
 import UpdateForm from "../components/UpdateForm";
 import UpdateCalorieForm from "../components/UpdateCalorieForm";
 import SetWorkOutPopUp from "../components/SetWorkOutPopUp";
+import purplex from "../ass-ets/purplex.png";
 import Confetti from "react-confetti";
 import messages from "../ass-ets/PookieMessages";
 function StaticHomePage(){
@@ -44,7 +45,7 @@ function StaticHomePage(){
       setConfetti("true")
       setTimeout(() => {
        setConfetti("False")
-    }, 10000);
+    }, 5000);
     }
 
     useEffect(() => {
@@ -52,9 +53,10 @@ function StaticHomePage(){
       console.log("meow")
       const workout_set = current_user["workout_set"]
       const active_workout_sub_obj = current_user["active_workouts"][workout_set]
-      const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set]
+      const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set] === undefined? "": current_user["active_workout_goals"][workout_set]
       const ring_obj = current_user["rings"][workout_ring_key]
-      const goal_expression = String(active_workout_goal_sub_obj["current"]) 
+
+      const goal_expression = current_user["active_workout_goals"] ==""? "false":String(active_workout_goal_sub_obj["current"]) 
       + go_up_down_map[workout_set]+ String(active_workout_goal_sub_obj["goal"])
       console.log(goal_expression)
 
@@ -86,8 +88,9 @@ function StaticHomePage(){
               "workout":ring_obj["workout"], 
               "calories":ring_obj["calories"], 
               "workout_goal":ring_obj["workout_goal"]+1}},
+            
             //Also reset stuff
-            active_workout_goals:"",active_workouts:"",workout_set:""
+            active_workout_goals:""
           })
 
         }
@@ -126,7 +129,6 @@ function StaticHomePage(){
              
         {confetti === "true" ? <Confetti classname = "confetti" numberOfPieces={1000} width = {window.innerWidth} gravity = {1}></Confetti>: <></>}
         <br/>
-        
         <br/>
         <div className = "button-circle-wrapper">
         <div className = "main-buttons">
@@ -137,7 +139,7 @@ function StaticHomePage(){
         <PookieExp></PookieExp>
         <div className="circles">
         <div className = "leftCircle">
-        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["active_workouts"] === ""? "":current_user["active_workouts"][current_user["workout_set"]]["current"]+ " / "+ 
+        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["active_workouts"] === ""? "No Workout Set!":current_user["active_workouts"][current_user["workout_set"]]["current"]+ " / "+ 
         current_user["active_workouts"][current_user["workout_set"]]["goal"]}</h2>
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout",current_user]}}></CircleProgress>
         </div>
@@ -147,7 +149,8 @@ function StaticHomePage(){
         </div>
         
         <div className = "rightCircle">
-        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{typeof(current_user["workout_pace"][current_user["workout_set"]]) === 'undefined' ? "":
+        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["active_workout_goals"] === "" ||
+        current_user["active_workouts"] === ""? "Goal Reached!": 
         current_user["workout_pace"][current_user["workout_set"]][day]["avg_reached"]+ " / "+ 
         current_user["workout_pace"][current_user["workout_set"]][day]["goal"]}</h2>
         <CircleProgress className = "workoutGoalCircle" props = {{"info":["Goal of Workout:  "+current_user["workout_goal_set"],"progress-bar-circle workoutgoal",current_user]}} ></CircleProgress>

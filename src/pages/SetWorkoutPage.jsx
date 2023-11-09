@@ -1,4 +1,5 @@
 import React, {useContext,useState} from 'react';
+import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {UserContext} from "../context/UserContext";
@@ -7,21 +8,35 @@ import bike from '../ass-ets/kisspng-cycling-bicycle-computer-icons-mountain-bik
 import runner from '../ass-ets/running-icon-on-transparent-background-hi.png';
 import lift from '../ass-ets/clipart1105277.png';
 import "./SetWorkoutPage.scss"
-import {Link} from "react-router-dom";
+import {Link, useNavigate,Navigate} from "react-router-dom";
 
 function SetWorkoutPage(){
     //Like normal  const [current_user, setUser] = useState([]) or something, but I am giving it to you
     //the "context" is an object, our current user with all their information. When you update set 
     //the state with setUser
+    const navigator = useNavigate();
     const {current_user,setUser}= useContext(UserContext);
     const {current_time, setTime} =useContext(TimeContext)
+    const [showError,setShowError]=useState(false)
+    const [errorMsg, setErrorMsg]= useState("")
     const [pb,setPersonalBest] = useState(null)
     const [goal,setGoal] = useState(null)
     const [workoutType,setWorkoutType] = useState(null)
-
     const time_key = current_time
+    let error_message = ""
+    let has_been_clicked = false
     //Inspect, check console in browser you'll see what I mean
+    const handleClose = () => setShowError(false);
     function setStuff(){
+        has_been_clicked = true
+        if((workoutType === null || pb === null || goal === null) && has_been_clicked === true){
+            setShowError(true)
+            setErrorMsg("placeholder")
+            console.log(errorMsg)
+            return <Navigate to='/setworkout' />
+        }
+
+
         setUser({
             ...current_user,
             workout_goal_set: workoutType,
@@ -38,13 +53,23 @@ function SetWorkoutPage(){
   
               }
         })
-
-        
         localStorage.setItem("user",JSON.stringify(current_user))
+        navigator("/home");
     }
     
     
     return (<div className = "set-workout-page">
+        <Modal show={showError} onHide={handleClose} size = "lg">
+        <Modal.Header closeButton>
+          <Modal.Title style = {{fontSize: "100px"}} >Please fill in this field!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style ={{fontSize: "100px"}}>{errorMsg} can not be empty!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose} style={{width: "200px",height: "200px",fontSize: "70px"}}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     <br/> 
     <br/>
     <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{marginLeft: '50px', fontSize: '100px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)', width: '400px', borderRadius: '33px', paddingTop: '20px', paddingBottom: '20px'}}>Home</Button></Link>
@@ -80,7 +105,7 @@ function SetWorkoutPage(){
         <input type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setPersonalBest(e.target.value)} />  <br />
     </form>
     </div>
-    <Link to = "/home"><Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px', fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}} onClick={setStuff}> Submit</Button></Link>
+    <Button variant = "secondary" className="submitcustom" style={{textAlign: 'center', marginLeft: '1245px', fontSize: '20px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', borderRadius: '11px'}} onClick={setStuff}> Submit</Button>
     </div>)
 
     }
