@@ -176,7 +176,7 @@ function GoalsPage(){
         &nbsp;
 
         <h1 className="page-txt"> Weekly Goal Progress </h1> <br />
-        <h4 className="top-info"> The following graphs can help you visualize your progress over the past week. </h4> <br />
+        <h4 className="top-info" style={{fontFamily: "Noto Sans TC sans-serif"}}> The following graphs can help you visualize your progress over the past week. </h4> <br />
 
         <div class="flex-parent jc-center">
             <Button variant = "primary" size="lg" onClick={() => chooseGraph("Workout")} className ="graph-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}> Workout</Button>   &nbsp; &nbsp;
