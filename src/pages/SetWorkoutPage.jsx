@@ -31,7 +31,19 @@ function SetWorkoutPage(){
         has_been_clicked = true
         if((workoutType === null || pb === null || goal === null) && has_been_clicked === true){
             setShowError(true)
-            setErrorMsg("placeholder")
+            if (workoutType===null && pb===null && goal ===null){
+                setErrorMsg("All fields ")
+            }
+            else if(workoutType===null){
+            setErrorMsg("Goal type ")
+            }
+            else if(pb===null){
+                setErrorMsg("How much or how long of this workout ")
+                }
+                else if(goal===null){
+                    setErrorMsg("Goal of workout ")
+                    }   
+
             console.log(errorMsg)
             return <Navigate to='/setworkout' />
         }
@@ -56,16 +68,14 @@ function SetWorkoutPage(){
         localStorage.setItem("user",JSON.stringify(current_user))
         navigator("/home");
     }
+    localStorage.setItem("user",JSON.stringify(current_user))
     
     
     return (<div className = "set-workout-page">
         <Modal show={showError} onHide={handleClose} size = "lg">
-        <Modal.Header closeButton>
-          <Modal.Title style = {{fontSize: "100px"}} >Please fill in this field!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body style ={{fontSize: "100px"}}>{errorMsg} can not be empty!</Modal.Body>
+        <Modal.Body style ={{fontSize: "100px", fontFamily: "Noto Sans TC sans-serif"}}>{errorMsg} can not be empty!</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose} style={{width: "200px",height: "200px",fontSize: "70px"}}>
+          <Button variant="primary" onClick={handleClose} style={{width: "200px",height: "200px",fontSize: "70px", fontFamily: "Noto Sans TC sans-serif"}}>
             Close
           </Button>
         </Modal.Footer>
