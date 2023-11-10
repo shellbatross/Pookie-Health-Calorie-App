@@ -86,7 +86,7 @@ function BikePage(){
         <input type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0"onInput={e=>setDistance(e.target.value)} />  <br />
     </form>
     <div className='pacetitle' style={{fontSize: '150px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Pace</div>
-    <div className='pacedescription'>Enter the pace that you want to bike at (miles per hour)</div>
+    <div className='pacedescription'>Enter the pace that you want to bike at (minutes per mile)</div>
     <form id="paceform" className="bikepacebox">
         <input type="number" onWheel={(e) => e.target.blur()} id="day1" name="days" min="0" placeholder="0" onInput={e=>setPace(e.target.value)} />  <br />
     </form>
