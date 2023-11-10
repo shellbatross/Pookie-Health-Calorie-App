@@ -4,9 +4,10 @@ import { useState,useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { anythingThatNeedsPace } from "../ass-ets/WorkoutConstants";
 
 function CircleProgress(props){
-
+const {current_user, setUser} = useContext(UserContext);
 
 let x = props.props.info
 let circle_label = x[0]
@@ -24,7 +25,8 @@ let curr_workout_goal = x[2]["active_workout_goals"][curr_workout]
 let start_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["current"]
 let end_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["goal"]
 console.log(start_workout_goal,end_workout_goal)
-workout_goal_final = Math.floor(end_workout_goal/start_workout_goal*100)
+workout_goal_final = current_user["workout_goal_set"] in anythingThatNeedsPace || current_user["workout_set"] in anythingThatNeedsPace? 
+Math.floor(end_workout_goal/start_workout_goal*100):Math.floor(start_workout_goal/end_workout_goal*100)
 
 }
 
