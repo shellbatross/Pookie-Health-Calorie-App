@@ -108,7 +108,9 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <div class="center">
-            <Link to ="/home"><button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button></Link>
+            {/* <Link to ="/home"> */}
+                <button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button>
+                {/* </Link> */}
         </div>
         <br></br>
         <br></br>
