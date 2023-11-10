@@ -15,8 +15,6 @@ function DisplayWorkoutGraph(){
     const {current_user,setUser}= useContext(UserContext);
     const {current_time,setTime} = useContext(TimeContext);
 
-    console.log(current_user);
-    console.log(current_time);
 
     let WCG = [[],[],[]];
     let ringsList = current_user["rings"];
@@ -35,7 +33,6 @@ function DisplayWorkoutGraph(){
     // WCG[1] = [...temp, ...WCG[1]];
     // WCG[2] = [...temp, ...WCG[2]];
 
-    console.log("RINGSS for W, C, G: ", WCG);
 
     // graphing
     var data = [{

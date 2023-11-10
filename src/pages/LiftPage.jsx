@@ -36,8 +36,6 @@ function LiftPage(){
             else if(reps===null){
                 setErrorMsg("Reps ")
                 } 
-
-            console.log(errorMsg)
             return <Navigate to = "/lift"></Navigate>
         }
 

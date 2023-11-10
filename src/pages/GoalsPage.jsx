@@ -22,8 +22,6 @@ function GoalsPage(){
     const {current_user,setUser}= useContext(UserContext);
     const {current_time,setTime} = useContext(TimeContext);
 
-    console.log(current_user);
-    console.log(current_time);
 
     const [goals, setGoals] = useState({
         x: [1, 2, 3, 4, 5, 6, 7],
@@ -43,7 +41,6 @@ function GoalsPage(){
     // this selects it
     function chooseGraph(gType){
         graphType = gType;
-        console.log("Gtype = :", graphType);
 
         goals.x = progValues();
         setRevision(revision + 1);
@@ -61,7 +58,6 @@ function GoalsPage(){
             WCG[2][i] = ringsList[dates[i]]['workout_goal'];
         }
 
-        console.log("RINGSS for W, C, G: ", WCG);
 
         // graphing
         var data = [{
@@ -88,7 +84,6 @@ function GoalsPage(){
 
     function progValues() {
 
-        console.log("please what the fuck is the graph type:  ", graphType);
         if (graphType === "Calories"){
             // return caloriesGraph();
 
@@ -124,13 +119,11 @@ function GoalsPage(){
 
         // console.log("workoutType: ", workoutType);
         allLines[0] = goalsMet;
-        console.log("allLines 0:   ", allLines);
 
 
         // BIKING
 
         days_by_attr = (current_user["workout_pace"]["Biking"]);
-        console.log("HELLO PLS BIKIG: ", current_user["workout_pace"])
         dates = Object.keys(days_by_attr);
 
         goalsMet = [];
@@ -139,12 +132,9 @@ function GoalsPage(){
             let val = days_by_attr[dates[i]]["avg_reached"];
             goalsMet[i] = val || 0;
             selectedGraph[i] = val || 0;
-
-            console.log("goalsmet: ", goalsMet);
         }
 
         allLines[1] = goalsMet;
-        console.log("allLines 1:   ", allLines);
 
 
         return goalsMet;

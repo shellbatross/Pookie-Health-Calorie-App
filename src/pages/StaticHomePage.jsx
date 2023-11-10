@@ -36,8 +36,6 @@ function StaticHomePage(){
     const workout_ring_key = String(current_time)
     const day = current_time
     //Inspect, check console in browser you'll see what I mean
-    console.log(current_user)
-    console.log(current_time)
     let calorie_reached = false
 
     GrabMessage();
@@ -54,7 +52,6 @@ function StaticHomePage(){
       current_user["rings"][workout_ring_key] != undefined &&current_user["rings"][workout_ring_key]["calories"] != 1){
         calorie_reached = true
         const ring_obj_2= current_user["rings"][workout_ring_key]
-        console.log(ring_obj_2)
         setUser({...current_user,
           //Update rings closed 
           rings:{
@@ -65,7 +62,6 @@ function StaticHomePage(){
         })  
       }
       if(current_user["workout_set"]!=""){
-      console.log("meow")
       const workout_set = current_user["workout_set"]
       const active_workout_sub_obj = current_user["active_workouts"][workout_set]
       const active_workout_goal_sub_obj = current_user["active_workout_goals"][workout_set] === undefined? "": current_user["active_workout_goals"][workout_set]
@@ -73,11 +69,8 @@ function StaticHomePage(){
 
       const goal_expression = current_user["active_workout_goals"] ==""? "false":String(active_workout_goal_sub_obj["current"]) 
       + go_up_down_map[workout_set]+ String(active_workout_goal_sub_obj["goal"])
-      console.log(goal_expression)
 
       //If they closed the workout ring
-      console.log(active_workout_sub_obj["current"])
-      console.log(active_workout_sub_obj["goal"])
       //Close pace ring
       if (String(active_workout_goal_sub_obj["current"])!== "good luck!" && String(active_workout_goal_sub_obj["current"])!== "Reached"  && eval(goal_expression)){
         fireConfetti();

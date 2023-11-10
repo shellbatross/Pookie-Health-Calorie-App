@@ -15,8 +15,6 @@ function DisplayCaloriesGraph(){
     const {current_user,setUser}= useContext(UserContext);
     const {current_time,setTime} = useContext(TimeContext);
 
-    console.log(current_user);
-    console.log(current_time);
 
     let caloriesIn = [];
     // selectedGraph = [];
@@ -38,12 +36,9 @@ function DisplayCaloriesGraph(){
     // let temp = Array(7 - dates.length).fill(0);
     // caloriesIn = [...temp, ...caloriesIn];
 
-    console.log("CALORIES LIST :   ", caloriesList);
-    console.log("CALORIES : ", caloriesIn);
 
     function maxYValue(){
         let m = ((Math.ceil((Math.max(...caloriesIn))) % 5) + 1) * 5;
-        console.log("MAX X  :" , m);
         return m;
     }
 

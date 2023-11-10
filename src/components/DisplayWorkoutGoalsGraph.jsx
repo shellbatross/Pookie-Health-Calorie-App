@@ -15,9 +15,6 @@ function DisplayWorkoutGoalsGraph(){
     const {current_user,setUser}= useContext(UserContext);
     const {current_time,setTime} = useContext(TimeContext);
 
-    console.log(current_user);
-    console.log(current_time);
-
     let currGoal = 5;
     // TODO: stop hardcoding this value...
     let goalsMet = [];
@@ -53,7 +50,6 @@ function DisplayWorkoutGoalsGraph(){
         // console.log("allLines ", j, " :   ", allLines[j]);
     }
 
-    console.log("allLines:  ", allLines);
 
     var data = [{
         x: [1, 2, 3, 4, 5, 6, 7],

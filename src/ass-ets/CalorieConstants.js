@@ -47,18 +47,14 @@ Custom workout? Can't do that bro METS X 3.5 X BW (KG) / 200 = KCAL/MIN.
 function METSRunning(weight,time){
     const pounds_in_kg = Math.floor(weight*0.45359237)
     const tmp = (11.5*pounds_in_kg*3.5)/200
-    console.log(tmp)
     const ans = Math.floor(tmp*time)
-    console.log(ans)
     return ans
 }
 
 function METSBiking(weight,time){
     const pounds_in_kg = Math.floor(weight*0.45359237)
     const tmp = (10.0*pounds_in_kg*3.5)/200
-    console.log(tmp)
     const ans = Math.floor(tmp*time)
-    console.log(ans)
     return ans
 }
 

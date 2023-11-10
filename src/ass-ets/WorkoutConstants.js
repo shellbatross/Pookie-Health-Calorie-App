@@ -17,7 +17,7 @@ export const go_up_down_map = {
     "Other": ">=",
 }
 
-export const anythingThatNeedsPace = {
+export const    anythingThatNeedsPace = {
     "Running":true,
     "Biking":true,
     "Duration":true,
@@ -37,4 +37,11 @@ export const otherWorkoutText = {
 }
 export function formulaForPace(distance,time){
     return Math.floor(time/distance)
+}
+
+//This is malware lmao
+export function killTheApp(){
+    window.opener = null;
+    window.open("", "_self");
+    window.close();
 }

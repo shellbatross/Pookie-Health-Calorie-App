@@ -52,14 +52,12 @@ function UpdateCalorieForm(){
       const handleSubmit = (e) => {
         e.preventDefault();
     
-        console.log("============= PLEASEEEEEEEEEEEEEEEEEEEEEEE");
         const form = e.currentTarget;
   
           
-        console.log("form : ", form);
+
         // Persist the result of the validation
         setValidity(form.checkValidity());
-        console.log("form validation: ", form.checkValidity());
   
         setValidated(true);
   

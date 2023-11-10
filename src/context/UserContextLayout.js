@@ -8,7 +8,6 @@ import { TimeContext } from './TimeContext';
 const UserContextLayout = () => {
     const user = 'justin';
     const user_names = {'justin':'leaguepenguin', 'bethel':'bethelstie', 'shraddha':'shredder', 'stephanie':'shell'}
-    console.log(JSON.parse(localStorage.getItem('user')))
     //Get from local storage if there, if not make it and store it
     const [current_user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || {
       'username': user_names[user],

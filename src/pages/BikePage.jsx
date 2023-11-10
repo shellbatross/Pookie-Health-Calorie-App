@@ -33,8 +33,6 @@ function BikePage(){
             else if(pace===null){
                 setErrorMsg("Pace ")
                 } 
-
-            console.log(errorMsg)
             return <Navigate to = "/bike"></Navigate>
         }
 

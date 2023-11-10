@@ -35,7 +35,6 @@ function UpdateForm(){
 
 
     let error_modal = <></>
-    console.log(current_user)
     //Bunch of useffects to keep track on each aspect of user,see if ring closes to update and confetti god this is so scuffed
 
     const [validated, setValidated] = useState(false);
@@ -44,7 +43,6 @@ function UpdateForm(){
     
     function getCurrent(){
     let all_info = current_user["active_workout_goals"][current_user["workout_set"]]["all"]
-    console.log(all_info)
     let current_pace = 0
     let current = 0
     if (current_user["workout_goal_set"] in anythingThatNeedsPace || current_user["workout_set"] in anythingThatNeedsPace){
@@ -58,9 +56,7 @@ function UpdateForm(){
     }
     else{
       all_info.push(parseInt(input2))
-      console.log(all_info)
       current = Math.max(...all_info)
-      console.log(current)
     }
 
     return current
@@ -74,14 +70,11 @@ function UpdateForm(){
     const handleSubmit = (e) => {
       e.preventDefault();
   
-      console.log("============= PLEASEEEEEEEEEEEEEEEEEEEEEEE");
       const form = e.currentTarget;
 
         
-      console.log("form : ", form);
       // Persist the result of the validation
       setValidity(form.checkValidity());
-      console.log("form validation: ", form.checkValidity());
 
       setValidated(true);
 
@@ -96,20 +89,16 @@ function UpdateForm(){
     }
 
     function UpdateStuff(){
-        console.log("entered UpdateStuff");
         //Check if any workout has been set at all, if theres nothing then give a warning
         if (current_user["workout_set"]===""){
-          console.log("work on warning bitch")
           return
         }
         //Might be a new day, check if we need somewhere to store info 
         
         let key = String(current_user["workout_set"])
-        console.log(workout_ring_key in current_user["rings"]);
         //This looks god awful, but if its first time in the day i need to make a set of space for new info on this brand
         //new god awful wretched beautiful day
         if (workout_ring_key in current_user["rings"] === false){
-          console.log("hereee")
           setUser({...current_user,
             //Set space for a new ring at the date
             rings:{
@@ -133,7 +122,6 @@ function UpdateForm(){
           )
         }
         else{
-          console.log(current_user["workout_pace"][key][workout_ring_key]["avg_reached"])
           //Just update stuff
           setUser({...current_user, 
             //First update current workout progress

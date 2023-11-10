@@ -44,7 +44,6 @@ function SetWorkoutPage(){
                     setErrorMsg("Goal of workout ")
                     }   
 
-            console.log(errorMsg)
             return <Navigate to='/setworkout' />
         }
 

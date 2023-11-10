@@ -12,7 +12,6 @@ const {current_user, setUser} = useContext(UserContext);
 let x = props.props.info
 let circle_label = x[0]
 let circle_starter = x[1]
-console.log(circle_label)
 let workout_final_val = 0
 let calorie_final = 0
 let workout_goal_final = 0
@@ -24,7 +23,6 @@ workout_final_val = Math.floor(workout_start_val/workout_end_val*100)
 let curr_workout_goal = x[2]["active_workout_goals"][curr_workout]
 let start_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["current"]
 let end_workout_goal = curr_workout_goal ===undefined? 0 :curr_workout_goal["goal"]
-console.log(start_workout_goal,end_workout_goal)
 workout_goal_final = current_user["workout_goal_set"] in anythingThatNeedsPace || current_user["workout_set"] in anythingThatNeedsPace? 
 Math.floor(end_workout_goal/start_workout_goal*100):Math.floor(start_workout_goal/end_workout_goal*100)
 

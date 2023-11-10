@@ -37,7 +37,6 @@ function RunPage(){
                 setErrorMsg("Pace ")
                 } 
 
-            console.log(errorMsg)
             return <Navigate to = "/run"></Navigate>
         }
         
