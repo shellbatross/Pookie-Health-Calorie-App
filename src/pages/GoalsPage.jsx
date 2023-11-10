@@ -189,7 +189,7 @@ function GoalsPage(){
         <div className="text-box">  
         
             {graphType === "Pace" ? "Plots how much of your goal (e.g. pace) has been acheived per workout over the past 7 days or less. Click each point for the exact value." :   
-                (graphType === "Calories" ? "Plots your caloric intake for the past 7 days or less. Note that caloric information for a day is saved only after the day ends." : 
+                (graphType === "Calories" ? "Plots your caloric intake for the past 7 days or less. The last bar represents today's calories so far." : 
                     (graphType === "Workout" ? "Plots the number of completed rings for each group (e.g. caloric intake) for the past 7 days or less." 
                         : "Select a graph type to view and learn more."))} </div>
 
