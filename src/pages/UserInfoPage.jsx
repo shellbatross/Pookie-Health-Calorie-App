@@ -44,27 +44,12 @@ function UserInfoPage(){
     //Inspect, check console in browser you'll see what I mean
     return (<div className='user-info-page'>
         
-        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(75, 89, 181)'}}>Home</Button></Link>
+        <Link to = "/home"><Button variant = "primary" size="lg" className ="home-btn" style={{fontSize: '22px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', backgroundColor: 'rgb(22, 10, 184)'}}>Home</Button></Link>
 
         <h1 className='page-title'> User Information </h1>
         <br></br>
         <form>
-        <Accordion style={{paddingLeft: '30px', marginLeft: '100px'}}>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header style ={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '24px !important', border: "1px solid rgb(134, 76, 153)", backgroundColor: 'purple', fontWeight:"bold "}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Current Information</Accordion.Header>
-        <Accordion.Body>
-        <ul>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Name: {current_user["name"]}</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Height: {current_user["height"]} cm</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Weight: {current_user["weight"]} lbs</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Age: {current_user["age"]}</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Sex: {current_user["sex"]}</li>
-          <li style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>Fitness Level: {current_user["fitness_level"]}</li>
-
-          </ul>
-        </Accordion.Body>
-        </Accordion.Item>
-        </Accordion>
+        
         <br/>
         <br/>
         <div class="container">
@@ -73,8 +58,13 @@ function UserInfoPage(){
         </div>
 
         <div class="container">
+        <label-2 htmlFor="age">Birthday </label-2>
+        <input id="age" name="age" placeholder="ex: 01/12/2002" onInput={e=>setAge(e.target.value)}></input> <br></br>
+        </div>
+
+        <div class="container">
         <label-2 htmlFor="age">Age </label-2>
-        <input type="number" onWheel={(e) => e.target.blur()} id="age" name="age" placeholder="ex: 23" onInput={e=>setAge(e.target.value)}></input> <br></br>
+        <input type="number" onWheel={(e) => e.target.blur()} id="age" name="age" placeholder="22" onInput={e=>setAge(e.target.value)}></input> <br></br>
         </div>
 
         <div class="container">
@@ -83,12 +73,12 @@ function UserInfoPage(){
         </div>
 
         <div class="container">
-        <label-2 htmlFor="calorie">Height (cm)</label-2>
+        <label-2 htmlFor="calorie">Height (in)</label-2>
         <input type="number" onWheel={(e) => e.target.blur()} id="calorie" name="calorie" placeholder="ex: 170" onInput={e=>setHeight(e.target.value)}></input> <br></br>
         </div>
  
         <div class="container">
-        <label-2 htmlFor="sex">Sex </label-2>
+        <label-2 htmlFor="sex">Biological Sex </label-2>
         <select id="dropdown" className='sexx' onChange= {e=>setSex(e.target.value)} >
                     <option value="Unselected">No Option Selected</option>
                     <option value="F" >Female</option>
@@ -107,6 +97,7 @@ function UserInfoPage(){
         </div>
         <br></br>
         <br></br>
+        <br></br>
         <div class="center">
             {/* <Link to ="/home"> */}
                 <button type="button" style={{fontSize: '25px', borderRadius: '11px'}} className ='button' onClick = {handleClick} >Submit</button>
@@ -116,11 +107,10 @@ function UserInfoPage(){
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
         <Link to = "/termsandconditions"><Button variant = "secondary" style={{fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '23px',
         marginLeft: '130px', 
         // 110 to center ^
-        marginTop: '-0.5px', backgroundColor: 'rgb(75, 89, 181)'}} className="termsbutton"> Terms and Conditions</Button></Link>
+        marginTop: '-0.5px', backgroundColor: 'rgb(22, 10, 184)'}} className="termsbutton"> Terms and Conditions</Button></Link>
         </form>
     </div>)
 

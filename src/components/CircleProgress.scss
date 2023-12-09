@@ -67,7 +67,7 @@
 .workout {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(rgb(127, 121, 205) calc(var(--progress-value) * 1%), rgb(158, 168, 227) 0);
+    conic-gradient(rgb(33, 22, 188) calc(var(--progress-value) * 1%), rgb(158, 168, 227) 0);
   animation: workout-progress 2s 1 forwards;
 }
     
@@ -78,7 +78,7 @@
 .dailygoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(129, 183, 198) calc(var(--progress-value) * 1%), rgb(166, 206, 223) 0);
+    conic-gradient(rgb(47, 149, 177) calc(var(--progress-value) * 1%), rgb(166, 206, 223) 0);
   animation: dailygoal-progress 2s 1 forwards;
 }
 
@@ -89,7 +89,7 @@
 .workoutgoal {
   background: 
     radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
-    conic-gradient(rgb(188, 224, 240)calc(var(--progress-value) * 1%), rgb(221, 241, 251) 0);
+    conic-gradient(rgb(88, 181, 221)calc(var(--progress-value) * 1%), rgb(221, 241, 251) 0);
   animation: workoutgoal-progress 2s 1 forwards;
 }
 .h2{

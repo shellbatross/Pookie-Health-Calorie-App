@@ -147,17 +147,17 @@ function StaticHomePage(){
         <PookieExp></PookieExp>
         <div className="circles">
         <div className = "leftCircle">
-        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["active_workouts"] === ""? "No Workout Set!":current_user["active_workouts"][current_user["workout_set"]]["current"]+ " / "+ 
+        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '80px'}}>{current_user["active_workouts"] === ""? "No Workout Set!":current_user["active_workouts"][current_user["workout_set"]]["current"]+ " / "+ 
         current_user["active_workouts"][current_user["workout_set"]]["goal"]}</h2>
         <CircleProgress className = "workoutInfoCircle" props = {{"info":["Workout: "+current_user["workout_set"],"progress-bar-circle workout",current_user]}}></CircleProgress>
         </div>
         <div className = "middleCircle">
-        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["calories"] === ""? "":current_user["calories"]["current"] + " / "+ current_user["calories"]["goal"]}</h2>
+        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '80px'}}>{current_user["calories"] === ""? "":current_user["calories"]["current"] + " / "+ current_user["calories"]["goal"]}</h2>
         <CircleProgress className = "caloriesBurnedCircle" props = {{"info":["Calories","progress-bar-circle-center dailygoal",current_user]}}></CircleProgress>   
         </div>
         
         <div className = "rightCircle">
-        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif'}}>{current_user["active_workout_goals"] === "" ||
+        <h2 style={{fontSize: '70px', fontFamily: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif', fontSize: '80px'}}>{current_user["active_workout_goals"] === "" ||
         current_user["active_workouts"] === ""? "Goal Reached!": 
         current_user["workout_pace"][current_user["workout_set"]][day]["avg_reached"]+ " / "+ 
         current_user["workout_pace"][current_user["workout_set"]][day]["goal"]}</h2>
